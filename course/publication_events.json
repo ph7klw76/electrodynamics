@@ -1,0 +1,2724 @@
+{
+  "schema_version": 1,
+  "status": "MEASURED",
+  "title": "Electrodynamics",
+  "slug": "electrodynamics",
+  "website_url": "https://ph7klw76.github.io/electrodynamics/",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "duration_frames": 23400,
+  "duration_seconds": 780.0,
+  "scenes": [
+    {
+      "index": 0,
+      "chapter": 0,
+      "title": "Two surfaces, one magnetic circulation",
+      "focus": "Follow the fields through a charging circuit",
+      "text": "Picture a capacitor being charged. Current flows in the wire, but no conduction charge crosses the vacuum gap. Now draw a loop around the wire. A flat surface through that loop cuts the wire. A curved surface with the same edge can pass through the gap instead. Can these surfaces give two different values for the same magnetic circulation? This puzzle takes us from Maxwell's equations all the way to an optical coating.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 0,
+      "end_frame": 891,
+      "duration_frames": 891,
+      "speech_end_frame": 730,
+      "formulas": [
+        "\\oint_C\\mathbf B\\cdot d\\boldsymbol\\ell\\quad\\text{one fixed contour}",
+        "I_{\\rm cond}(S_{\\rm wire})=I,\\quad I_{\\rm cond}(S_{\\rm gap})=0"
+      ],
+      "note": "The wire and the gap constrain the same oriented boundary.",
+      "highlight_term": "flux",
+      "highlight_frame": null,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 1,
+      "chapter": 0,
+      "title": "Keep the boundary fixed",
+      "focus": "One loop can bound many oriented surfaces",
+      "text": "The magnetic circulation is an integral along the loop. It has one value once we fix the direction of travel. Match each surface normal to that direction by the right hand rule. Ampere's original magnetostatic equation counts the conduction current through the surface. The wire surface counts current. The gap surface does not. A charging circuit lies outside the assumptions of magnetostatics.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 891,
+      "end_frame": 1816,
+      "duration_frames": 925,
+      "speech_end_frame": 1655,
+      "formulas": [
+        "\\oiint_{\\partial V}\\mathbf E\\cdot d\\mathbf A=Q_{\\rm enc}/\\epsilon_0",
+        "\\oiint_{\\partial V}\\mathbf B\\cdot d\\mathbf A=0"
+      ],
+      "note": "Electric charge sources electric flux. Magnetic flux through a closed surface is zero.",
+      "highlight_term": "flux",
+      "highlight_frame": null,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 2,
+      "chapter": 0,
+      "title": "Predict the missing term",
+      "focus": "What counts across a vacuum gap?",
+      "text": "Pause and choose. In the ideal vacuum gap, is the electric flux fixed, does it change so that epsilon zero times its rate of change equals the lead current, or do electrons carry that current through the vacuum? Sketch the two surfaces before choosing. Think about what happens to the charge on the plates during charging.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 1816,
+      "end_frame": 2584,
+      "duration_frames": 768,
+      "speech_end_frame": 2389,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "flux",
+      "highlight_frame": 1940,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 3,
+      "chapter": 0,
+      "title": "The changing flux closes the budget",
+      "focus": "Same circulation, different contributions",
+      "text": "The changing flux supplies the missing term. In the parallel plate approximation, the electric flux across the gap is the plate charge divided by epsilon zero. Differentiate with respect to time. The result, multiplied by epsilon zero, is the rate at which charge arrives. Maxwell's correction makes the surface choice consistent. Displacement current has units of amperes. In this gap it describes a changing field without a flow of charge carriers.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 2584,
+      "end_frame": 3557,
+      "duration_frames": 973,
+      "speech_end_frame": 3395,
+      "formulas": [
+        "\\oint_C\\mathbf B\\cdot d\\boldsymbol\\ell=\\mu_0\\left(I_{\\rm cond}+\\epsilon_0\\dot\\Phi_E\\right)",
+        "\\epsilon_0\\dot\\Phi_E=\\dot Q=I\\quad\\text{(ideal gap)}"
+      ],
+      "note": "The surface law contains both conduction and displacement contributions.",
+      "highlight_term": "flux",
+      "highlight_frame": 2607,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 4,
+      "chapter": 1,
+      "title": "A changing magnetic field drives circulation",
+      "focus": "Induction exists with or without a wire loop",
+      "text": "Now drive current up a long solenoid. Take the magnetic field inside to point along positive z and grow steadily. Outside, approximate the magnetic field as zero. Place an imaginary circle around the coil, without adding a conductor. Faraday's law relates the electric circulation around that circle to the rate of change of magnetic flux through its disk.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 3557,
+      "end_frame": 4373,
+      "duration_frames": 816,
+      "speech_end_frame": 4211,
+      "formulas": [
+        "\\oint_C\\mathbf E\\cdot d\\boldsymbol\\ell=-\\frac{d}{dt}\\int_S\\mathbf B\\cdot d\\mathbf A",
+        "\\mathbf B=B(t)\\hat{\\mathbf z}\\quad(r<a)"
+      ],
+      "note": "The test circle specifies a path. A material wire is unnecessary.",
+      "highlight_term": "circulation",
+      "highlight_frame": 4077,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 5,
+      "chapter": 1,
+      "title": "Flux depends on the field-filled area",
+      "focus": "Inside the coil, use πr². Outside, use πa².",
+      "text": "Cylindrical symmetry makes the induced electric field azimuthal in this idealization. The disk flux uses only the part of the disk where the magnetic field exists. For a circle inside the coil, that area grows as radius squared. Outside the coil, it saturates at the coil's cross section. The circumference keeps growing, however. Divide the rate of flux change by that circumference.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 4373,
+      "end_frame": 5225,
+      "duration_frames": 852,
+      "speech_end_frame": 5064,
+      "formulas": [
+        "\\Phi_B=B(t)\\pi\\min(r,a)^2",
+        "2\\pi r E_\\phi=-\\frac{d\\Phi_B}{dt}"
+      ],
+      "note": "Flux integrates the field only over the part of the disk inside the coil.",
+      "highlight_term": "circulation",
+      "highlight_frame": null,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 6,
+      "chapter": 1,
+      "title": "Predict outside the solenoid",
+      "focus": "Look down from the positive z side",
+      "text": "The positive z magnetic field is increasing. The magnetic field outside is negligible. From the positive z side, which way does the induced electric field circulate outside? Choose clockwise, counterclockwise, or zero. Decide whether the local field or the flux through the entire disk enters Faraday's law.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 5225,
+      "end_frame": 6005,
+      "duration_frames": 780,
+      "speech_end_frame": 5810,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "circulation",
+      "highlight_frame": null,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 7,
+      "chapter": 1,
+      "title": "A field can circulate where its curl vanishes",
+      "focus": "Clockwise outside, with magnitude proportional to 1/r",
+      "text": "The electric field points clockwise. Positive flux increases, so circulation is negative for the counterclockwise orientation. Beyond the coil radius, its magnitude decreases inversely with radius. The field can be nonzero even where its local curl vanishes. Outside the coil, a spanning disk for a loop encircling the axis also includes the interior. This distinction between local and integral statements is worth slowing down for.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 6005,
+      "end_frame": 6990,
+      "duration_frames": 985,
+      "speech_end_frame": 6828,
+      "formulas": [
+        "E_\\phi(r)=-\\frac{\\dot B}{2}\\begin{cases}r&r\\leq a\\\\ a^2/r&r>a\\end{cases}"
+      ],
+      "note": "This idealization neglects coil ends and propagation delays.",
+      "highlight_term": "circulation",
+      "highlight_frame": 6144,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 8,
+      "chapter": 2,
+      "title": "From local rotation to a boundary integral",
+      "focus": "Stokes' theorem connects a surface and its edge",
+      "text": "Curl measures circulation per area in the small-loop limit. To see how local curls build up, imagine tiling a disk with tiny oriented loops. On shared edges, neighboring loops traverse the same edge in opposite directions. Those contributions cancel. Summing all of the little loops leaves circulation along the outside boundary.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 6990,
+      "end_frame": 7770,
+      "duration_frames": 780,
+      "speech_end_frame": 7609,
+      "formulas": [
+        "\\int_S(\\nabla\\times\\mathbf E)\\cdot d\\mathbf A=\\oint_{\\partial S}\\mathbf E\\cdot d\\boldsymbol\\ell"
+      ],
+      "note": "The edge orientation follows the surface normal by the right-hand rule.",
+      "highlight_term": "curl",
+      "highlight_frame": 6997,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 9,
+      "chapter": 2,
+      "title": "Shrink a loop without crossing the coil",
+      "focus": "A small loop can sit entirely in the exterior",
+      "text": "Take a tiny disk in the exterior that does not enclose the solenoid. Its normal is still along positive z. The changing magnetic flux through that disk is zero in this model. Yet a probe at a point on the disk detects a nonzero induced electric field. A curl measurement compares contributions around the whole small loop. It is different from a point measurement of the field.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 7770,
+      "end_frame": 8611,
+      "duration_frames": 841,
+      "speech_end_frame": 8450,
+      "formulas": [
+        "\\nabla\\times\\mathbf E=-\\partial_t\\mathbf B",
+        "\\partial_t\\mathbf B=\\mathbf 0\\quad\\text{everywhere on this disk}"
+      ],
+      "note": "A point field measurement and a loop integral answer different questions.",
+      "highlight_term": "curl",
+      "highlight_frame": 8270,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 10,
+      "chapter": 2,
+      "title": "Predict the small-loop result",
+      "focus": "Zero flux change through this particular disk",
+      "text": "For the small exterior disk, which statement is required? Its electric circulation vanishes, the electric field vanishes everywhere along its edge, or the circulation equals that of the larger loop surrounding the coil? Choose an answer and explain how the result depends on which region the disk spans.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 8611,
+      "end_frame": 9310,
+      "duration_frames": 699,
+      "speech_end_frame": 9115,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "curl",
+      "highlight_frame": null,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 11,
+      "chapter": 2,
+      "title": "Use orientation consistently",
+      "focus": "Reverse both the normal and the traversal direction",
+      "text": "The small-loop circulation vanishes. The field contributions cancel in the line integral. In differential form, the curl of the electric field equals minus the time derivative of the magnetic field. Integrate this relation over the oriented surface, then apply Stokes' theorem. Reversing the chosen normal reverses the loop direction and both sides change sign together.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 9310,
+      "end_frame": 10154,
+      "duration_frames": 844,
+      "speech_end_frame": 9992,
+      "formulas": [
+        "\\oint_{\\partial S_{\\rm small}}\\mathbf E\\cdot d\\boldsymbol\\ell=0",
+        "\\mathbf E\\ne\\mathbf 0\\quad\\text{along the edge}"
+      ],
+      "note": "The outer and inner loops have different boundaries and enclose different flux.",
+      "highlight_term": "curl",
+      "highlight_frame": 9539,
+      "phase": "EXPLAIN"
+    },
+    {
+      "index": 12,
+      "chapter": 3,
+      "title": "Charge has a local budget",
+      "focus": "Outward current flux lowers charge in a fixed volume",
+      "text": "Charge conservation gives a useful diagnostic. Choose a fixed volume. Count the charge inside, and count the current leaving through its closed surface. If more charge flows out than in, the stored charge falls. The divergence theorem converts the outward flux into a volume integral of the divergence. Since the choice of volume is arbitrary, we obtain the local continuity equation.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 10154,
+      "end_frame": 11008,
+      "duration_frames": 854,
+      "speech_end_frame": 10847,
+      "formulas": [
+        "\\frac{d}{dt}\\int_V\\rho\\,dV=-\\oiint_{\\partial V}\\mathbf J\\cdot d\\mathbf A",
+        "\\partial_t\\rho+\\nabla\\cdot\\mathbf J=0"
+      ],
+      "note": "The sign comes from choosing outward normals on the closed surface.",
+      "highlight_term": "current",
+      "highlight_frame": 10360,
+      "phase": "APPLY"
+    },
+    {
+      "index": 13,
+      "chapter": 3,
+      "title": "A varying current density can be divergence-free",
+      "focus": "Compare net flux, not just arrow lengths",
+      "text": "In a straight steady conductor that narrows, the same current passes through every cross section, while the average current density increases in the narrow section. A plot of that axial average can slope upward. It is not the three-dimensional divergence. Near a taper the current field can have transverse components, and an insulating wall contributes no outward charge flux.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 11008,
+      "end_frame": 11803,
+      "duration_frames": 795,
+      "speech_end_frame": 11642,
+      "formulas": [
+        "I=\\int_A\\mathbf J\\cdot d\\mathbf A,\\quad \\langle J_z\\rangle=I/A"
+      ],
+      "note": "Near the taper, a radial component can cancel the axial derivative.",
+      "highlight_term": "current",
+      "highlight_frame": 11097,
+      "phase": "APPLY"
+    },
+    {
+      "index": 14,
+      "chapter": 3,
+      "title": "Predict at a steady constriction",
+      "focus": "A fixed volume spans the change in cross section",
+      "text": "Suppose the lead current is steady and the conductor's sides are insulated. Through a volume that spans the constriction, is the net outward current positive, negative, or zero? Draw arrows for the two end faces and label the outward normals. Decide whether a higher current density implies a higher current.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 11803,
+      "end_frame": 12536,
+      "duration_frames": 733,
+      "speech_end_frame": 12341,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "current",
+      "highlight_frame": 11835,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 15,
+      "chapter": 3,
+      "title": "Continuity also checks Maxwell's correction",
+      "focus": "The divergence of a curl is zero",
+      "text": "The net flux is zero. The same current enters and leaves, so charge does not accumulate. Now take the divergence of the Ampere-Maxwell equation. The divergence of the left hand curl vanishes identically. Gauss's law turns the divergence of the changing electric field term into the time derivative of charge density. What remains on the right is the continuity equation.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 12536,
+      "end_frame": 13381,
+      "duration_frames": 845,
+      "speech_end_frame": 13219,
+      "formulas": [
+        "0=\\nabla\\cdot(\\nabla\\times\\mathbf B)=\\mu_0(\\nabla\\cdot\\mathbf J+\\partial_t\\rho)",
+        "I_{\\rm out,net}=-I+I=0"
+      ],
+      "note": "The same local conservation law follows from the field equations and Gauss's law.",
+      "highlight_term": "current",
+      "highlight_frame": 12612,
+      "phase": "APPLY"
+    },
+    {
+      "index": 16,
+      "chapter": 4,
+      "title": "Follow energy through the gap",
+      "focus": "The Poynting vector points across the side boundary",
+      "text": "The capacitor stores electric field energy as it charges. How does that energy reach the gap? Take the electric field to point up, along positive z. In a circular capacitor, the magnetic field in the gap points around the axis in the positive azimuthal direction. The cross product of the electric and magnetic fields points radially inward.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 13381,
+      "end_frame": 14156,
+      "duration_frames": 775,
+      "speech_end_frame": 13994,
+      "formulas": [
+        "\\mathbf S=\\mathbf E\\times\\mathbf H=\\frac{\\mathbf E\\times\\mathbf B}{\\mu_0}\\quad\\text{(vacuum)}",
+        "\\hat{\\mathbf z}\\times\\hat{\\boldsymbol\\phi}=-\\hat{\\mathbf r}"
+      ],
+      "note": "Power flux density has units of watts per square metre.",
+      "highlight_term": "energy",
+      "highlight_frame": 13441,
+      "phase": "CRITIQUE"
+    },
+    {
+      "index": 17,
+      "chapter": 4,
+      "title": "Balance flux against field energy",
+      "focus": "Poynting's theorem connects fields and matter",
+      "text": "Poynting's theorem follows by dotting the curl equations with the appropriate fields and using the divergence identity for a cross product. The result separates the rate of change of field energy, the outward energy flux and the rate at which fields do work on matter. In the vacuum gap, the work term is zero. For this quasistatic example, the leading change is the electric energy.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 14156,
+      "end_frame": 14988,
+      "duration_frames": 832,
+      "speech_end_frame": 14827,
+      "formulas": [
+        "u=\\frac12\\epsilon_0 E^2+\\frac{B^2}{2\\mu_0}",
+        "\\partial_t u+\\nabla\\cdot\\mathbf S=-\\mathbf J\\cdot\\mathbf E"
+      ],
+      "note": "The matter term is a power density. In the vacuum gap it vanishes.",
+      "highlight_term": "energy",
+      "highlight_frame": 14459,
+      "phase": "CRITIQUE"
+    },
+    {
+      "index": 18,
+      "chapter": 4,
+      "title": "Predict the sign of outward power",
+      "focus": "The capacitor voltage and its charging current are positive",
+      "text": "For the gap volume, what is the sign of the outward electromagnetic power through its curved side during charging? Choose positive, zero, or negative. Use the outward normal, not the direction in which you happen to draw the integration arrow. Then ask how this sign relates to the growing electric energy.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 14988,
+      "end_frame": 15711,
+      "duration_frames": 723,
+      "speech_end_frame": 15516,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "energy",
+      "highlight_frame": 15494,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 19,
+      "chapter": 4,
+      "title": "The inward power equals V times I",
+      "focus": "Flux balance in the ideal parallel-plate limit",
+      "text": "The outward power is negative. Integrate the radial Poynting flux over the cylindrical side. Using the Ampere-Maxwell field at the rim, the inward power is voltage times current. Independently, differentiate one half times capacitance times voltage squared. It gives the same power. In the lab you will check both calculations and estimate when neglecting changing magnetic energy and edge fringing is reasonable.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 15711,
+      "end_frame": 16633,
+      "duration_frames": 922,
+      "speech_end_frame": 16471,
+      "formulas": [
+        "\\oiint_{\\partial V}\\mathbf S\\cdot d\\mathbf A\\simeq -VI",
+        "\\dot U_E=\\frac{d}{dt}\\left(\\tfrac12 C V^2\\right)=VI"
+      ],
+      "note": "Compare side flux with electric energy change at fixed capacitance.",
+      "highlight_term": "energy",
+      "highlight_frame": 16394,
+      "phase": "CRITIQUE"
+    },
+    {
+      "index": 20,
+      "chapter": 5,
+      "title": "At an interface, match both tangential fields",
+      "focus": "Normal incidence, real impedances, no surface sheet current",
+      "text": "Move from slowly changing fields to a traveling plane wave. Its electric and magnetic fields are transverse. The ratio of electric field to magnetic field intensity is the wave impedance. At a plane interface, match tangential electric and magnetic fields. For the reflected wave the magnetic field changes sign relative to the electric field, because the propagation direction reverses.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 16633,
+      "end_frame": 17534,
+      "duration_frames": 901,
+      "speech_end_frame": 17373,
+      "formulas": [
+        "Z=\\sqrt{\\mu/\\epsilon},\\quad H_{\\rm forward}=E/Z",
+        "E_i+E_r=E_t,\\quad (E_i-E_r)/Z_1=E_t/Z_2"
+      ],
+      "note": "For a wave traveling backward, the magnetic amplitude gets the opposite sign.",
+      "highlight_term": "impedance",
+      "highlight_frame": 16982,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 21,
+      "chapter": 5,
+      "title": "Amplitudes and powers are different",
+      "focus": "Use impedance when converting fields to flux",
+      "text": "Take two linear lossless nonmagnetic media. The impedance is the vacuum impedance divided by refractive index. Solve the two matching equations for the reflected and transmitted electric amplitudes. To compute average power, square the electric amplitude and divide by twice the impedance. A transmitted amplitude of one half, for example, does not by itself tell you the fraction of power transmitted.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 17534,
+      "end_frame": 18408,
+      "duration_frames": 874,
+      "speech_end_frame": 18247,
+      "formulas": [
+        "r=\\frac{n_1-n_2}{n_1+n_2},\\quad t=1+r",
+        "R=|r|^2,\\quad T=(n_2/n_1)|t|^2"
+      ],
+      "note": "Field coefficients are dimensionless amplitudes; power weights depend on impedance.",
+      "highlight_term": "impedance",
+      "highlight_frame": 17645,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 22,
+      "chapter": 5,
+      "title": "Predict reflection phase",
+      "focus": "From n = 1 into n = 1.5",
+      "text": "Send a wave from index one into index one point five at normal incidence. Relative to the incident electric field at the interface, does the reflected electric field have a minus sign, a plus sign, or zero amplitude? Choose before solving. Use both matching conditions and keep the forward and backward magnetic field signs separate.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 18408,
+      "end_frame": 19189,
+      "duration_frames": 781,
+      "speech_end_frame": 18994,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "impedance",
+      "highlight_frame": null,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 23,
+      "chapter": 5,
+      "title": "Check the answer with power conservation",
+      "focus": "r = −0.2; reflected power fraction = 0.04",
+      "text": "The reflected electric amplitude has a minus sign, giving a phase reversal at the interface. The reflected power fraction is four percent. The transmitted electric amplitude is zero point eight, while transmitted power is ninety-six percent. The impedance factor makes the difference. Check both field residuals and power conservation; either check alone can miss a mistake.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 19189,
+      "end_frame": 20027,
+      "duration_frames": 838,
+      "speech_end_frame": 19865,
+      "formulas": [
+        "r=-0.2,\\quad t=0.8",
+        "R=0.04,\\quad T=0.96"
+      ],
+      "note": "Check the tangential field residuals as well as the power budget.",
+      "highlight_term": "impedance",
+      "highlight_frame": 19619,
+      "phase": "COMPUTE"
+    },
+    {
+      "index": 24,
+      "chapter": 6,
+      "title": "Add a layer and track propagation phase",
+      "focus": "Two boundaries, one interference problem",
+      "text": "Now put a transparent film between air and glass. Reflection can come from both boundaries, and the field travels through the film in both directions. A film a quarter wavelength thick gives a half-cycle of round-trip phase. To cancel reflection completely at the design wavelength, the returning amplitudes must also balance. Thickness sets phase. Impedance sets the amplitude matching.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 20027,
+      "end_frame": 20874,
+      "duration_frames": 847,
+      "speech_end_frame": 20712,
+      "formulas": [
+        "\\delta=2\\pi n_f d/\\lambda_0,\\quad r_{\\rm film}=\\frac{r_{1f}+r_{f3}e^{2i\\delta}}{1+r_{1f}r_{f3}e^{2i\\delta}}"
+      ],
+      "note": "Propagation phases depend on vacuum wavelength, film index and physical thickness.",
+      "highlight_term": "phase",
+      "highlight_frame": 20386,
+      "phase": "CRITIQUE"
+    },
+    {
+      "index": 25,
+      "chapter": 6,
+      "title": "Design at one wavelength",
+      "focus": "Choose the geometric-mean index and quarter-wave thickness",
+      "text": "For nonmagnetic lossless media at normal incidence, choose the film index as the geometric mean of the outer indices. Set thickness to the vacuum design wavelength divided by four times that film index. This ideal match eliminates reflection at the design wavelength. A finite spectral band, material dispersion, absorption, or oblique incidence changes the result.",
+      "kind": "explain",
+      "duration": 1.0,
+      "start_frame": 20874,
+      "end_frame": 21741,
+      "duration_frames": 867,
+      "speech_end_frame": 21580,
+      "formulas": [
+        "n_f=\\sqrt{n_1n_3},\\quad d=\\lambda_{\\rm design}/(4n_f)",
+        "\\lambda_{\\rm design}=550\\ \\mathrm{nm}:\\quad d=112.27\\ \\mathrm{nm}"
+      ],
+      "note": "This exact match applies at normal incidence with ideal lossless media.",
+      "highlight_term": "phase",
+      "highlight_frame": null,
+      "phase": "CRITIQUE"
+    },
+    {
+      "index": 26,
+      "chapter": 6,
+      "title": "Predict what detuning changes",
+      "focus": "Keep the film fixed; move away from the design wavelength",
+      "text": "Change the illumination wavelength while holding film thickness and indices fixed. Does the cancellation generally remain exact, does reflected power generally return, or is all incident power now absorbed? Think about the phase accrued in one traversal. State which assumptions exclude energy loss before choosing.",
+      "kind": "predict",
+      "duration": 1.0,
+      "start_frame": 21741,
+      "end_frame": 22497,
+      "duration_frames": 756,
+      "speech_end_frame": 22302,
+      "formulas": [],
+      "note": "",
+      "highlight_term": "phase",
+      "highlight_frame": 22133,
+      "phase": "PREDICT"
+    },
+    {
+      "index": 27,
+      "chapter": 6,
+      "title": "Design, test, and critique a coating",
+      "focus": "Use the browser lab to solve an unfamiliar case",
+      "text": "Reflected power generally returns. The physical film stays the same, but its optical phase changes with wavelength. In the Python lab, compare a boundary-matching solver with a separate multiple-reflection formula. Then design a coating for a new substrate and report how thickness tolerance shifts the reflectance curve. Explain what a real experiment would need to measure, and which conclusion would fail first if your assumptions changed.",
+      "kind": "reveal",
+      "duration": 1.0,
+      "start_frame": 22497,
+      "end_frame": 23400,
+      "duration_frames": 903,
+      "speech_end_frame": 23240,
+      "formulas": [
+        "\\lambda_0\\ne\\lambda_{\\rm design}\\ \\Rightarrow\\ \\delta\\text{ generally differs from }\\pi/2"
+      ],
+      "note": "Try a substrate with a new index. Compare phase detuning and thickness uncertainty.",
+      "highlight_term": "phase",
+      "highlight_frame": 22658,
+      "phase": "CRITIQUE"
+    }
+  ],
+  "narration": [
+    {
+      "scene": 0,
+      "start_seconds": 0.22,
+      "end_seconds": 15.120000000000001,
+      "start_frame": 7,
+      "end_frame": 454,
+      "text": "Picture a capacitor being charged. Current flows in the wire, but no conduction charge crosses the vacuum gap. Now draw a loop around the wire. A flat surface through that loop cuts the wire. A curved surface with the same edge can pass through the gap instead."
+    },
+    {
+      "scene": 0,
+      "start_seconds": 15.340000000000002,
+      "end_seconds": 24.300000000000004,
+      "start_frame": 460,
+      "end_frame": 729,
+      "text": "Can these surfaces give two different values for the same magnetic circulation? This puzzle takes us from Maxwell's equations all the way to an optical coating."
+    },
+    {
+      "scene": 1,
+      "start_seconds": 29.919999999999998,
+      "end_seconds": 46.4,
+      "start_frame": 898,
+      "end_frame": 1392,
+      "text": "The magnetic circulation is an integral along the loop. It has one value once we fix the direction of travel. Match each surface normal to that direction by the right hand rule. Ampere's original magnetostatic equation counts the conduction current through the surface."
+    },
+    {
+      "scene": 1,
+      "start_seconds": 46.62,
+      "end_seconds": 55.15,
+      "start_frame": 1399,
+      "end_frame": 1654,
+      "text": "The wire surface counts current. The gap surface does not. A charging circuit lies outside the assumptions of magnetostatics."
+    },
+    {
+      "scene": 2,
+      "start_seconds": 60.75333333333333,
+      "end_seconds": 75.83333333333333,
+      "start_frame": 1823,
+      "end_frame": 2275,
+      "text": "Pause and choose. In the ideal vacuum gap, is the electric flux fixed, does it change so that epsilon zero times its rate of change equals the lead current, or do electrons carry that current through the vacuum? Sketch the two surfaces before choosing."
+    },
+    {
+      "scene": 2,
+      "start_seconds": 76.05333333333333,
+      "end_seconds": 79.61333333333333,
+      "start_frame": 2282,
+      "end_frame": 2388,
+      "text": "Think about what happens to the charge on the plates during charging."
+    },
+    {
+      "scene": 3,
+      "start_seconds": 86.35333333333332,
+      "end_seconds": 102.64333333333332,
+      "start_frame": 2591,
+      "end_frame": 3079,
+      "text": "The changing flux supplies the missing term. In the parallel plate approximation, the electric flux across the gap is the plate charge divided by epsilon zero. Differentiate with respect to time. The result, multiplied by epsilon zero, is the rate at which charge arrives."
+    },
+    {
+      "scene": 3,
+      "start_seconds": 102.86333333333332,
+      "end_seconds": 113.15333333333331,
+      "start_frame": 3086,
+      "end_frame": 3395,
+      "text": "Maxwell's correction makes the surface choice consistent. Displacement current has units of amperes. In this gap it describes a changing field without a flow of charge carriers."
+    },
+    {
+      "scene": 4,
+      "start_seconds": 118.78666666666666,
+      "end_seconds": 134.10666666666665,
+      "start_frame": 3564,
+      "end_frame": 4023,
+      "text": "Now drive current up a long solenoid. Take the magnetic field inside to point along positive z and grow steadily. Outside, approximate the magnetic field as zero. Place an imaginary circle around the coil, without adding a conductor."
+    },
+    {
+      "scene": 4,
+      "start_seconds": 134.32666666666665,
+      "end_seconds": 140.36666666666665,
+      "start_frame": 4030,
+      "end_frame": 4211,
+      "text": "Faraday's law relates the electric circulation around that circle to the rate of change of magnetic flux through its disk."
+    },
+    {
+      "scene": 5,
+      "start_seconds": 145.98666666666665,
+      "end_seconds": 163.47666666666666,
+      "start_frame": 4380,
+      "end_frame": 4904,
+      "text": "Cylindrical symmetry makes the induced electric field azimuthal in this idealization. The disk flux uses only the part of the disk where the magnetic field exists. For a circle inside the coil, that area grows as radius squared. Outside the coil, it saturates at the coil's cross section."
+    },
+    {
+      "scene": 5,
+      "start_seconds": 163.69666666666666,
+      "end_seconds": 168.77666666666667,
+      "start_frame": 4911,
+      "end_frame": 5063,
+      "text": "The circumference keeps growing, however. Divide the rate of flux change by that circumference."
+    },
+    {
+      "scene": 6,
+      "start_seconds": 174.38666666666666,
+      "end_seconds": 188.62666666666667,
+      "start_frame": 5232,
+      "end_frame": 5659,
+      "text": "The positive z magnetic field is increasing. The magnetic field outside is negligible. From the positive z side, which way does the induced electric field circulate outside? Choose clockwise, counterclockwise, or zero."
+    },
+    {
+      "scene": 6,
+      "start_seconds": 188.84666666666666,
+      "end_seconds": 193.65666666666667,
+      "start_frame": 5665,
+      "end_frame": 5810,
+      "text": "Decide whether the local field or the flux through the entire disk enters Faraday's law."
+    },
+    {
+      "scene": 7,
+      "start_seconds": 200.38666666666666,
+      "end_seconds": 216.84666666666666,
+      "start_frame": 6012,
+      "end_frame": 6505,
+      "text": "The electric field points clockwise. Positive flux increases, so circulation is negative for the counterclockwise orientation. Beyond the coil radius, its magnitude decreases inversely with radius. The field can be nonzero even where its local curl vanishes."
+    },
+    {
+      "scene": 7,
+      "start_seconds": 217.06666666666666,
+      "end_seconds": 227.59666666666666,
+      "start_frame": 6512,
+      "end_frame": 6828,
+      "text": "Outside the coil, a spanning disk for a loop encircling the axis also includes the interior. This distinction between local and integral statements is worth slowing down for."
+    },
+    {
+      "scene": 8,
+      "start_seconds": 233.22,
+      "end_seconds": 249.21,
+      "start_frame": 6997,
+      "end_frame": 7476,
+      "text": "Curl measures circulation per area in the small-loop limit. To see how local curls build up, imagine tiling a disk with tiny oriented loops. On shared edges, neighboring loops traverse the same edge in opposite directions. Those contributions cancel."
+    },
+    {
+      "scene": 8,
+      "start_seconds": 249.43,
+      "end_seconds": 253.61,
+      "start_frame": 7483,
+      "end_frame": 7608,
+      "text": "Summing all of the little loops leaves circulation along the outside boundary."
+    },
+    {
+      "scene": 9,
+      "start_seconds": 259.22,
+      "end_seconds": 275.22,
+      "start_frame": 7777,
+      "end_frame": 8257,
+      "text": "Take a tiny disk in the exterior that does not enclose the solenoid. Its normal is still along positive z. The changing magnetic flux through that disk is zero in this model. Yet a probe at a point on the disk detects a nonzero induced electric field."
+    },
+    {
+      "scene": 9,
+      "start_seconds": 275.44,
+      "end_seconds": 281.65,
+      "start_frame": 8263,
+      "end_frame": 8450,
+      "text": "A curl measurement compares contributions around the whole small loop. It is different from a point measurement of the field."
+    },
+    {
+      "scene": 10,
+      "start_seconds": 287.2533333333334,
+      "end_seconds": 298.5733333333334,
+      "start_frame": 8618,
+      "end_frame": 8957,
+      "text": "For the small exterior disk, which statement is required? Its electric circulation vanishes, the electric field vanishes everywhere along its edge, or the circulation equals that of the larger loop surrounding the coil?"
+    },
+    {
+      "scene": 10,
+      "start_seconds": 298.79333333333335,
+      "end_seconds": 303.81333333333333,
+      "start_frame": 8964,
+      "end_frame": 9114,
+      "text": "Choose an answer and explain how the result depends on which region the disk spans."
+    },
+    {
+      "scene": 11,
+      "start_seconds": 310.5533333333334,
+      "end_seconds": 327.3133333333334,
+      "start_frame": 9317,
+      "end_frame": 9819,
+      "text": "The small-loop circulation vanishes. The field contributions cancel in the line integral. In differential form, the curl of the electric field equals minus the time derivative of the magnetic field. Integrate this relation over the oriented surface, then apply Stokes' theorem."
+    },
+    {
+      "scene": 11,
+      "start_seconds": 327.53333333333336,
+      "end_seconds": 333.05333333333334,
+      "start_frame": 9826,
+      "end_frame": 9992,
+      "text": "Reversing the chosen normal reverses the loop direction and both sides change sign together."
+    },
+    {
+      "scene": 12,
+      "start_seconds": 338.6866666666667,
+      "end_seconds": 351.3366666666667,
+      "start_frame": 10161,
+      "end_frame": 10540,
+      "text": "Charge conservation gives a useful diagnostic. Choose a fixed volume. Count the charge inside, and count the current leaving through its closed surface. If more charge flows out than in, the stored charge falls."
+    },
+    {
+      "scene": 12,
+      "start_seconds": 351.5566666666667,
+      "end_seconds": 361.5466666666667,
+      "start_frame": 10547,
+      "end_frame": 10846,
+      "text": "The divergence theorem converts the outward flux into a volume integral of the divergence. Since the choice of volume is arbitrary, we obtain the local continuity equation."
+    },
+    {
+      "scene": 13,
+      "start_seconds": 367.1533333333334,
+      "end_seconds": 381.2433333333334,
+      "start_frame": 11015,
+      "end_frame": 11437,
+      "text": "In a straight steady conductor that narrows, the same current passes through every cross section, while the average current density increases in the narrow section. A plot of that axial average can slope upward. It is not the three-dimensional divergence."
+    },
+    {
+      "scene": 13,
+      "start_seconds": 381.46333333333337,
+      "end_seconds": 388.04333333333335,
+      "start_frame": 11444,
+      "end_frame": 11641,
+      "text": "Near a taper the current field can have transverse components, and an insulating wall contributes no outward charge flux."
+    },
+    {
+      "scene": 14,
+      "start_seconds": 393.6533333333334,
+      "end_seconds": 407.32333333333344,
+      "start_frame": 11810,
+      "end_frame": 12220,
+      "text": "Suppose the lead current is steady and the conductor's sides are insulated. Through a volume that spans the constriction, is the net outward current positive, negative, or zero? Draw arrows for the two end faces and label the outward normals."
+    },
+    {
+      "scene": 14,
+      "start_seconds": 407.5433333333334,
+      "end_seconds": 411.3633333333334,
+      "start_frame": 12226,
+      "end_frame": 12341,
+      "text": "Decide whether a higher current density implies a higher current."
+    },
+    {
+      "scene": 15,
+      "start_seconds": 418.08666666666676,
+      "end_seconds": 431.1866666666668,
+      "start_frame": 12543,
+      "end_frame": 12936,
+      "text": "The net flux is zero. The same current enters and leaves, so charge does not accumulate. Now take the divergence of the Ampere-Maxwell equation. The divergence of the left hand curl vanishes identically."
+    },
+    {
+      "scene": 15,
+      "start_seconds": 431.40666666666675,
+      "end_seconds": 440.6266666666668,
+      "start_frame": 12942,
+      "end_frame": 13219,
+      "text": "Gauss's law turns the divergence of the changing electric field term into the time derivative of charge density. What remains on the right is the continuity equation."
+    },
+    {
+      "scene": 16,
+      "start_seconds": 446.25333333333344,
+      "end_seconds": 461.8433333333334,
+      "start_frame": 13388,
+      "end_frame": 13855,
+      "text": "The capacitor stores electric field energy as it charges. How does that energy reach the gap? Take the electric field to point up, along positive z. In a circular capacitor, the magnetic field in the gap points around the axis in the positive azimuthal direction."
+    },
+    {
+      "scene": 16,
+      "start_seconds": 462.0633333333334,
+      "end_seconds": 466.46333333333337,
+      "start_frame": 13862,
+      "end_frame": 13994,
+      "text": "The cross product of the electric and magnetic fields points radially inward."
+    },
+    {
+      "scene": 17,
+      "start_seconds": 472.08666666666676,
+      "end_seconds": 486.85666666666674,
+      "start_frame": 14163,
+      "end_frame": 14606,
+      "text": "Poynting's theorem follows by dotting the curl equations with the appropriate fields and using the divergence identity for a cross product. The result separates the rate of change of field energy, the outward energy flux and the rate at which fields do work on matter."
+    },
+    {
+      "scene": 17,
+      "start_seconds": 487.0766666666667,
+      "end_seconds": 494.2066666666667,
+      "start_frame": 14612,
+      "end_frame": 14826,
+      "text": "In the vacuum gap, the work term is zero. For this quasistatic example, the leading change is the electric energy."
+    },
+    {
+      "scene": 18,
+      "start_seconds": 499.8200000000001,
+      "end_seconds": 513.2400000000001,
+      "start_frame": 14995,
+      "end_frame": 15397,
+      "text": "For the gap volume, what is the sign of the outward electromagnetic power through its curved side during charging? Choose positive, zero, or negative. Use the outward normal, not the direction in which you happen to draw the integration arrow."
+    },
+    {
+      "scene": 18,
+      "start_seconds": 513.46,
+      "end_seconds": 517.19,
+      "start_frame": 15404,
+      "end_frame": 15516,
+      "text": "Then ask how this sign relates to the growing electric energy."
+    },
+    {
+      "scene": 19,
+      "start_seconds": 523.9200000000001,
+      "end_seconds": 541.59,
+      "start_frame": 15718,
+      "end_frame": 16248,
+      "text": "The outward power is negative. Integrate the radial Poynting flux over the cylindrical side. Using the Ampere-Maxwell field at the rim, the inward power is voltage times current. Independently, differentiate one half times capacitance times voltage squared. It gives the same power."
+    },
+    {
+      "scene": 19,
+      "start_seconds": 541.8100000000001,
+      "end_seconds": 549.0200000000001,
+      "start_frame": 16254,
+      "end_frame": 16471,
+      "text": "In the lab you will check both calculations and estimate when neglecting changing magnetic energy and edge fringing is reasonable."
+    },
+    {
+      "scene": 20,
+      "start_seconds": 554.6533333333334,
+      "end_seconds": 571.5733333333334,
+      "start_frame": 16640,
+      "end_frame": 17147,
+      "text": "Move from slowly changing fields to a traveling plane wave. Its electric and magnetic fields are transverse. The ratio of electric field to magnetic field intensity is the wave impedance. At a plane interface, match tangential electric and magnetic fields."
+    },
+    {
+      "scene": 20,
+      "start_seconds": 571.7933333333334,
+      "end_seconds": 579.0833333333334,
+      "start_frame": 17154,
+      "end_frame": 17372,
+      "text": "For the reflected wave the magnetic field changes sign relative to the electric field, because the propagation direction reverses."
+    },
+    {
+      "scene": 21,
+      "start_seconds": 584.6866666666667,
+      "end_seconds": 601.6666666666667,
+      "start_frame": 17541,
+      "end_frame": 18050,
+      "text": "Take two linear lossless nonmagnetic media. The impedance is the vacuum impedance divided by refractive index. Solve the two matching equations for the reflected and transmitted electric amplitudes. To compute average power, square the electric amplitude and divide by twice the impedance."
+    },
+    {
+      "scene": 21,
+      "start_seconds": 601.8866666666667,
+      "end_seconds": 608.2166666666667,
+      "start_frame": 18057,
+      "end_frame": 18246,
+      "text": "A transmitted amplitude of one half, for example, does not by itself tell you the fraction of power transmitted."
+    },
+    {
+      "scene": 22,
+      "start_seconds": 613.82,
+      "end_seconds": 627.9200000000001,
+      "start_frame": 18415,
+      "end_frame": 18838,
+      "text": "Send a wave from index one into index one point five at normal incidence. Relative to the incident electric field at the interface, does the reflected electric field have a minus sign, a plus sign, or zero amplitude? Choose before solving."
+    },
+    {
+      "scene": 22,
+      "start_seconds": 628.14,
+      "end_seconds": 633.12,
+      "start_frame": 18844,
+      "end_frame": 18994,
+      "text": "Use both matching conditions and keep the forward and backward magnetic field signs separate."
+    },
+    {
+      "scene": 23,
+      "start_seconds": 639.8533333333334,
+      "end_seconds": 655.9933333333333,
+      "start_frame": 19196,
+      "end_frame": 19680,
+      "text": "The reflected electric amplitude has a minus sign, giving a phase reversal at the interface. The reflected power fraction is four percent. The transmitted electric amplitude is zero point eight, while transmitted power is ninety-six percent. The impedance factor makes the difference."
+    },
+    {
+      "scene": 23,
+      "start_seconds": 656.2133333333334,
+      "end_seconds": 662.1533333333334,
+      "start_frame": 19686,
+      "end_frame": 19865,
+      "text": "Check both field residuals and power conservation; either check alone can miss a mistake."
+    },
+    {
+      "scene": 24,
+      "start_seconds": 667.7866666666666,
+      "end_seconds": 680.1966666666666,
+      "start_frame": 20034,
+      "end_frame": 20406,
+      "text": "Now put a transparent film between air and glass. Reflection can come from both boundaries, and the field travels through the film in both directions. A film a quarter wavelength thick gives a half-cycle of round-trip phase."
+    },
+    {
+      "scene": 24,
+      "start_seconds": 680.4166666666666,
+      "end_seconds": 690.3866666666667,
+      "start_frame": 20412,
+      "end_frame": 20712,
+      "text": "To cancel reflection completely at the design wavelength, the returning amplitudes must also balance. Thickness sets phase. Impedance sets the amplitude matching."
+    },
+    {
+      "scene": 25,
+      "start_seconds": 696.02,
+      "end_seconds": 712.61,
+      "start_frame": 20881,
+      "end_frame": 21378,
+      "text": "For nonmagnetic lossless media at normal incidence, choose the film index as the geometric mean of the outer indices. Set thickness to the vacuum design wavelength divided by four times that film index. This ideal match eliminates reflection at the design wavelength."
+    },
+    {
+      "scene": 25,
+      "start_seconds": 712.8299999999999,
+      "end_seconds": 719.31,
+      "start_frame": 21385,
+      "end_frame": 21579,
+      "text": "A finite spectral band, material dispersion, absorption, or oblique incidence changes the result."
+    },
+    {
+      "scene": 26,
+      "start_seconds": 724.92,
+      "end_seconds": 739.7299999999999,
+      "start_frame": 21748,
+      "end_frame": 22192,
+      "text": "Change the illumination wavelength while holding film thickness and indices fixed. Does the cancellation generally remain exact, does reflected power generally return, or is all incident power now absorbed? Think about the phase accrued in one traversal."
+    },
+    {
+      "scene": 26,
+      "start_seconds": 739.9499999999999,
+      "end_seconds": 743.39,
+      "start_frame": 22198,
+      "end_frame": 22302,
+      "text": "State which assumptions exclude energy loss before choosing."
+    },
+    {
+      "scene": 27,
+      "start_seconds": 750.12,
+      "end_seconds": 762.46,
+      "start_frame": 22504,
+      "end_frame": 22874,
+      "text": "Reflected power generally returns. The physical film stays the same, but its optical phase changes with wavelength. In the Python lab, compare a boundary-matching solver with a separate multiple-reflection formula."
+    },
+    {
+      "scene": 27,
+      "start_seconds": 762.68,
+      "end_seconds": 774.65,
+      "start_frame": 22880,
+      "end_frame": 23240,
+      "text": "Then design a coating for a new substrate and report how thickness tolerance shifts the reflectance curve. Explain what a real experiment would need to measure, and which conclusion would fail first if your assumptions changed."
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "Q1",
+      "scene": 2,
+      "review_scene": 0,
+      "question": "Across the ideal vacuum gap of a charging capacitor, what accounts for the lead current in Ampère-Maxwell's law?",
+      "options": [
+        "The electric flux is fixed.",
+        "ε₀ times the rate of change of electric flux.",
+        "Conduction electrons crossing the gap."
+      ],
+      "correct": 1,
+      "explanation": "The electric flux is Q/ε₀ in the ideal gap, so ε₀ dΦ_E/dt = dQ/dt = I.",
+      "wrong": {
+        "0": "The plates are gaining charge. Gauss's law connects that changing charge to changing electric flux.",
+        "2": "In an ideal vacuum capacitor, charges accumulate on the plates. The field term accounts for the gap."
+      },
+      "time_seconds": 80,
+      "frame": 2400,
+      "review_seconds": 0.0,
+      "hold_start_frame": 2389,
+      "reveal_frame": 2584,
+      "timestamp": "01:20"
+    },
+    {
+      "id": "Q2",
+      "scene": 6,
+      "review_scene": 4,
+      "question": "Viewed from +z, which way does E circulate outside a long solenoid whose +z magnetic field is increasing?",
+      "options": [
+        "Clockwise.",
+        "Counterclockwise.",
+        "There is no induced E."
+      ],
+      "correct": 0,
+      "explanation": "The positive flux increases. Faraday's minus sign gives negative circulation relative to the counterclockwise direction.",
+      "wrong": {
+        "1": "The right-hand orientation is counterclockwise for +z. The increasing positive flux enters with a minus sign.",
+        "2": "The loop encloses a changing flux even where the local magnetic field is negligible."
+      },
+      "time_seconds": 194,
+      "frame": 5820,
+      "review_seconds": 118.56666666666666,
+      "hold_start_frame": 5810,
+      "reveal_frame": 6005,
+      "timestamp": "03:14"
+    },
+    {
+      "id": "Q3",
+      "scene": 10,
+      "review_scene": 8,
+      "question": "A small disk lies entirely outside the ideal solenoid and misses its axis. What must vanish?",
+      "options": [
+        "The electric field at every point of the edge.",
+        "The magnetic flux change, but the circulation equals the larger loop's.",
+        "The electric circulation around this edge."
+      ],
+      "correct": 2,
+      "explanation": "The flux through this disk is constant at zero, so Faraday's law gives zero electric circulation.",
+      "wrong": {
+        "0": "A line integral can vanish even when the field is nonzero along the path.",
+        "1": "Different boundary curves can enclose different changing fluxes. Apply the law to this disk."
+      },
+      "time_seconds": 305,
+      "frame": 9150,
+      "review_seconds": 233.0,
+      "hold_start_frame": 9115,
+      "reveal_frame": 9310,
+      "timestamp": "05:05"
+    },
+    {
+      "id": "Q4",
+      "scene": 14,
+      "review_scene": 12,
+      "question": "A steady insulated conductor narrows. What is the net outward current through a volume spanning the constriction?",
+      "options": [
+        "Positive.",
+        "Zero.",
+        "Negative."
+      ],
+      "correct": 1,
+      "explanation": "Steady charge means no accumulation. The inlet and outlet carry equal currents with opposite outward signs.",
+      "wrong": {
+        "0": "Greater current density over a smaller area can carry the same total current. Compare face integrals.",
+        "2": "There is no accumulation in this steady example. Include the exit current as well as the entry."
+      },
+      "time_seconds": 412,
+      "frame": 12360,
+      "review_seconds": 338.46666666666664,
+      "hold_start_frame": 12341,
+      "reveal_frame": 12536,
+      "timestamp": "06:52"
+    },
+    {
+      "id": "Q5",
+      "scene": 18,
+      "review_scene": 16,
+      "question": "While a circular vacuum capacitor charges with V > 0 and I > 0, what is the sign of outward side power?",
+      "options": [
+        "Positive.",
+        "Zero.",
+        "Negative."
+      ],
+      "correct": 2,
+      "explanation": "E points along +z and H along +φ. E × H points inward, giving negative outward power and increasing electric energy.",
+      "wrong": {
+        "0": "Check the cross-product order E × H and the outward radial normal.",
+        "1": "The work term J·E is zero in the vacuum gap, but the electromagnetic flux can cross the side."
+      },
+      "time_seconds": 518,
+      "frame": 15540,
+      "review_seconds": 446.03333333333336,
+      "hold_start_frame": 15516,
+      "reveal_frame": 15711,
+      "timestamp": "08:38"
+    },
+    {
+      "id": "Q6",
+      "scene": 22,
+      "review_scene": 20,
+      "question": "A normally incident wave goes from n = 1 to n = 1.5. What is the reflected electric field sign at the interface?",
+      "options": [
+        "Negative.",
+        "Positive.",
+        "Zero."
+      ],
+      "correct": 0,
+      "explanation": "r = (1 − 1.5)/(1 + 1.5) = −0.2. The reflected electric field has a π phase shift at the interface.",
+      "wrong": {
+        "1": "The backward wave reverses the sign in the magnetic matching condition. Solve both conditions together.",
+        "2": "The indices differ, so these nonmagnetic media have unequal wave impedances."
+      },
+      "time_seconds": 634,
+      "frame": 19020,
+      "review_seconds": 554.4333333333333,
+      "hold_start_frame": 18994,
+      "reveal_frame": 19189,
+      "timestamp": "10:34"
+    },
+    {
+      "id": "Q7",
+      "scene": 26,
+      "review_scene": 24,
+      "question": "A matched quarter-wave film stays fixed while the vacuum wavelength changes. What generally happens?",
+      "options": [
+        "Cancellation stays exact at every wavelength.",
+        "Reflected power returns.",
+        "All incident power is absorbed."
+      ],
+      "correct": 1,
+      "explanation": "The phase 2π n_f d/λ depends on wavelength. Detuning generally spoils cancellation; the model has no absorption.",
+      "wrong": {
+        "0": "The physical thickness is fixed, but the number of wavelengths traversed is not.",
+        "2": "The materials are lossless. Any missing transmitted power must be reflected in this model."
+      },
+      "time_seconds": 744,
+      "frame": 22320,
+      "review_seconds": 667.5666666666667,
+      "hold_start_frame": 22302,
+      "reveal_frame": 22497,
+      "timestamp": "12:24"
+    }
+  ],
+  "captions": [
+    {
+      "id": 1,
+      "start_seconds": 0.22,
+      "end_seconds": 1.96,
+      "text": "Picture a capacitor being charged.",
+      "start_frame": 6,
+      "end_frame": 59
+    },
+    {
+      "id": 2,
+      "start_seconds": 2.58,
+      "end_seconds": 6.14,
+      "text": "Current flows in the wire, but no conduction\ncharge crosses the vacuum gap.",
+      "start_frame": 77,
+      "end_frame": 185
+    },
+    {
+      "id": 3,
+      "start_seconds": 6.74,
+      "end_seconds": 8.32,
+      "text": "Now draw a loop around the wire.",
+      "start_frame": 202,
+      "end_frame": 250
+    },
+    {
+      "id": 4,
+      "start_seconds": 8.8,
+      "end_seconds": 11.14,
+      "text": "A flat surface through that loop cuts the\nwire.",
+      "start_frame": 264,
+      "end_frame": 335
+    },
+    {
+      "id": 5,
+      "start_seconds": 11.68,
+      "end_seconds": 14.8,
+      "text": "A curved surface with the same edge can pass\nthrough the gap instead.",
+      "start_frame": 350,
+      "end_frame": 444
+    },
+    {
+      "id": 6,
+      "start_seconds": 15.34,
+      "end_seconds": 19.0,
+      "text": "Can these surfaces give two different values\nfor the same magnetic circulation?",
+      "start_frame": 460,
+      "end_frame": 570
+    },
+    {
+      "id": 7,
+      "start_seconds": 19.96,
+      "end_seconds": 23.58,
+      "text": "This puzzle takes us from Maxwell's equations\nall the way to an optical coating.",
+      "start_frame": 598,
+      "end_frame": 708
+    },
+    {
+      "id": 8,
+      "start_seconds": 29.92,
+      "end_seconds": 32.88,
+      "text": "The magnetic circulation is an integral along\nthe loop.",
+      "start_frame": 897,
+      "end_frame": 987
+    },
+    {
+      "id": 9,
+      "start_seconds": 33.46,
+      "end_seconds": 36.22,
+      "text": "It has one value once we fix the direction of\ntravel.",
+      "start_frame": 1003,
+      "end_frame": 1087
+    },
+    {
+      "id": 10,
+      "start_seconds": 37.06,
+      "end_seconds": 40.58,
+      "text": "Match each surface normal to that direction by\nthe right hand rule.",
+      "start_frame": 1111,
+      "end_frame": 1218
+    },
+    {
+      "id": 11,
+      "start_seconds": 41.54,
+      "end_seconds": 45.7,
+      "text": "Ampere's original magnetostatic equation\ncounts the conduction current through the",
+      "start_frame": 1246,
+      "end_frame": 1371
+    },
+    {
+      "id": 12,
+      "start_seconds": 45.7,
+      "end_seconds": 45.98,
+      "text": "surface.",
+      "start_frame": 1371,
+      "end_frame": 1380
+    },
+    {
+      "id": 13,
+      "start_seconds": 46.62,
+      "end_seconds": 48.36,
+      "text": "The wire surface counts current.",
+      "start_frame": 1398,
+      "end_frame": 1451
+    },
+    {
+      "id": 14,
+      "start_seconds": 49.08,
+      "end_seconds": 50.5,
+      "text": "The gap surface does not.",
+      "start_frame": 1472,
+      "end_frame": 1515
+    },
+    {
+      "id": 15,
+      "start_seconds": 51.18,
+      "end_seconds": 54.84,
+      "text": "A charging circuit lies outside the\nassumptions of magnetostatics.",
+      "start_frame": 1535,
+      "end_frame": 1646
+    },
+    {
+      "id": 16,
+      "start_seconds": 60.753,
+      "end_seconds": 61.773,
+      "text": "Pause and choose.",
+      "start_frame": 1822,
+      "end_frame": 1854
+    },
+    {
+      "id": 17,
+      "start_seconds": 62.493,
+      "end_seconds": 67.373,
+      "text": "In the ideal vacuum gap, is the electric flux\nfixed, does it change so that epsilon",
+      "start_frame": 1874,
+      "end_frame": 2022
+    },
+    {
+      "id": 18,
+      "start_seconds": 67.373,
+      "end_seconds": 71.873,
+      "text": "zero times its rate of change equals the lead\ncurrent, or do electrons carry that",
+      "start_frame": 2021,
+      "end_frame": 2157
+    },
+    {
+      "id": 19,
+      "start_seconds": 71.873,
+      "end_seconds": 72.893,
+      "text": "current through the vacuum?",
+      "start_frame": 2156,
+      "end_frame": 2187
+    },
+    {
+      "id": 20,
+      "start_seconds": 73.713,
+      "end_seconds": 75.493,
+      "text": "Sketch the two surfaces before choosing.",
+      "start_frame": 2211,
+      "end_frame": 2265
+    },
+    {
+      "id": 21,
+      "start_seconds": 76.053,
+      "end_seconds": 79.233,
+      "text": "Think about what happens to the charge on the\nplates during charging.",
+      "start_frame": 2281,
+      "end_frame": 2377
+    },
+    {
+      "id": 22,
+      "start_seconds": 86.353,
+      "end_seconds": 88.653,
+      "text": "The changing flux supplies the missing term.",
+      "start_frame": 2590,
+      "end_frame": 2660
+    },
+    {
+      "id": 23,
+      "start_seconds": 88.653,
+      "end_seconds": 93.533,
+      "text": "In the parallel plate approximation, the\nelectric flux across the gap is the plate",
+      "start_frame": 2659,
+      "end_frame": 2806
+    },
+    {
+      "id": 24,
+      "start_seconds": 93.533,
+      "end_seconds": 95.373,
+      "text": "charge divided by epsilon zero.",
+      "start_frame": 2805,
+      "end_frame": 2862
+    },
+    {
+      "id": 25,
+      "start_seconds": 95.373,
+      "end_seconds": 97.693,
+      "text": "Differentiate with respect to time.",
+      "start_frame": 2861,
+      "end_frame": 2931
+    },
+    {
+      "id": 26,
+      "start_seconds": 98.133,
+      "end_seconds": 102.213,
+      "text": "The result, multiplied by epsilon zero, is the\nrate at which charge arrives.",
+      "start_frame": 2943,
+      "end_frame": 3067
+    },
+    {
+      "id": 27,
+      "start_seconds": 102.863,
+      "end_seconds": 105.583,
+      "text": "Maxwell's correction makes the surface choice\nconsistent.",
+      "start_frame": 3085,
+      "end_frame": 3168
+    },
+    {
+      "id": 28,
+      "start_seconds": 106.223,
+      "end_seconds": 108.263,
+      "text": "Displacement current has units of amperes.",
+      "start_frame": 3186,
+      "end_frame": 3248
+    },
+    {
+      "id": 29,
+      "start_seconds": 108.803,
+      "end_seconds": 112.763,
+      "text": "In this gap it describes a changing field\nwithout a flow of charge carriers.",
+      "start_frame": 3264,
+      "end_frame": 3383
+    },
+    {
+      "id": 30,
+      "start_seconds": 118.787,
+      "end_seconds": 121.247,
+      "text": "Now drive current up a long solenoid.",
+      "start_frame": 3563,
+      "end_frame": 3638
+    },
+    {
+      "id": 31,
+      "start_seconds": 121.807,
+      "end_seconds": 126.187,
+      "text": "Take the magnetic field inside to point along\npositive z and grow steadily.",
+      "start_frame": 3654,
+      "end_frame": 3786
+    },
+    {
+      "id": 32,
+      "start_seconds": 126.947,
+      "end_seconds": 129.647,
+      "text": "Outside, approximate the magnetic field as\nzero.",
+      "start_frame": 3808,
+      "end_frame": 3890
+    },
+    {
+      "id": 33,
+      "start_seconds": 130.267,
+      "end_seconds": 133.767,
+      "text": "Place an imaginary circle around the coil,\nwithout adding a conductor.",
+      "start_frame": 3908,
+      "end_frame": 4014
+    },
+    {
+      "id": 34,
+      "start_seconds": 134.327,
+      "end_seconds": 138.367,
+      "text": "Faraday's law relates the electric circulation\naround that circle to the rate of change",
+      "start_frame": 4029,
+      "end_frame": 4152
+    },
+    {
+      "id": 35,
+      "start_seconds": 138.367,
+      "end_seconds": 140.047,
+      "text": "of magnetic flux through its disk.",
+      "start_frame": 4151,
+      "end_frame": 4202
+    },
+    {
+      "id": 36,
+      "start_seconds": 145.987,
+      "end_seconds": 150.667,
+      "text": "Cylindrical symmetry makes the induced\nelectric field azimuthal in this idealization.",
+      "start_frame": 4379,
+      "end_frame": 4521
+    },
+    {
+      "id": 37,
+      "start_seconds": 151.267,
+      "end_seconds": 155.127,
+      "text": "The disk flux uses only the part of the disk\nwhere the magnetic field exists.",
+      "start_frame": 4538,
+      "end_frame": 4654
+    },
+    {
+      "id": 38,
+      "start_seconds": 155.887,
+      "end_seconds": 159.447,
+      "text": "For a circle inside the coil, that area grows\nas radius squared.",
+      "start_frame": 4676,
+      "end_frame": 4784
+    },
+    {
+      "id": 39,
+      "start_seconds": 160.347,
+      "end_seconds": 163.227,
+      "text": "Outside the coil, it saturates at the coil's\ncross section.",
+      "start_frame": 4810,
+      "end_frame": 4897
+    },
+    {
+      "id": 40,
+      "start_seconds": 163.697,
+      "end_seconds": 165.517,
+      "text": "The circumference keeps growing, however.",
+      "start_frame": 4910,
+      "end_frame": 4966
+    },
+    {
+      "id": 41,
+      "start_seconds": 166.337,
+      "end_seconds": 168.457,
+      "text": "Divide the rate of flux change by that\ncircumference.",
+      "start_frame": 4990,
+      "end_frame": 5054
+    },
+    {
+      "id": 42,
+      "start_seconds": 174.387,
+      "end_seconds": 176.847,
+      "text": "The positive z magnetic field is increasing.",
+      "start_frame": 5231,
+      "end_frame": 5306
+    },
+    {
+      "id": 43,
+      "start_seconds": 177.447,
+      "end_seconds": 179.427,
+      "text": "The magnetic field outside is negligible.",
+      "start_frame": 5323,
+      "end_frame": 5383
+    },
+    {
+      "id": 44,
+      "start_seconds": 180.147,
+      "end_seconds": 184.907,
+      "text": "From the positive z side, which way does the\ninduced electric field circulate outside?",
+      "start_frame": 5404,
+      "end_frame": 5548
+    },
+    {
+      "id": 45,
+      "start_seconds": 185.627,
+      "end_seconds": 188.227,
+      "text": "Choose clockwise, counterclockwise, or zero.",
+      "start_frame": 5568,
+      "end_frame": 5647
+    },
+    {
+      "id": 46,
+      "start_seconds": 188.847,
+      "end_seconds": 193.227,
+      "text": "Decide whether the local field or the flux\nthrough the entire disk enters Faraday's",
+      "start_frame": 5665,
+      "end_frame": 5797
+    },
+    {
+      "id": 47,
+      "start_seconds": 193.227,
+      "end_seconds": 193.447,
+      "text": "law.",
+      "start_frame": 5796,
+      "end_frame": 5804
+    },
+    {
+      "id": 48,
+      "start_seconds": 200.387,
+      "end_seconds": 202.127,
+      "text": "The electric field points clockwise.",
+      "start_frame": 6011,
+      "end_frame": 6064
+    },
+    {
+      "id": 49,
+      "start_seconds": 203.147,
+      "end_seconds": 207.167,
+      "text": "Positive flux increases, so circulation is\nnegative for the counterclockwise",
+      "start_frame": 6094,
+      "end_frame": 6216
+    },
+    {
+      "id": 50,
+      "start_seconds": 207.167,
+      "end_seconds": 207.727,
+      "text": "orientation.",
+      "start_frame": 6215,
+      "end_frame": 6232
+    },
+    {
+      "id": 51,
+      "start_seconds": 208.687,
+      "end_seconds": 212.687,
+      "text": "Beyond the coil radius, its magnitude\ndecreases inversely with radius.",
+      "start_frame": 6260,
+      "end_frame": 6381
+    },
+    {
+      "id": 52,
+      "start_seconds": 213.307,
+      "end_seconds": 216.467,
+      "text": "The field can be nonzero even where its local\ncurl vanishes.",
+      "start_frame": 6399,
+      "end_frame": 6495
+    },
+    {
+      "id": 53,
+      "start_seconds": 217.067,
+      "end_seconds": 222.067,
+      "text": "Outside the coil, a spanning disk for a loop\nencircling the axis also includes the",
+      "start_frame": 6512,
+      "end_frame": 6663
+    },
+    {
+      "id": 54,
+      "start_seconds": 222.067,
+      "end_seconds": 222.427,
+      "text": "interior.",
+      "start_frame": 6662,
+      "end_frame": 6673
+    },
+    {
+      "id": 55,
+      "start_seconds": 223.267,
+      "end_seconds": 227.387,
+      "text": "This distinction between local and integral\nstatements is worth slowing down for.",
+      "start_frame": 6698,
+      "end_frame": 6822
+    },
+    {
+      "id": 56,
+      "start_seconds": 233.22,
+      "end_seconds": 236.62,
+      "text": "Curl measures circulation per area in the\nsmall-loop limit.",
+      "start_frame": 6996,
+      "end_frame": 7099
+    },
+    {
+      "id": 57,
+      "start_seconds": 237.42,
+      "end_seconds": 242.1,
+      "text": "To see how local curls build up, imagine\ntiling a disk with tiny oriented loops.",
+      "start_frame": 7122,
+      "end_frame": 7263
+    },
+    {
+      "id": 58,
+      "start_seconds": 242.9,
+      "end_seconds": 247.18,
+      "text": "On shared edges, neighboring loops traverse\nthe same edge in opposite directions.",
+      "start_frame": 7287,
+      "end_frame": 7416
+    },
+    {
+      "id": 59,
+      "start_seconds": 247.7,
+      "end_seconds": 248.8,
+      "text": "Those contributions cancel.",
+      "start_frame": 7431,
+      "end_frame": 7464
+    },
+    {
+      "id": 60,
+      "start_seconds": 249.43,
+      "end_seconds": 253.33,
+      "text": "Summing all of the little loops leaves\ncirculation along the outside boundary.",
+      "start_frame": 7482,
+      "end_frame": 7600
+    },
+    {
+      "id": 61,
+      "start_seconds": 259.22,
+      "end_seconds": 263.06,
+      "text": "Take a tiny disk in the exterior that does not\nenclose the solenoid.",
+      "start_frame": 7776,
+      "end_frame": 7892
+    },
+    {
+      "id": 62,
+      "start_seconds": 263.52,
+      "end_seconds": 265.62,
+      "text": "Its normal is still along positive z.",
+      "start_frame": 7905,
+      "end_frame": 7969
+    },
+    {
+      "id": 63,
+      "start_seconds": 266.26,
+      "end_seconds": 269.96,
+      "text": "The changing magnetic flux through that disk\nis zero in this model.",
+      "start_frame": 7987,
+      "end_frame": 8099
+    },
+    {
+      "id": 64,
+      "start_seconds": 270.42,
+      "end_seconds": 274.94,
+      "text": "Yet a probe at a point on the disk detects a\nnonzero induced electric field.",
+      "start_frame": 8112,
+      "end_frame": 8249
+    },
+    {
+      "id": 65,
+      "start_seconds": 275.44,
+      "end_seconds": 278.96,
+      "text": "A curl measurement compares contributions\naround the whole small loop.",
+      "start_frame": 8263,
+      "end_frame": 8369
+    },
+    {
+      "id": 66,
+      "start_seconds": 279.4,
+      "end_seconds": 281.36,
+      "text": "It is different from a point measurement of\nthe field.",
+      "start_frame": 8382,
+      "end_frame": 8441
+    },
+    {
+      "id": 67,
+      "start_seconds": 287.253,
+      "end_seconds": 290.113,
+      "text": "For the small exterior disk, which statement\nis required?",
+      "start_frame": 8617,
+      "end_frame": 8704
+    },
+    {
+      "id": 68,
+      "start_seconds": 290.753,
+      "end_seconds": 294.673,
+      "text": "Its electric circulation vanishes, the\nelectric field vanishes everywhere along its",
+      "start_frame": 8722,
+      "end_frame": 8841
+    },
+    {
+      "id": 69,
+      "start_seconds": 294.673,
+      "end_seconds": 298.293,
+      "text": "edge, or the circulation equals that of the\nlarger loop surrounding the coil?",
+      "start_frame": 8840,
+      "end_frame": 8949
+    },
+    {
+      "id": 70,
+      "start_seconds": 298.793,
+      "end_seconds": 303.393,
+      "text": "Choose an answer and explain how the result\ndepends on which region the disk spans.",
+      "start_frame": 8963,
+      "end_frame": 9102
+    },
+    {
+      "id": 71,
+      "start_seconds": 310.553,
+      "end_seconds": 312.673,
+      "text": "The small-loop circulation vanishes.",
+      "start_frame": 9316,
+      "end_frame": 9381
+    },
+    {
+      "id": 72,
+      "start_seconds": 313.373,
+      "end_seconds": 315.933,
+      "text": "The field contributions cancel in the line\nintegral.",
+      "start_frame": 9401,
+      "end_frame": 9478
+    },
+    {
+      "id": 73,
+      "start_seconds": 316.593,
+      "end_seconds": 320.893,
+      "text": "In differential form, the curl of the electric\nfield equals minus the time derivative",
+      "start_frame": 9497,
+      "end_frame": 9627
+    },
+    {
+      "id": 74,
+      "start_seconds": 320.893,
+      "end_seconds": 322.133,
+      "text": "of the magnetic field.",
+      "start_frame": 9626,
+      "end_frame": 9664
+    },
+    {
+      "id": 75,
+      "start_seconds": 322.893,
+      "end_seconds": 327.053,
+      "text": "Integrate this relation over the oriented\nsurface, then apply Stokes' theorem.",
+      "start_frame": 9686,
+      "end_frame": 9812
+    },
+    {
+      "id": 76,
+      "start_seconds": 327.533,
+      "end_seconds": 332.393,
+      "text": "Reversing the chosen normal reverses the loop\ndirection and both sides change sign",
+      "start_frame": 9825,
+      "end_frame": 9972
+    },
+    {
+      "id": 77,
+      "start_seconds": 332.393,
+      "end_seconds": 332.733,
+      "text": "together.",
+      "start_frame": 9971,
+      "end_frame": 9982
+    },
+    {
+      "id": 78,
+      "start_seconds": 338.687,
+      "end_seconds": 341.107,
+      "text": "Charge conservation gives a useful diagnostic.",
+      "start_frame": 10160,
+      "end_frame": 10234
+    },
+    {
+      "id": 79,
+      "start_seconds": 341.967,
+      "end_seconds": 343.047,
+      "text": "Choose a fixed volume.",
+      "start_frame": 10259,
+      "end_frame": 10292
+    },
+    {
+      "id": 80,
+      "start_seconds": 343.527,
+      "end_seconds": 347.087,
+      "text": "Count the charge inside, and count the current\nleaving through its closed surface.",
+      "start_frame": 10305,
+      "end_frame": 10413
+    },
+    {
+      "id": 81,
+      "start_seconds": 347.887,
+      "end_seconds": 351.007,
+      "text": "If more charge flows out than in, the stored\ncharge falls.",
+      "start_frame": 10436,
+      "end_frame": 10531
+    },
+    {
+      "id": 82,
+      "start_seconds": 351.557,
+      "end_seconds": 355.737,
+      "text": "The divergence theorem converts the outward\nflux into a volume integral of the",
+      "start_frame": 10546,
+      "end_frame": 10673
+    },
+    {
+      "id": 83,
+      "start_seconds": 355.737,
+      "end_seconds": 356.177,
+      "text": "divergence.",
+      "start_frame": 10672,
+      "end_frame": 10686
+    },
+    {
+      "id": 84,
+      "start_seconds": 356.977,
+      "end_seconds": 361.197,
+      "text": "Since the choice of volume is arbitrary, we\nobtain the local continuity equation.",
+      "start_frame": 10709,
+      "end_frame": 10836
+    },
+    {
+      "id": 85,
+      "start_seconds": 367.153,
+      "end_seconds": 371.353,
+      "text": "In a straight steady conductor that narrows,\nthe same current passes through every",
+      "start_frame": 11014,
+      "end_frame": 11141
+    },
+    {
+      "id": 86,
+      "start_seconds": 371.353,
+      "end_seconds": 375.533,
+      "text": "cross section, while the average current\ndensity increases in the narrow section.",
+      "start_frame": 11140,
+      "end_frame": 11266
+    },
+    {
+      "id": 87,
+      "start_seconds": 376.193,
+      "end_seconds": 378.593,
+      "text": "A plot of that axial average can slope upward.",
+      "start_frame": 11285,
+      "end_frame": 11358
+    },
+    {
+      "id": 88,
+      "start_seconds": 379.113,
+      "end_seconds": 380.733,
+      "text": "It is not the three-dimensional divergence.",
+      "start_frame": 11373,
+      "end_frame": 11422
+    },
+    {
+      "id": 89,
+      "start_seconds": 381.463,
+      "end_seconds": 385.883,
+      "text": "Near a taper the current field can have\ntransverse components, and an insulating wall",
+      "start_frame": 11443,
+      "end_frame": 11577
+    },
+    {
+      "id": 90,
+      "start_seconds": 385.883,
+      "end_seconds": 387.683,
+      "text": "contributes no outward charge flux.",
+      "start_frame": 11576,
+      "end_frame": 11631
+    },
+    {
+      "id": 91,
+      "start_seconds": 393.653,
+      "end_seconds": 397.013,
+      "text": "Suppose the lead current is steady and the\nconductor's sides are insulated.",
+      "start_frame": 11809,
+      "end_frame": 11911
+    },
+    {
+      "id": 92,
+      "start_seconds": 397.593,
+      "end_seconds": 401.693,
+      "text": "Through a volume that spans the constriction,\nis the net outward current positive,",
+      "start_frame": 11927,
+      "end_frame": 12051
+    },
+    {
+      "id": 93,
+      "start_seconds": 402.133,
+      "end_seconds": 403.093,
+      "text": "negative, or zero?",
+      "start_frame": 12063,
+      "end_frame": 12093
+    },
+    {
+      "id": 94,
+      "start_seconds": 403.813,
+      "end_seconds": 407.073,
+      "text": "Draw arrows for the two end faces and label\nthe outward normals.",
+      "start_frame": 12114,
+      "end_frame": 12213
+    },
+    {
+      "id": 95,
+      "start_seconds": 407.543,
+      "end_seconds": 411.063,
+      "text": "Decide whether a higher current density\nimplies a higher current.",
+      "start_frame": 12226,
+      "end_frame": 12332
+    },
+    {
+      "id": 96,
+      "start_seconds": 418.087,
+      "end_seconds": 419.407,
+      "text": "The net flux is zero.",
+      "start_frame": 12542,
+      "end_frame": 12583
+    },
+    {
+      "id": 97,
+      "start_seconds": 420.027,
+      "end_seconds": 423.747,
+      "text": "The same current enters and leaves, so charge\ndoes not accumulate.",
+      "start_frame": 12600,
+      "end_frame": 12713
+    },
+    {
+      "id": 98,
+      "start_seconds": 424.567,
+      "end_seconds": 427.387,
+      "text": "Now take the divergence of the Ampere-Maxwell\nequation.",
+      "start_frame": 12737,
+      "end_frame": 12822
+    },
+    {
+      "id": 99,
+      "start_seconds": 428.107,
+      "end_seconds": 430.967,
+      "text": "The divergence of the left hand curl vanishes\nidentically.",
+      "start_frame": 12843,
+      "end_frame": 12930
+    },
+    {
+      "id": 100,
+      "start_seconds": 431.407,
+      "end_seconds": 435.667,
+      "text": "Gauss's law turns the divergence of the\nchanging electric field term into the time",
+      "start_frame": 12942,
+      "end_frame": 13071
+    },
+    {
+      "id": 101,
+      "start_seconds": 435.667,
+      "end_seconds": 437.227,
+      "text": "derivative of charge density.",
+      "start_frame": 13070,
+      "end_frame": 13117
+    },
+    {
+      "id": 102,
+      "start_seconds": 437.847,
+      "end_seconds": 440.267,
+      "text": "What remains on the right is the continuity\nequation.",
+      "start_frame": 13135,
+      "end_frame": 13209
+    },
+    {
+      "id": 103,
+      "start_seconds": 446.253,
+      "end_seconds": 449.233,
+      "text": "The capacitor stores electric field energy as\nit charges.",
+      "start_frame": 13387,
+      "end_frame": 13477
+    },
+    {
+      "id": 104,
+      "start_seconds": 449.993,
+      "end_seconds": 451.433,
+      "text": "How does that energy reach the gap?",
+      "start_frame": 13499,
+      "end_frame": 13543
+    },
+    {
+      "id": 105,
+      "start_seconds": 452.113,
+      "end_seconds": 454.993,
+      "text": "Take the electric field to point up, along\npositive z.",
+      "start_frame": 13563,
+      "end_frame": 13650
+    },
+    {
+      "id": 106,
+      "start_seconds": 455.693,
+      "end_seconds": 460.013,
+      "text": "In a circular capacitor, the magnetic field in\nthe gap points around the axis in the",
+      "start_frame": 13670,
+      "end_frame": 13801
+    },
+    {
+      "id": 107,
+      "start_seconds": 460.013,
+      "end_seconds": 461.453,
+      "text": "positive azimuthal direction.",
+      "start_frame": 13800,
+      "end_frame": 13844
+    },
+    {
+      "id": 108,
+      "start_seconds": 462.063,
+      "end_seconds": 466.183,
+      "text": "The cross product of the electric and magnetic\nfields points radially inward.",
+      "start_frame": 13861,
+      "end_frame": 13986
+    },
+    {
+      "id": 109,
+      "start_seconds": 472.087,
+      "end_seconds": 476.047,
+      "text": "Poynting's theorem follows by dotting the curl\nequations with the appropriate fields",
+      "start_frame": 14162,
+      "end_frame": 14282
+    },
+    {
+      "id": 110,
+      "start_seconds": 476.047,
+      "end_seconds": 478.767,
+      "text": "and using the divergence identity for a cross\nproduct.",
+      "start_frame": 14281,
+      "end_frame": 14364
+    },
+    {
+      "id": 111,
+      "start_seconds": 479.687,
+      "end_seconds": 484.387,
+      "text": "The result separates the rate of change of\nfield energy, the outward energy flux and",
+      "start_frame": 14390,
+      "end_frame": 14532
+    },
+    {
+      "id": 112,
+      "start_seconds": 484.387,
+      "end_seconds": 486.527,
+      "text": "the rate at which fields do work on matter.",
+      "start_frame": 14531,
+      "end_frame": 14596
+    },
+    {
+      "id": 113,
+      "start_seconds": 487.077,
+      "end_seconds": 489.377,
+      "text": "In the vacuum gap, the work term is zero.",
+      "start_frame": 14612,
+      "end_frame": 14682
+    },
+    {
+      "id": 114,
+      "start_seconds": 489.997,
+      "end_seconds": 493.897,
+      "text": "For this quasistatic example, the leading\nchange is the electric energy.",
+      "start_frame": 14699,
+      "end_frame": 14817
+    },
+    {
+      "id": 115,
+      "start_seconds": 499.82,
+      "end_seconds": 504.04,
+      "text": "For the gap volume, what is the sign of the\noutward electromagnetic power through its",
+      "start_frame": 14994,
+      "end_frame": 15122
+    },
+    {
+      "id": 116,
+      "start_seconds": 504.04,
+      "end_seconds": 505.38,
+      "text": "curved side during charging?",
+      "start_frame": 15121,
+      "end_frame": 15162
+    },
+    {
+      "id": 117,
+      "start_seconds": 506.24,
+      "end_seconds": 508.24,
+      "text": "Choose positive, zero, or negative.",
+      "start_frame": 15187,
+      "end_frame": 15248
+    },
+    {
+      "id": 118,
+      "start_seconds": 508.9,
+      "end_seconds": 512.62,
+      "text": "Use the outward normal, not the direction in\nwhich you happen to draw the integration",
+      "start_frame": 15267,
+      "end_frame": 15379
+    },
+    {
+      "id": 119,
+      "start_seconds": 512.62,
+      "end_seconds": 513.02,
+      "text": "arrow.",
+      "start_frame": 15378,
+      "end_frame": 15391
+    },
+    {
+      "id": 120,
+      "start_seconds": 513.46,
+      "end_seconds": 516.92,
+      "text": "Then ask how this sign relates to the growing\nelectric energy.",
+      "start_frame": 15403,
+      "end_frame": 15508
+    },
+    {
+      "id": 121,
+      "start_seconds": 523.92,
+      "end_seconds": 525.44,
+      "text": "The outward power is negative.",
+      "start_frame": 15717,
+      "end_frame": 15764
+    },
+    {
+      "id": 122,
+      "start_seconds": 526.2,
+      "end_seconds": 529.4,
+      "text": "Integrate the radial Poynting flux over the\ncylindrical side.",
+      "start_frame": 15786,
+      "end_frame": 15882
+    },
+    {
+      "id": 123,
+      "start_seconds": 530.08,
+      "end_seconds": 534.82,
+      "text": "Using the Ampere-Maxwell field at the rim, the\ninward power is voltage times current.",
+      "start_frame": 15902,
+      "end_frame": 16045
+    },
+    {
+      "id": 124,
+      "start_seconds": 535.5,
+      "end_seconds": 539.82,
+      "text": "Independently, differentiate one half times\ncapacitance times voltage squared.",
+      "start_frame": 16065,
+      "end_frame": 16195
+    },
+    {
+      "id": 125,
+      "start_seconds": 540.26,
+      "end_seconds": 541.34,
+      "text": "It gives the same power.",
+      "start_frame": 16207,
+      "end_frame": 16241
+    },
+    {
+      "id": 126,
+      "start_seconds": 541.81,
+      "end_seconds": 546.03,
+      "text": "In the lab you will check both calculations\nand estimate when neglecting changing",
+      "start_frame": 16254,
+      "end_frame": 16381
+    },
+    {
+      "id": 127,
+      "start_seconds": 546.03,
+      "end_seconds": 548.63,
+      "text": "magnetic energy and edge fringing is\nreasonable.",
+      "start_frame": 16380,
+      "end_frame": 16459
+    },
+    {
+      "id": 128,
+      "start_seconds": 554.653,
+      "end_seconds": 558.133,
+      "text": "Move from slowly changing fields to a\ntraveling plane wave.",
+      "start_frame": 16639,
+      "end_frame": 16744
+    },
+    {
+      "id": 129,
+      "start_seconds": 558.753,
+      "end_seconds": 561.413,
+      "text": "Its electric and magnetic fields are\ntransverse.",
+      "start_frame": 16762,
+      "end_frame": 16843
+    },
+    {
+      "id": 130,
+      "start_seconds": 562.333,
+      "end_seconds": 566.513,
+      "text": "The ratio of electric field to magnetic field\nintensity is the wave impedance.",
+      "start_frame": 16869,
+      "end_frame": 16996
+    },
+    {
+      "id": 131,
+      "start_seconds": 567.313,
+      "end_seconds": 571.193,
+      "text": "At a plane interface, match tangential\nelectric and magnetic fields.",
+      "start_frame": 17019,
+      "end_frame": 17136
+    },
+    {
+      "id": 132,
+      "start_seconds": 571.793,
+      "end_seconds": 576.153,
+      "text": "For the reflected wave the magnetic field\nchanges sign relative to the electric field,",
+      "start_frame": 17153,
+      "end_frame": 17285
+    },
+    {
+      "id": 133,
+      "start_seconds": 576.153,
+      "end_seconds": 578.813,
+      "text": "because the propagation direction reverses.",
+      "start_frame": 17284,
+      "end_frame": 17365
+    },
+    {
+      "id": 134,
+      "start_seconds": 584.687,
+      "end_seconds": 587.427,
+      "text": "Take two linear lossless nonmagnetic media.",
+      "start_frame": 17540,
+      "end_frame": 17623
+    },
+    {
+      "id": 135,
+      "start_seconds": 588.047,
+      "end_seconds": 591.427,
+      "text": "The impedance is the vacuum impedance divided\nby refractive index.",
+      "start_frame": 17641,
+      "end_frame": 17743
+    },
+    {
+      "id": 136,
+      "start_seconds": 592.167,
+      "end_seconds": 596.227,
+      "text": "Solve the two matching equations for the\nreflected and transmitted electric amplitudes.",
+      "start_frame": 17765,
+      "end_frame": 17887
+    },
+    {
+      "id": 137,
+      "start_seconds": 596.887,
+      "end_seconds": 600.927,
+      "text": "To compute average power, square the electric\namplitude and divide by twice the",
+      "start_frame": 17906,
+      "end_frame": 18028
+    },
+    {
+      "id": 138,
+      "start_seconds": 600.927,
+      "end_seconds": 601.227,
+      "text": "impedance.",
+      "start_frame": 18027,
+      "end_frame": 18037
+    },
+    {
+      "id": 139,
+      "start_seconds": 601.887,
+      "end_seconds": 606.627,
+      "text": "A transmitted amplitude of one half, for\nexample, does not by itself tell you the",
+      "start_frame": 18056,
+      "end_frame": 18199
+    },
+    {
+      "id": 140,
+      "start_seconds": 606.627,
+      "end_seconds": 607.887,
+      "text": "fraction of power transmitted.",
+      "start_frame": 18198,
+      "end_frame": 18237
+    },
+    {
+      "id": 141,
+      "start_seconds": 613.82,
+      "end_seconds": 617.8,
+      "text": "Send a wave from index one into index one\npoint five at normal incidence.",
+      "start_frame": 18414,
+      "end_frame": 18534
+    },
+    {
+      "id": 142,
+      "start_seconds": 618.42,
+      "end_seconds": 622.74,
+      "text": "Relative to the incident electric field at the\ninterface, does the reflected electric",
+      "start_frame": 18552,
+      "end_frame": 18683
+    },
+    {
+      "id": 143,
+      "start_seconds": 622.74,
+      "end_seconds": 626.04,
+      "text": "field have a minus sign, a plus sign, or zero\namplitude?",
+      "start_frame": 18682,
+      "end_frame": 18782
+    },
+    {
+      "id": 144,
+      "start_seconds": 626.78,
+      "end_seconds": 627.58,
+      "text": "Choose before solving.",
+      "start_frame": 18803,
+      "end_frame": 18828
+    },
+    {
+      "id": 145,
+      "start_seconds": 628.14,
+      "end_seconds": 632.32,
+      "text": "Use both matching conditions and keep the\nforward and backward magnetic field signs",
+      "start_frame": 18844,
+      "end_frame": 18970
+    },
+    {
+      "id": 146,
+      "start_seconds": 632.32,
+      "end_seconds": 632.78,
+      "text": "separate.",
+      "start_frame": 18969,
+      "end_frame": 18984
+    },
+    {
+      "id": 147,
+      "start_seconds": 639.853,
+      "end_seconds": 643.693,
+      "text": "The reflected electric amplitude has a minus\nsign, giving a phase reversal at the",
+      "start_frame": 19195,
+      "end_frame": 19311
+    },
+    {
+      "id": 148,
+      "start_seconds": 643.693,
+      "end_seconds": 644.053,
+      "text": "interface.",
+      "start_frame": 19310,
+      "end_frame": 19322
+    },
+    {
+      "id": 149,
+      "start_seconds": 644.833,
+      "end_seconds": 647.473,
+      "text": "The reflected power fraction is four percent.",
+      "start_frame": 19344,
+      "end_frame": 19425
+    },
+    {
+      "id": 150,
+      "start_seconds": 647.473,
+      "end_seconds": 652.113,
+      "text": "The transmitted electric amplitude is zero\npoint eight, while transmitted power is",
+      "start_frame": 19424,
+      "end_frame": 19564
+    },
+    {
+      "id": 151,
+      "start_seconds": 652.113,
+      "end_seconds": 653.373,
+      "text": "ninety-six percent.",
+      "start_frame": 19563,
+      "end_frame": 19602
+    },
+    {
+      "id": 152,
+      "start_seconds": 653.373,
+      "end_seconds": 655.613,
+      "text": "The impedance factor makes the difference.",
+      "start_frame": 19601,
+      "end_frame": 19669
+    },
+    {
+      "id": 153,
+      "start_seconds": 656.213,
+      "end_seconds": 661.493,
+      "text": "Check both field residuals and power\nconservation; either check alone can miss a",
+      "start_frame": 19686,
+      "end_frame": 19845
+    },
+    {
+      "id": 154,
+      "start_seconds": 661.493,
+      "end_seconds": 661.793,
+      "text": "mistake.",
+      "start_frame": 19844,
+      "end_frame": 19854
+    },
+    {
+      "id": 155,
+      "start_seconds": 667.787,
+      "end_seconds": 670.327,
+      "text": "Now put a transparent film between air and\nglass.",
+      "start_frame": 20033,
+      "end_frame": 20110
+    },
+    {
+      "id": 156,
+      "start_seconds": 671.067,
+      "end_seconds": 674.767,
+      "text": "Reflection can come from both boundaries, and\nthe field travels through the film in",
+      "start_frame": 20132,
+      "end_frame": 20244
+    },
+    {
+      "id": 157,
+      "start_seconds": 674.767,
+      "end_seconds": 675.527,
+      "text": "both directions.",
+      "start_frame": 20243,
+      "end_frame": 20266
+    },
+    {
+      "id": 158,
+      "start_seconds": 676.147,
+      "end_seconds": 679.867,
+      "text": "A film a quarter wavelength thick gives a\nhalf-cycle of round-trip phase.",
+      "start_frame": 20284,
+      "end_frame": 20397
+    },
+    {
+      "id": 159,
+      "start_seconds": 680.417,
+      "end_seconds": 685.097,
+      "text": "To cancel reflection completely at the design\nwavelength, the returning amplitudes must",
+      "start_frame": 20412,
+      "end_frame": 20553
+    },
+    {
+      "id": 160,
+      "start_seconds": 685.097,
+      "end_seconds": 685.897,
+      "text": "also balance.",
+      "start_frame": 20552,
+      "end_frame": 20577
+    },
+    {
+      "id": 161,
+      "start_seconds": 686.717,
+      "end_seconds": 687.637,
+      "text": "Thickness sets phase.",
+      "start_frame": 20601,
+      "end_frame": 20630
+    },
+    {
+      "id": 162,
+      "start_seconds": 688.277,
+      "end_seconds": 690.017,
+      "text": "Impedance sets the amplitude matching.",
+      "start_frame": 20648,
+      "end_frame": 20701
+    },
+    {
+      "id": 163,
+      "start_seconds": 696.02,
+      "end_seconds": 701.1,
+      "text": "For nonmagnetic lossless media at normal\nincidence, choose the film index as the",
+      "start_frame": 20880,
+      "end_frame": 21033
+    },
+    {
+      "id": 164,
+      "start_seconds": 701.1,
+      "end_seconds": 703.08,
+      "text": "geometric mean of the outer indices.",
+      "start_frame": 21033,
+      "end_frame": 21093
+    },
+    {
+      "id": 165,
+      "start_seconds": 703.86,
+      "end_seconds": 708.24,
+      "text": "Set thickness to the vacuum design wavelength\ndivided by four times that film index.",
+      "start_frame": 21115,
+      "end_frame": 21248
+    },
+    {
+      "id": 166,
+      "start_seconds": 708.96,
+      "end_seconds": 712.26,
+      "text": "This ideal match eliminates reflection at the\ndesign wavelength.",
+      "start_frame": 21268,
+      "end_frame": 21368
+    },
+    {
+      "id": 167,
+      "start_seconds": 712.83,
+      "end_seconds": 718.47,
+      "text": "A finite spectral band, material dispersion,\nabsorption, or oblique incidence changes",
+      "start_frame": 21384,
+      "end_frame": 21555
+    },
+    {
+      "id": 168,
+      "start_seconds": 718.47,
+      "end_seconds": 718.99,
+      "text": "the result.",
+      "start_frame": 21554,
+      "end_frame": 21570
+    },
+    {
+      "id": 169,
+      "start_seconds": 724.92,
+      "end_seconds": 728.84,
+      "text": "Change the illumination wavelength while\nholding film thickness and indices fixed.",
+      "start_frame": 21747,
+      "end_frame": 21866
+    },
+    {
+      "id": 170,
+      "start_seconds": 729.52,
+      "end_seconds": 734.56,
+      "text": "Does the cancellation generally remain exact,\ndoes reflected power generally return, or",
+      "start_frame": 21885,
+      "end_frame": 22037
+    },
+    {
+      "id": 171,
+      "start_seconds": 734.56,
+      "end_seconds": 736.34,
+      "text": "is all incident power now absorbed?",
+      "start_frame": 22036,
+      "end_frame": 22091
+    },
+    {
+      "id": 172,
+      "start_seconds": 737.2,
+      "end_seconds": 739.52,
+      "text": "Think about the phase accrued in one\ntraversal.",
+      "start_frame": 22116,
+      "end_frame": 22186
+    },
+    {
+      "id": 173,
+      "start_seconds": 739.95,
+      "end_seconds": 743.07,
+      "text": "State which assumptions exclude energy loss\nbefore choosing.",
+      "start_frame": 22198,
+      "end_frame": 22293
+    },
+    {
+      "id": 174,
+      "start_seconds": 750.12,
+      "end_seconds": 752.04,
+      "text": "Reflected power generally returns.",
+      "start_frame": 22503,
+      "end_frame": 22562
+    },
+    {
+      "id": 175,
+      "start_seconds": 752.72,
+      "end_seconds": 756.58,
+      "text": "The physical film stays the same, but its\noptical phase changes with wavelength.",
+      "start_frame": 22581,
+      "end_frame": 22698
+    },
+    {
+      "id": 176,
+      "start_seconds": 757.4,
+      "end_seconds": 760.8,
+      "text": "In the Python lab, compare a boundary-matching\nsolver with a separate",
+      "start_frame": 22722,
+      "end_frame": 22824
+    },
+    {
+      "id": 177,
+      "start_seconds": 760.8,
+      "end_seconds": 762.16,
+      "text": "multiple-reflection formula.",
+      "start_frame": 22824,
+      "end_frame": 22865
+    },
+    {
+      "id": 178,
+      "start_seconds": 762.68,
+      "end_seconds": 767.26,
+      "text": "Then design a coating for a new substrate and\nreport how thickness tolerance shifts the",
+      "start_frame": 22880,
+      "end_frame": 23018
+    },
+    {
+      "id": 179,
+      "start_seconds": 767.26,
+      "end_seconds": 768.14,
+      "text": "reflectance curve.",
+      "start_frame": 23017,
+      "end_frame": 23045
+    },
+    {
+      "id": 180,
+      "start_seconds": 768.7,
+      "end_seconds": 772.62,
+      "text": "Explain what a real experiment would need to\nmeasure, and which conclusion would fail",
+      "start_frame": 23061,
+      "end_frame": 23179
+    },
+    {
+      "id": 181,
+      "start_seconds": 772.62,
+      "end_seconds": 774.36,
+      "text": "first if your assumptions changed.",
+      "start_frame": 23178,
+      "end_frame": 23231
+    }
+  ],
+  "chapters": [
+    {
+      "index": 0,
+      "title": "Maxwell and the capacitor",
+      "start_frame": 0,
+      "start_seconds": 0.0,
+      "animation_frames": 96
+    },
+    {
+      "index": 1,
+      "title": "Induction outside the coil",
+      "start_frame": 3557,
+      "start_seconds": 118.56666666666666,
+      "animation_frames": 84
+    },
+    {
+      "index": 2,
+      "title": "From circulation to curl",
+      "start_frame": 6990,
+      "start_seconds": 233.0,
+      "animation_frames": 78
+    },
+    {
+      "index": 3,
+      "title": "Charge conservation",
+      "start_frame": 10154,
+      "start_seconds": 338.46666666666664,
+      "animation_frames": 105
+    },
+    {
+      "index": 4,
+      "title": "Energy crosses space",
+      "start_frame": 13381,
+      "start_seconds": 446.03333333333336,
+      "animation_frames": 102
+    },
+    {
+      "index": 5,
+      "title": "Waves at an interface",
+      "start_frame": 16633,
+      "start_seconds": 554.4333333333333,
+      "animation_frames": 99
+    },
+    {
+      "index": 6,
+      "title": "A layer changes everything",
+      "start_frame": 20027,
+      "start_seconds": 667.5666666666667,
+      "animation_frames": 83
+    }
+  ],
+  "summary": [
+    [
+      "A changing electric flux can account for the magnetic circulation in a vacuum gap.",
+      "Conduction electrons must cross an ideal vacuum capacitor."
+    ],
+    [
+      "A local field may be nonzero even when a small loop has zero circulation.",
+      "Zero curl forces the electric field itself to vanish."
+    ],
+    [
+      "Steady charge implies zero net outward charge flux from a fixed volume.",
+      "Larger current density always implies net outward current."
+    ],
+    [
+      "Electromagnetic energy flux is E × H and depends on the chosen outward normal.",
+      "Energy can cross the vacuum gap only with conduction current."
+    ],
+    [
+      "Film cancellation depends on phase and on amplitude matching.",
+      "Quarter-wave thickness guarantees perfect cancellation for any film index and wavelength."
+    ]
+  ],
+  "physics": {
+    "interface_r": -0.2,
+    "interface_t": 0.8,
+    "interface_R": 0.04000000000000001,
+    "interface_T": 0.9600000000000002,
+    "design_nm": 550,
+    "film_index": 1.224744871391589,
+    "thickness_nm": 112.26827987756235,
+    "detuned_R": 0.012697462781108431,
+    "gap_outward_W": -0.02
+  },
+  "narration_words": 1636
+}

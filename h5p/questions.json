@@ -1,0 +1,611 @@
+[
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>The electric flux is fixed.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The plates are gaining charge. Gauss's law connects that changing charge to changing electric flux.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>ε₀ times the rate of change of electric flux.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The electric flux is Q/ε₀ in the ideal gap, so ε₀ dΦ_E/dt = dQ/dt = I.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Conduction electrons crossing the gap.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "In an ideal vacuum capacitor, charges accumulate on the plates. The field term accounts for the gap.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>Across the ideal vacuum gap of a charging capacitor, what accounts for the lead current in Ampère-Maxwell's law?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>Clockwise.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The positive flux increases. Faraday's minus sign gives negative circulation relative to the counterclockwise direction.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Counterclockwise.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The right-hand orientation is counterclockwise for +z. The increasing positive flux enters with a minus sign.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>There is no induced E.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The loop encloses a changing flux even where the local magnetic field is negligible.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>Viewed from +z, which way does E circulate outside a long solenoid whose +z magnetic field is increasing?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>The electric field at every point of the edge.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "A line integral can vanish even when the field is nonzero along the path.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>The magnetic flux change, but the circulation equals the larger loop's.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "Different boundary curves can enclose different changing fluxes. Apply the law to this disk.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>The electric circulation around this edge.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The flux through this disk is constant at zero, so Faraday's law gives zero electric circulation.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>A small disk lies entirely outside the ideal solenoid and misses its axis. What must vanish?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>Positive.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "Greater current density over a smaller area can carry the same total current. Compare face integrals.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Zero.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "Steady charge means no accumulation. The inlet and outlet carry equal currents with opposite outward signs.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Negative.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "There is no accumulation in this steady example. Include the exit current as well as the entry.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>A steady insulated conductor narrows. What is the net outward current through a volume spanning the constriction?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>Positive.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "Check the cross-product order E × H and the outward radial normal.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Zero.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The work term J·E is zero in the vacuum gap, but the electromagnetic flux can cross the side.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Negative.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "E points along +z and H along +φ. E × H points inward, giving negative outward power and increasing electric energy.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>While a circular vacuum capacitor charges with V > 0 and I > 0, what is the sign of outward side power?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>Negative.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "r = (1 − 1.5)/(1 + 1.5) = −0.2. The reflected electric field has a π phase shift at the interface.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Positive.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The backward wave reverses the sign in the magnetic matching condition. Solve both conditions together.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Zero.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The indices differ, so these nonmagnetic media have unequal wave impedances.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>A normally incident wave goes from n = 1 to n = 1.5. What is the reflected electric field sign at the interface?</p>"
+  },
+  {
+    "media": {
+      "disableImageZooming": false
+    },
+    "answers": [
+      {
+        "text": "<p>Cancellation stays exact at every wavelength.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The physical thickness is fixed, but the number of wavelengths traversed is not.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>Reflected power returns.</p>",
+        "correct": true,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The phase 2π n_f d/λ depends on wavelength. Detuning generally spoils cancellation; the model has no absorption.",
+          "notChosenFeedback": ""
+        }
+      },
+      {
+        "text": "<p>All incident power is absorbed.</p>",
+        "correct": false,
+        "tipsAndFeedback": {
+          "tip": "",
+          "chosenFeedback": "The materials are lossless. Any missing transmitted power must be reflected in this model.",
+          "notChosenFeedback": ""
+        }
+      }
+    ],
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory."
+      }
+    ],
+    "UI": {
+      "checkAnswerButton": "Check",
+      "submitAnswerButton": "Submit",
+      "showSolutionButton": "Show solution",
+      "tryAgainButton": "Retry",
+      "tipsLabel": "Show tip",
+      "scoreBarLabel": "You got :num out of :total points",
+      "tipAvailable": "Tip available",
+      "feedbackAvailable": "Feedback available",
+      "readFeedback": "Read feedback",
+      "wrongAnswer": "Wrong answer",
+      "correctAnswer": "Correct answer",
+      "shouldCheck": "Should have been checked",
+      "shouldNotCheck": "Should not have been checked",
+      "noInput": "Please answer before viewing the solution",
+      "a11yCheck": "Check the answers. The responses will be marked as correct, incorrect, or unanswered.",
+      "a11yShowSolution": "Show the solution. The task will be marked with its correct solution.",
+      "a11yRetry": "Retry the task. Reset all responses and start the task over again."
+    },
+    "behaviour": {
+      "enableRetry": true,
+      "enableSolutionsButton": true,
+      "enableCheckButton": true,
+      "type": "single",
+      "singlePoint": false,
+      "randomAnswers": false,
+      "showSolutionsRequiresInput": true,
+      "confirmCheckDialog": false,
+      "confirmRetryDialog": false,
+      "autoCheck": false,
+      "passPercentage": 100,
+      "showScorePoints": true
+    },
+    "confirmCheck": {
+      "header": "Finish ?",
+      "body": "Are you sure you wish to finish ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Finish"
+    },
+    "confirmRetry": {
+      "header": "Retry ?",
+      "body": "Are you sure you wish to retry ?",
+      "cancelLabel": "Cancel",
+      "confirmLabel": "Confirm"
+    },
+    "question": "<p>A matched quarter-wave film stays fixed while the vacuum wavelength changes. What generally happens?</p>"
+  }
+]
