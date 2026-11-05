@@ -24,6 +24,13 @@ for(const page of ['index.html','assessment.html']){
     assert.ok(fs.existsSync(path.resolve(out,file)),page+' has a missing target '+name);
   }
 }
-for(const q of events.quizzes)assert.ok(fs.existsSync(path.join(out,'h5p','question-'+q.id.slice(1)+'.html')));
+const reasoning=require(path.join(out,'reasoning.json'));
+const index=fs.readFileSync(path.join(out,'index.html'),'utf8');
+for(const q of events.quizzes){
+  assert.ok(fs.existsSync(path.join(out,'h5p','question-'+q.id.slice(1)+'.html')));
+  const activity=reasoning[q.id];
+  assert.ok(index.includes('id="'+activity.model.slice(1)+'"'),q.id+' model target is missing');
+  assert.ok(fs.existsSync(path.join(out,'lab','files',activity.lab)),q.id+' notebook is missing');
+}
 if(cfg.youtube_url)assert.ok(fs.existsSync(path.join(out,'h5p','electrodynamics.html')));
 console.log(JSON.stringify({status:'PASS',checkedFixtures:fixtures.length,basePath:cfg.base_path,standaloneQuestions:events.quizzes.length}));

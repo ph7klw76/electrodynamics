@@ -5,6 +5,7 @@
 <meta name="description" content="An upper-division field lab on Maxwell’s equations, induction, energy flow, and optical coatings.">
 <title>Electrodynamics | Field Lab</title>
 <link rel="stylesheet" href="style.css?v=c91aae998702"><link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="charge-explorers.css"><link rel="stylesheet" href="wave-explorers.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to lesson</a>
@@ -16,40 +17,61 @@
   <p class="eyebrow">UPPER-DIVISION UNDERGRADUATE PHYSICS / E&amp;M II</p>
   <h1 id="intro">Can energy cross an <em>empty gap?</em></h1>
   <p class="lead">Follow the fields from a charging capacitor to a transparent coating. Use Maxwell’s equations to predict what changes, what is conserved, and what an experiment would need to measure.</p>
-  <a class="button" href="#watch">Watch &amp; Question ↓</a><a class="textlink" href="#lab">Open the Python lab</a>
+  <a class="button" href="#capacitor-explorer">Explore the capacitor ↓</a><a class="textlink" href="#watch">Watch &amp; Question</a>
  </div>
- <aside class="hero-card" aria-label="The central puzzle">
-  <p class="eyebrow">01 SCENARIO / THE VACUUM GAP</p>
-  <div class="hero-ket" data-math="\mathbf S=\mathbf E\times\mathbf H"></div>
-  <div class="recipe"><b>01 PREDICT</b><b>02 COMPUTE</b><b>03 CHECK</b></div>
-  <p>The lead carries charge. The vacuum gap carries a changing field. Which way does electromagnetic energy flow as the capacitor charges?</p>
-  <div class="stat"><strong>07</strong><span>CONCEPTUAL CHECKPOINTS<br>+ ONE INDEPENDENT DESIGN TASK</span></div>
- </aside>
+ <div id="capacitor-explorer"></div>
 </section>
 <section id="explore">
- <div class="section-title"><div><p class="eyebrow">01 / EXPLORE A MODEL</p><h2>When does a film<br>stop reflecting?</h2></div>
- <p>An ideal film between air and glass cancels reflection near its design wavelength. Keep the film fixed and move the wavelength. Then vary its thickness and predict where the minimum shifts.</p></div>
- <div class="simulation">
-  <form id="controls" aria-label="Optical film parameters"><h3>Film controls</h3>
-   <label for="wavelength">Vacuum wavelength <output id="wavelengthOut" for="wavelength"></output></label><input id="wavelength" type="range" min="400" max="700" value="550">
-   <label for="thickness">Physical thickness <output id="thicknessOut" for="thickness"></output></label><input id="thickness" type="range" min="50" max="190" step=".01" value="112.27">
-   <button type="reset" id="reset">Reset to the matched design</button>
-   <p class="small">Fixed indices 1.00 → √1.5 → 1.50. Normal incidence. Lossless and nondispersive. The bare interface reflects 4%.</p>
-  </form>
-  <div class="science"><div class="numbers" aria-live="polite"><div><span>REFLECTANCE</span><strong id="reflectance">—</strong></div><div><span>TRANSMITTANCE</span><strong id="transmittance">—</strong></div><div><span>FIRST MINIMUM</span><strong id="design">—</strong></div></div>
-  <svg id="spectrum" role="img" aria-label="Reflectance spectrum from 400 to 700 nanometres" viewBox="0 0 640 300" width="640" height="300"></svg>
-  <p class="small" id="plotNote">The solid line shows the coated interface. The dashed line shows bare glass.</p>
-  <details><summary>Model equation and assumptions</summary><div data-math="r=\frac{r_{1f}+r_{f3}e^{2i\delta}}{1+r_{1f}r_{f3}e^{2i\delta}},\quad \delta=2\pi n_f d/\lambda_0"></div><p>Reflectance is |r|². The lab independently solves the four tangential-field boundary equations and checks the power balance.</p></details></div>
- </div>
+ <div class="section-title"><div><p class="eyebrow">01 / EXPLORE A MODEL</p><h2>What changes across<br>a loop or surface?</h2></div>
+ <p>Predict what happens before you move the loop or control volume. Compare what the arrows show at one point with what adds up over the whole boundary.</p></div>
+ <details class="explorer-panel" id="induction"><summary>Induction and circulation · Q2–Q3</summary><div id="solenoid-explorer"></div></details>
+ <details class="explorer-panel" id="conservation"><summary>Charge conservation in a narrowing wire · Q4</summary><div id="conductor-explorer"></div></details>
 </section>
 <section id="watch">
  <div class="section-title"><div><p class="eyebrow">02 / WATCH &amp; QUESTION</p><h2>Follow the field.<br>Defend your prediction.</h2></div>
- <p>The video and checkpoints share one H5P player. At each pause, choose an answer, read the feedback, and use the review jump before trying again.</p></div>
+ <p>At each pause, make a prediction and sketch or write why. Check your choice, then use the feedback and review jump to revise your reasoning.</p></div>
  <div class="watch-layout"><div>
   <div class="pending" id="videoPending"><h3>Lecture upload pending</h3><p>The independent practice and lab below are available in this preview.</p><a href="#practice">Start the practice activities ↓</a></div>
   <iframe id="lectureH5p" class="lecture-h5p" title="Electrodynamics interactive lecture and questions" loading="lazy" allow="fullscreen; autoplay; encrypted-media" allowfullscreen hidden></iframe>
   <div class="resources"><a id="youtubeLink" hidden>Open on YouTube ↗</a><a href="lecture.srt" download>Captions · SRT</a><a href="lecture.vtt" download>Captions · VTT</a><a id="h5pDownload" href="h5p/Electrodynamics_Interactive.h5p" download hidden>Native H5P download</a></div>
  </div><aside aria-label="Lecture chapters"><h3>Chapters</h3><div id="chapters"></div><p id="chapterFeedback" role="status" class="small"></p></aside></div>
+ <details class="explorer-panel" id="reasoning-notes">
+  <summary>Write an explanation and check your reasoning</summary>
+  <form id="reasoning-form">
+   <label for="reasoning-question">Checkpoint</label>
+   <select id="reasoning-question"></select>
+   <p id="reasoning-prompt"></p>
+   <label for="reasoning-response">Your explanation</label>
+   <textarea id="reasoning-response" rows="4" required aria-describedby="reasoning-prompt reasoning-help"></textarea>
+   <p id="reasoning-help" class="small">Sketch on paper or describe your sketch here. Copy your notes before leaving this page.</p>
+   <button type="submit">Show the reasoning checklist</button>
+  </form>
+  <div id="reasoning-checklist" hidden><h3 tabindex="-1">Compare with your explanation</h3><ul></ul></div>
+  <div class="resources"><a id="reasoning-model">Explore this model</a><a id="reasoning-lab">Open the matching Python investigation</a></div>
+ </details>
+</section>
+<section id="waves">
+ <div class="section-title"><div><p class="eyebrow">WAVES &amp; BOUNDARIES</p><h2>See where the<br>reflection comes from.</h2></div>
+ <p>Start with one interface, then add a thin film. Use the wave and amplitude diagrams to explain what the reflectance plot measures.</p></div>
+ <details class="explorer-panel" id="reflection"><summary>Reflection at a single interface · Q6</summary><div id="reflection-explorer"></div></details>
+ <article id="film-explorer">
+  <h3>When does a film stop reflecting? · Q7</h3>
+  <p>Keep the film fixed and predict what happens away from the design wavelength. Then change the thickness and explain where the minimum shifts.</p>
+  <div class="simulation">
+   <form id="controls" aria-label="Optical film parameters"><h4>Film controls</h4>
+    <label for="wavelength">Vacuum wavelength <output id="wavelengthOut" for="wavelength"></output></label><input id="wavelength" type="range" min="400" max="700" value="550">
+    <label for="thickness">Physical thickness <output id="thicknessOut" for="thickness"></output></label><input id="thickness" type="range" min="50" max="190" step=".01" value="112.27">
+    <button type="reset" id="reset">Reset to the matched design</button>
+    <p class="small">Fixed indices 1.00 → √1.5 → 1.50. Normal incidence. Lossless and nondispersive. The bare interface reflects 4%.</p>
+   </form>
+   <div class="science"><div class="numbers" aria-live="polite"><div><span>REFLECTANCE</span><strong id="reflectance">—</strong></div><div><span>TRANSMITTANCE</span><strong id="transmittance">—</strong></div><div><span>FIRST MINIMUM</span><strong id="design">—</strong></div></div>
+    <div id="film-phasors"></div>
+    <svg id="spectrum" role="img" aria-label="Reflectance spectrum from 400 to 700 nanometres" viewBox="0 0 640 300" width="640" height="300"></svg>
+    <p class="small" id="plotNote">The solid line shows the coated interface. The dashed line shows bare glass.</p>
+    <details><summary>Model equation and assumptions</summary><div data-math="r=\frac{r_{1f}+r_{f3}e^{2i\delta}}{1+r_{1f}r_{f3}e^{2i\delta}},\quad \delta=2\pi n_f d/\lambda_0"></div><p>Reflectance is |r|². The lab independently solves the four tangential-field boundary equations and checks the power balance.</p></details>
+   </div>
+  </div>
+ </article>
 </section>
 <section id="lab">
  <div class="section-title"><div><p class="eyebrow">03 / COMPUTE &amp; CHECK</p><h2>Run your own<br>field calculations.</h2></div>
@@ -80,4 +102,5 @@
 </main>
 <footer><a class="brand" href="#main"><span>∇</span> ELECTRODYNAMICS FIELD LAB</a><p>Original lesson content CC BY 4.0 · Code MIT<br><a href="CONTENT_LICENSE.md">Content license</a> · <a href="LICENSE">Code license</a></p></footer>
 <script src="config.js?v=f066b8c55a07"></script><script src="assets/katex/katex.min.js"></script><script src="physics.js?v=99b58352a2ea"></script><script src="app.js?v=96b9a976e816"></script>
+<script defer src="charge-explorers.js"></script><script defer src="wave-explorers.js"></script>
 </body></html>

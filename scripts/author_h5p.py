@@ -1,6 +1,7 @@
 """Author real native parameters; an explicit final Summary shares the measured clock."""
 from pathlib import Path
 import sys,json,copy,argparse
+from html import escape
 from uuid import uuid5,NAMESPACE_URL
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from course.assessment import QUESTIONS,SUMMARY
@@ -15,8 +16,9 @@ def params(name):return defaults(json.loads((ROOT/'tools/h5p/libraries'/name/'se
 def action(library,p,title):
     name,version=library.rsplit('-',1)
     return dict(library=name+' '+version,params=p,subContentId=str(uuid5(NAMESPACE_URL,'electrodynamics/'+title)),metadata=dict(title=title,contentType=name,license='CC BY',licenseVersion='4.0',authors=[dict(name='Electrodynamics Lab',role='Author')]))
-def choice(q):
+def choice(q, reasoning):
     p=params('H5P.MultiChoice-1.16');p['question']='<p>'+q['question']+'</p>'
+    p['question'] += '<p><strong>Explain before checking.</strong> '+escape(reasoning['prompt'])+' Record your reasoning in your notes.</p>'
     p['answers']=[dict(text='<p>'+o+'</p>',correct=i==q['correct'],tipsAndFeedback=dict(tip='',chosenFeedback=q['explanation'] if i==q['correct'] else q['wrong'][str(i)] if str(i) in q['wrong'] else q['wrong'][i],notChosenFeedback='')) for i,o in enumerate(q['options'])]
     p['behaviour'].update(type='single',randomAnswers=False,enableRetry=True,enableSolutionsButton=True,enableCheckButton=True,showScorePoints=True)
     p['overallFeedback']=[{'from':0,'to':100,'feedback':'Explain your reasoning. Review the relevant explanation or test the prediction in the laboratory.'}]
@@ -24,7 +26,8 @@ def choice(q):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--preview-url');a=parser.parse_args()
     cfg=json.loads((ROOT/'course/config.json').read_text());events=json.loads((ROOT/'course/publication_events.json').read_text(encoding='utf-8'))
-    questions=events['quizzes'];standalone=[choice(q) for q in questions]
+    reasoning=json.loads((ROOT/'course/reasoning.json').read_text(encoding='utf-8'))
+    questions=events['quizzes'];standalone=[choice(q,reasoning[q['id']]) for q in questions]
     (ROOT/'h5p/questions.json').write_text(json.dumps(standalone,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     metadata=dict(title=cfg['title'],language='en',mainLibrary='H5P.InteractiveVideo',embedTypes=['div'],license='CC BY',licenseVersion='4.0',authors=[dict(name='Electrodynamics Lab',role='Author')],preloadedDependencies=[dict(machineName=name,majorVersion=major,minorVersion=minor) for name,major,minor in [('H5P.InteractiveVideo',1,27),('H5P.MultiChoice',1,16),('H5P.Summary',1,10)]])
     (ROOT/'h5p/h5p.json').write_text(json.dumps(metadata,indent=2)+'\n')

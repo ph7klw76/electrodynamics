@@ -32,4 +32,13 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(bool(cfg['youtube_url']),cfg['status'] in {'video-candidate','video-confirmed'})
         if cfg['youtube_url']:
             content=json.loads((ROOT/'h5p/content.json').read_text(encoding='utf-8'))
-            self.assertEqual(content['interactiveVideo']['video']['files'][0]['path'],cfg['youtube_url'])
+            video=content['interactiveVideo']
+            self.assertEqual(video['video']['files'][0]['path'],cfg['youtube_url'])
+            manifest=json.loads((ROOT/'course/publication_events.json').read_text(encoding='utf-8'))
+            prompts=json.loads((ROOT/'course/reasoning.json').read_text(encoding='utf-8'))
+            interactions=video['assets']['interactions']
+            for quiz,interaction in zip(manifest['quizzes'],interactions[:-1],strict=True):
+                self.assertEqual(interaction['duration']['from'],quiz['time_seconds'])
+                self.assertEqual(interaction['adaptivity']['wrong']['seekTo'],quiz['review_seconds'])
+                self.assertTrue(interaction['pause'])
+                self.assertIn(prompts[quiz['id']]['prompt'],interaction['action']['params']['question'])

@@ -22,12 +22,33 @@ async function main(){
    assert.equal(await page.locator('#design').innerText(),'244.9 nm');
    await page.locator('#reset').click();
    await page.waitForFunction(()=>document.querySelector('#reflectance').textContent==='0.000%');
+   const reasoning = page.locator('#reasoning-notes');
+   await page.locator('.practice-links article').nth(3).getByRole('link',{name:'Write an explanation'}).click();
+   assert.equal(await reasoning.locator('select').inputValue(),'Q4');
+   assert.match(await reasoning.locator('#reasoning-prompt').innerText(),/control volume/);
+   const checklist = reasoning.locator('#reasoning-checklist');
+   const explanation = reasoning.getByLabel('Your explanation');
+   await explanation.fill('   ');
+   await reasoning.getByRole('button',{name:'Show the reasoning checklist'}).click();
+   assert.ok(await checklist.isHidden());
+   await explanation.fill('The incoming and outgoing currents are equal.');
+   await reasoning.getByRole('button',{name:'Show the reasoning checklist'}).click();
+   assert.equal(await checklist.locator('li').count(),3);
+   assert.ok(await checklist.isVisible());
+   await reasoning.getByRole('link',{name:'Explore this model'}).click();
+   assert.ok(await page.locator('#conductor-explorer').isVisible());
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),name+' explorer overflow');
+   await reasoning.locator('select').selectOption('Q5');
+   assert.equal(await explanation.inputValue(),'');
+   await reasoning.locator('select').selectOption('Q4');
+   assert.match(await explanation.inputValue(),/currents are equal/);
    await page.screenshot({path:path.join(out,name+'.png'),fullPage:true});
    report.layouts.push({name,width,noOverflow:true,coatingControls:true});
   }
   await page.setViewportSize({width:1280,height:900});
   for(const q of events.quizzes){
    await page.goto(base+'h5p/question-'+q.id.slice(1)+'.html',{waitUntil:'domcontentloaded'});const task=page.locator('.h5p-multichoice');await task.waitFor();const wrong=(q.correct+1)%q.options.length;
+   assert.match(await task.innerText(),/Explain before checking/);
    await task.locator('.h5p-alternative-container').nth(wrong).click();await task.locator('.h5p-question-check-answer').click();assert.ok((await task.innerText()).includes(q.wrong[String(wrong)]));
    await task.locator('.h5p-question-try-again').click();await task.locator('.h5p-alternative-container').nth(q.correct).click();await task.locator('.h5p-question-check-answer').click();
    const score=await page.evaluate(()=>H5P.instances[0].getScore());assert.equal(score,1);assert.ok((await task.innerText()).includes(q.explanation));report.h5pPractice.push({id:q.id,wrongFeedback:true,retry:true,score});
@@ -39,7 +60,13 @@ async function main(){
    const geometry=await frame.locator('.h5p-video-wrapper iframe').evaluate(e=>{const b=e.getBoundingClientRect(),p=e.parentElement.getBoundingClientRect();return {x:b.x-p.x,y:b.y-p.y,width:b.width,height:b.height};});assert.ok(Math.abs(geometry.y)<2&&geometry.width>200);
    report.video={mode:'startup-only',source,geometry,streaming:'Separate real streaming and all-learning-path tests are required.'};
   }else report.video={mode:'NOT_RUN',reason:'No confirmed public video URL; this build is not deployable yet.'};
-  await page.setViewportSize({width:1440,height:960});await page.goto(base+'lab/lab/index.html?path=Electrodynamics_Lab.ipynb',{waitUntil:'domcontentloaded'});await page.waitForSelector('.jp-Notebook',{timeout:120000});
+  await page.setViewportSize({width:1440,height:960});
+  await page.goto(base,{waitUntil:'domcontentloaded'});
+  await page.locator('.practice-links article').nth(3).getByRole('link',{name:'Open the Python investigation'}).click();
+  await page.getByRole('heading',{name:'Q4 · Charge conservation in a taper'}).waitFor({timeout:120000});
+  const firstCell = page.locator('.jp-Notebook:visible .jp-MarkdownCell').first();
+  await firstCell.getByRole('blockquote').getByText('My prediction and reasoning:',{exact:true}).waitFor();
+  await page.goto(base+'lab/lab/index.html?path=Electrodynamics_Lab.ipynb',{waitUntil:'domcontentloaded'});await page.waitForSelector('.jp-Notebook',{timeout:120000});
   const choose=async()=>{const b=page.getByRole('button',{name:'Select',exact:true});try{await b.waitFor({state:'visible',timeout:3500});}catch(e){if(e.name==='TimeoutError')return false;throw e;}await page.locator('.jp-Dialog select').selectOption({label:'Python (Pyodide)'});await b.click();return true;};
   let selected=await choose();await page.getByRole('menuitem',{name:'Run',exact:true}).click();await page.getByText('Run All Cells',{exact:true}).click();selected=(await choose())||selected;
   await page.waitForFunction(()=>document.querySelectorAll('.jp-OutputArea-error').length||[...document.querySelectorAll('.jp-OutputArea-output')].some(e=>e.textContent.includes('LAB_COMPLETE')),{},{timeout:300000,polling:500});
