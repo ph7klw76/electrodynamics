@@ -43,13 +43,16 @@ def main():
     command=parser.add_mutually_exclusive_group(required=True)
     command.add_argument("--url")
     command.add_argument("--confirm",action="store_true")
+    parser.add_argument("--render-dir",type=Path,default=OUT,
+                        help="Folder containing the verified edition and its video-verification.json")
     args=parser.parse_args()
+    media_dir=args.render_dir.resolve()
     cfg=load(CFG)
     events_path=ROOT/"course/publication_events.json"
     events=load(events_path)
-    media=load(OUT/"video-verification.json")
+    media=load(media_dir/"video-verification.json")
     assert media["status"]=="PASS" and media["edition"]=="full"
-    assert media["video_sha256"]==hashlib.sha256((OUT/media["file"]).read_bytes()).hexdigest()
+    assert media["video_sha256"]==hashlib.sha256((media_dir/media["file"]).read_bytes()).hexdigest()
     assert media["timeline_sha256"]==hashlib.sha256(events_path.read_bytes()).hexdigest()
     if args.url:
         identifier=video_id(args.url)
