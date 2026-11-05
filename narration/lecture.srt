@@ -1,0 +1,837 @@
+1
+00:00:00,220 --> 00:00:01,960
+Picture a capacitor being charged.
+
+2
+00:00:02,580 --> 00:00:06,140
+Current flows in the wire, but no conduction
+charge crosses the vacuum gap.
+
+3
+00:00:06,740 --> 00:00:08,320
+Now draw a loop around the wire.
+
+4
+00:00:08,800 --> 00:00:11,140
+A flat surface through that loop cuts the
+wire.
+
+5
+00:00:11,680 --> 00:00:14,800
+A curved surface with the same edge can pass
+through the gap instead.
+
+6
+00:00:15,340 --> 00:00:19,000
+Can these surfaces give two different values
+for the same magnetic circulation?
+
+7
+00:00:19,960 --> 00:00:23,580
+This puzzle takes us from Maxwell's equations
+all the way to an optical coating.
+
+8
+00:00:29,920 --> 00:00:32,880
+The magnetic circulation is an integral along
+the loop.
+
+9
+00:00:33,460 --> 00:00:36,220
+It has one value once we fix the direction of
+travel.
+
+10
+00:00:37,060 --> 00:00:40,580
+Match each surface normal to that direction by
+the right hand rule.
+
+11
+00:00:41,540 --> 00:00:45,700
+Ampere's original magnetostatic equation
+counts the conduction current through the
+
+12
+00:00:45,700 --> 00:00:45,980
+surface.
+
+13
+00:00:46,620 --> 00:00:48,360
+The wire surface counts current.
+
+14
+00:00:49,080 --> 00:00:50,500
+The gap surface does not.
+
+15
+00:00:51,180 --> 00:00:54,840
+A charging circuit lies outside the
+assumptions of magnetostatics.
+
+16
+00:01:00,753 --> 00:01:01,773
+Pause and choose.
+
+17
+00:01:02,493 --> 00:01:07,373
+In the ideal vacuum gap, is the electric flux
+fixed, does it change so that epsilon
+
+18
+00:01:07,373 --> 00:01:11,873
+zero times its rate of change equals the lead
+current, or do electrons carry that
+
+19
+00:01:11,873 --> 00:01:12,893
+current through the vacuum?
+
+20
+00:01:13,713 --> 00:01:15,493
+Sketch the two surfaces before choosing.
+
+21
+00:01:16,053 --> 00:01:19,233
+Think about what happens to the charge on the
+plates during charging.
+
+22
+00:01:26,353 --> 00:01:28,653
+The changing flux supplies the missing term.
+
+23
+00:01:28,653 --> 00:01:33,533
+In the parallel plate approximation, the
+electric flux across the gap is the plate
+
+24
+00:01:33,533 --> 00:01:35,373
+charge divided by epsilon zero.
+
+25
+00:01:35,373 --> 00:01:37,693
+Differentiate with respect to time.
+
+26
+00:01:38,133 --> 00:01:42,213
+The result, multiplied by epsilon zero, is the
+rate at which charge arrives.
+
+27
+00:01:42,863 --> 00:01:45,583
+Maxwell's correction makes the surface choice
+consistent.
+
+28
+00:01:46,223 --> 00:01:48,263
+Displacement current has units of amperes.
+
+29
+00:01:48,803 --> 00:01:52,763
+In this gap it describes a changing field
+without a flow of charge carriers.
+
+30
+00:01:58,787 --> 00:02:01,247
+Now drive current up a long solenoid.
+
+31
+00:02:01,807 --> 00:02:06,187
+Take the magnetic field inside to point along
+positive z and grow steadily.
+
+32
+00:02:06,947 --> 00:02:09,647
+Outside, approximate the magnetic field as
+zero.
+
+33
+00:02:10,267 --> 00:02:13,767
+Place an imaginary circle around the coil,
+without adding a conductor.
+
+34
+00:02:14,327 --> 00:02:18,367
+Faraday's law relates the electric circulation
+around that circle to the rate of change
+
+35
+00:02:18,367 --> 00:02:20,047
+of magnetic flux through its disk.
+
+36
+00:02:25,987 --> 00:02:30,667
+Cylindrical symmetry makes the induced
+electric field azimuthal in this idealization.
+
+37
+00:02:31,267 --> 00:02:35,127
+The disk flux uses only the part of the disk
+where the magnetic field exists.
+
+38
+00:02:35,887 --> 00:02:39,447
+For a circle inside the coil, that area grows
+as radius squared.
+
+39
+00:02:40,347 --> 00:02:43,227
+Outside the coil, it saturates at the coil's
+cross section.
+
+40
+00:02:43,697 --> 00:02:45,517
+The circumference keeps growing, however.
+
+41
+00:02:46,337 --> 00:02:48,457
+Divide the rate of flux change by that
+circumference.
+
+42
+00:02:54,387 --> 00:02:56,847
+The positive z magnetic field is increasing.
+
+43
+00:02:57,447 --> 00:02:59,427
+The magnetic field outside is negligible.
+
+44
+00:03:00,147 --> 00:03:04,907
+From the positive z side, which way does the
+induced electric field circulate outside?
+
+45
+00:03:05,627 --> 00:03:08,227
+Choose clockwise, counterclockwise, or zero.
+
+46
+00:03:08,847 --> 00:03:13,227
+Decide whether the local field or the flux
+through the entire disk enters Faraday's
+
+47
+00:03:13,227 --> 00:03:13,447
+law.
+
+48
+00:03:20,387 --> 00:03:22,127
+The electric field points clockwise.
+
+49
+00:03:23,147 --> 00:03:27,167
+Positive flux increases, so circulation is
+negative for the counterclockwise
+
+50
+00:03:27,167 --> 00:03:27,727
+orientation.
+
+51
+00:03:28,687 --> 00:03:32,687
+Beyond the coil radius, its magnitude
+decreases inversely with radius.
+
+52
+00:03:33,307 --> 00:03:36,467
+The field can be nonzero even where its local
+curl vanishes.
+
+53
+00:03:37,067 --> 00:03:42,067
+Outside the coil, a spanning disk for a loop
+encircling the axis also includes the
+
+54
+00:03:42,067 --> 00:03:42,427
+interior.
+
+55
+00:03:43,267 --> 00:03:47,387
+This distinction between local and integral
+statements is worth slowing down for.
+
+56
+00:03:53,220 --> 00:03:56,620
+Curl measures circulation per area in the
+small-loop limit.
+
+57
+00:03:57,420 --> 00:04:02,100
+To see how local curls build up, imagine
+tiling a disk with tiny oriented loops.
+
+58
+00:04:02,900 --> 00:04:07,180
+On shared edges, neighboring loops traverse
+the same edge in opposite directions.
+
+59
+00:04:07,700 --> 00:04:08,800
+Those contributions cancel.
+
+60
+00:04:09,430 --> 00:04:13,330
+Summing all of the little loops leaves
+circulation along the outside boundary.
+
+61
+00:04:19,220 --> 00:04:23,060
+Take a tiny disk in the exterior that does not
+enclose the solenoid.
+
+62
+00:04:23,520 --> 00:04:25,620
+Its normal is still along positive z.
+
+63
+00:04:26,260 --> 00:04:29,960
+The changing magnetic flux through that disk
+is zero in this model.
+
+64
+00:04:30,420 --> 00:04:34,940
+Yet a probe at a point on the disk detects a
+nonzero induced electric field.
+
+65
+00:04:35,440 --> 00:04:38,960
+A curl measurement compares contributions
+around the whole small loop.
+
+66
+00:04:39,400 --> 00:04:41,360
+It is different from a point measurement of
+the field.
+
+67
+00:04:47,253 --> 00:04:50,113
+For the small exterior disk, which statement
+is required?
+
+68
+00:04:50,753 --> 00:04:54,673
+Its electric circulation vanishes, the
+electric field vanishes everywhere along its
+
+69
+00:04:54,673 --> 00:04:58,293
+edge, or the circulation equals that of the
+larger loop surrounding the coil?
+
+70
+00:04:58,793 --> 00:05:03,393
+Choose an answer and explain how the result
+depends on which region the disk spans.
+
+71
+00:05:10,553 --> 00:05:12,673
+The small-loop circulation vanishes.
+
+72
+00:05:13,373 --> 00:05:15,933
+The field contributions cancel in the line
+integral.
+
+73
+00:05:16,593 --> 00:05:20,893
+In differential form, the curl of the electric
+field equals minus the time derivative
+
+74
+00:05:20,893 --> 00:05:22,133
+of the magnetic field.
+
+75
+00:05:22,893 --> 00:05:27,053
+Integrate this relation over the oriented
+surface, then apply Stokes' theorem.
+
+76
+00:05:27,533 --> 00:05:32,393
+Reversing the chosen normal reverses the loop
+direction and both sides change sign
+
+77
+00:05:32,393 --> 00:05:32,733
+together.
+
+78
+00:05:38,687 --> 00:05:41,107
+Charge conservation gives a useful diagnostic.
+
+79
+00:05:41,967 --> 00:05:43,047
+Choose a fixed volume.
+
+80
+00:05:43,527 --> 00:05:47,087
+Count the charge inside, and count the current
+leaving through its closed surface.
+
+81
+00:05:47,887 --> 00:05:51,007
+If more charge flows out than in, the stored
+charge falls.
+
+82
+00:05:51,557 --> 00:05:55,737
+The divergence theorem converts the outward
+flux into a volume integral of the
+
+83
+00:05:55,737 --> 00:05:56,177
+divergence.
+
+84
+00:05:56,977 --> 00:06:01,197
+Since the choice of volume is arbitrary, we
+obtain the local continuity equation.
+
+85
+00:06:07,153 --> 00:06:11,353
+In a straight steady conductor that narrows,
+the same current passes through every
+
+86
+00:06:11,353 --> 00:06:15,533
+cross section, while the average current
+density increases in the narrow section.
+
+87
+00:06:16,193 --> 00:06:18,593
+A plot of that axial average can slope upward.
+
+88
+00:06:19,113 --> 00:06:20,733
+It is not the three-dimensional divergence.
+
+89
+00:06:21,463 --> 00:06:25,883
+Near a taper the current field can have
+transverse components, and an insulating wall
+
+90
+00:06:25,883 --> 00:06:27,683
+contributes no outward charge flux.
+
+91
+00:06:33,653 --> 00:06:37,013
+Suppose the lead current is steady and the
+conductor's sides are insulated.
+
+92
+00:06:37,593 --> 00:06:41,693
+Through a volume that spans the constriction,
+is the net outward current positive,
+
+93
+00:06:42,133 --> 00:06:43,093
+negative, or zero?
+
+94
+00:06:43,813 --> 00:06:47,073
+Draw arrows for the two end faces and label
+the outward normals.
+
+95
+00:06:47,543 --> 00:06:51,063
+Decide whether a higher current density
+implies a higher current.
+
+96
+00:06:58,087 --> 00:06:59,407
+The net flux is zero.
+
+97
+00:07:00,027 --> 00:07:03,747
+The same current enters and leaves, so charge
+does not accumulate.
+
+98
+00:07:04,567 --> 00:07:07,387
+Now take the divergence of the Ampere-Maxwell
+equation.
+
+99
+00:07:08,107 --> 00:07:10,967
+The divergence of the left hand curl vanishes
+identically.
+
+100
+00:07:11,407 --> 00:07:15,667
+Gauss's law turns the divergence of the
+changing electric field term into the time
+
+101
+00:07:15,667 --> 00:07:17,227
+derivative of charge density.
+
+102
+00:07:17,847 --> 00:07:20,267
+What remains on the right is the continuity
+equation.
+
+103
+00:07:26,253 --> 00:07:29,233
+The capacitor stores electric field energy as
+it charges.
+
+104
+00:07:29,993 --> 00:07:31,433
+How does that energy reach the gap?
+
+105
+00:07:32,113 --> 00:07:34,993
+Take the electric field to point up, along
+positive z.
+
+106
+00:07:35,693 --> 00:07:40,013
+In a circular capacitor, the magnetic field in
+the gap points around the axis in the
+
+107
+00:07:40,013 --> 00:07:41,453
+positive azimuthal direction.
+
+108
+00:07:42,063 --> 00:07:46,183
+The cross product of the electric and magnetic
+fields points radially inward.
+
+109
+00:07:52,087 --> 00:07:56,047
+Poynting's theorem follows by dotting the curl
+equations with the appropriate fields
+
+110
+00:07:56,047 --> 00:07:58,767
+and using the divergence identity for a cross
+product.
+
+111
+00:07:59,687 --> 00:08:04,387
+The result separates the rate of change of
+field energy, the outward energy flux and
+
+112
+00:08:04,387 --> 00:08:06,527
+the rate at which fields do work on matter.
+
+113
+00:08:07,077 --> 00:08:09,377
+In the vacuum gap, the work term is zero.
+
+114
+00:08:09,997 --> 00:08:13,897
+For this quasistatic example, the leading
+change is the electric energy.
+
+115
+00:08:19,820 --> 00:08:24,040
+For the gap volume, what is the sign of the
+outward electromagnetic power through its
+
+116
+00:08:24,040 --> 00:08:25,380
+curved side during charging?
+
+117
+00:08:26,240 --> 00:08:28,240
+Choose positive, zero, or negative.
+
+118
+00:08:28,900 --> 00:08:32,620
+Use the outward normal, not the direction in
+which you happen to draw the integration
+
+119
+00:08:32,620 --> 00:08:33,020
+arrow.
+
+120
+00:08:33,460 --> 00:08:36,920
+Then ask how this sign relates to the growing
+electric energy.
+
+121
+00:08:43,920 --> 00:08:45,440
+The outward power is negative.
+
+122
+00:08:46,200 --> 00:08:49,400
+Integrate the radial Poynting flux over the
+cylindrical side.
+
+123
+00:08:50,080 --> 00:08:54,820
+Using the Ampere-Maxwell field at the rim, the
+inward power is voltage times current.
+
+124
+00:08:55,500 --> 00:08:59,820
+Independently, differentiate one half times
+capacitance times voltage squared.
+
+125
+00:09:00,260 --> 00:09:01,340
+It gives the same power.
+
+126
+00:09:01,810 --> 00:09:06,030
+In the lab you will check both calculations
+and estimate when neglecting changing
+
+127
+00:09:06,030 --> 00:09:08,630
+magnetic energy and edge fringing is
+reasonable.
+
+128
+00:09:14,653 --> 00:09:18,133
+Move from slowly changing fields to a
+traveling plane wave.
+
+129
+00:09:18,753 --> 00:09:21,413
+Its electric and magnetic fields are
+transverse.
+
+130
+00:09:22,333 --> 00:09:26,513
+The ratio of electric field to magnetic field
+intensity is the wave impedance.
+
+131
+00:09:27,313 --> 00:09:31,193
+At a plane interface, match tangential
+electric and magnetic fields.
+
+132
+00:09:31,793 --> 00:09:36,153
+For the reflected wave the magnetic field
+changes sign relative to the electric field,
+
+133
+00:09:36,153 --> 00:09:38,813
+because the propagation direction reverses.
+
+134
+00:09:44,687 --> 00:09:47,427
+Take two linear lossless nonmagnetic media.
+
+135
+00:09:48,047 --> 00:09:51,427
+The impedance is the vacuum impedance divided
+by refractive index.
+
+136
+00:09:52,167 --> 00:09:56,227
+Solve the two matching equations for the
+reflected and transmitted electric amplitudes.
+
+137
+00:09:56,887 --> 00:10:00,927
+To compute average power, square the electric
+amplitude and divide by twice the
+
+138
+00:10:00,927 --> 00:10:01,227
+impedance.
+
+139
+00:10:01,887 --> 00:10:06,627
+A transmitted amplitude of one half, for
+example, does not by itself tell you the
+
+140
+00:10:06,627 --> 00:10:07,887
+fraction of power transmitted.
+
+141
+00:10:13,820 --> 00:10:17,800
+Send a wave from index one into index one
+point five at normal incidence.
+
+142
+00:10:18,420 --> 00:10:22,740
+Relative to the incident electric field at the
+interface, does the reflected electric
+
+143
+00:10:22,740 --> 00:10:26,040
+field have a minus sign, a plus sign, or zero
+amplitude?
+
+144
+00:10:26,780 --> 00:10:27,580
+Choose before solving.
+
+145
+00:10:28,140 --> 00:10:32,320
+Use both matching conditions and keep the
+forward and backward magnetic field signs
+
+146
+00:10:32,320 --> 00:10:32,780
+separate.
+
+147
+00:10:39,853 --> 00:10:43,693
+The reflected electric amplitude has a minus
+sign, giving a phase reversal at the
+
+148
+00:10:43,693 --> 00:10:44,053
+interface.
+
+149
+00:10:44,833 --> 00:10:47,473
+The reflected power fraction is four percent.
+
+150
+00:10:47,473 --> 00:10:52,113
+The transmitted electric amplitude is zero
+point eight, while transmitted power is
+
+151
+00:10:52,113 --> 00:10:53,373
+ninety-six percent.
+
+152
+00:10:53,373 --> 00:10:55,613
+The impedance factor makes the difference.
+
+153
+00:10:56,213 --> 00:11:01,493
+Check both field residuals and power
+conservation; either check alone can miss a
+
+154
+00:11:01,493 --> 00:11:01,793
+mistake.
+
+155
+00:11:07,787 --> 00:11:10,327
+Now put a transparent film between air and
+glass.
+
+156
+00:11:11,067 --> 00:11:14,767
+Reflection can come from both boundaries, and
+the field travels through the film in
+
+157
+00:11:14,767 --> 00:11:15,527
+both directions.
+
+158
+00:11:16,147 --> 00:11:19,867
+A film a quarter wavelength thick gives a
+half-cycle of round-trip phase.
+
+159
+00:11:20,417 --> 00:11:25,097
+To cancel reflection completely at the design
+wavelength, the returning amplitudes must
+
+160
+00:11:25,097 --> 00:11:25,897
+also balance.
+
+161
+00:11:26,717 --> 00:11:27,637
+Thickness sets phase.
+
+162
+00:11:28,277 --> 00:11:30,017
+Impedance sets the amplitude matching.
+
+163
+00:11:36,020 --> 00:11:41,100
+For nonmagnetic lossless media at normal
+incidence, choose the film index as the
+
+164
+00:11:41,100 --> 00:11:43,080
+geometric mean of the outer indices.
+
+165
+00:11:43,860 --> 00:11:48,240
+Set thickness to the vacuum design wavelength
+divided by four times that film index.
+
+166
+00:11:48,960 --> 00:11:52,260
+This ideal match eliminates reflection at the
+design wavelength.
+
+167
+00:11:52,830 --> 00:11:58,470
+A finite spectral band, material dispersion,
+absorption, or oblique incidence changes
+
+168
+00:11:58,470 --> 00:11:58,990
+the result.
+
+169
+00:12:04,920 --> 00:12:08,840
+Change the illumination wavelength while
+holding film thickness and indices fixed.
+
+170
+00:12:09,520 --> 00:12:14,560
+Does the cancellation generally remain exact,
+does reflected power generally return, or
+
+171
+00:12:14,560 --> 00:12:16,340
+is all incident power now absorbed?
+
+172
+00:12:17,200 --> 00:12:19,520
+Think about the phase accrued in one
+traversal.
+
+173
+00:12:19,950 --> 00:12:23,070
+State which assumptions exclude energy loss
+before choosing.
+
+174
+00:12:30,120 --> 00:12:32,040
+Reflected power generally returns.
+
+175
+00:12:32,720 --> 00:12:36,580
+The physical film stays the same, but its
+optical phase changes with wavelength.
+
+176
+00:12:37,400 --> 00:12:40,800
+In the Python lab, compare a boundary-matching
+solver with a separate
+
+177
+00:12:40,800 --> 00:12:42,160
+multiple-reflection formula.
+
+178
+00:12:42,680 --> 00:12:47,260
+Then design a coating for a new substrate and
+report how thickness tolerance shifts the
+
+179
+00:12:47,260 --> 00:12:48,140
+reflectance curve.
+
+180
+00:12:48,700 --> 00:12:52,620
+Explain what a real experiment would need to
+measure, and which conclusion would fail
+
+181
+00:12:52,620 --> 00:12:54,360
+first if your assumptions changed.

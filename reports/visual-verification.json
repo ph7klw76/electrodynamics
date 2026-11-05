@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "media": "Electrodynamics_Lecture.mp4",
+  "proof_comparisons": [
+    {
+      "scene": 1,
+      "frame": 981,
+      "mean_rgb_error": 1.5214763374485596,
+      "proof": "scene-1.png"
+    },
+    {
+      "scene": 2,
+      "frame": 1906,
+      "mean_rgb_error": 1.371275720164609,
+      "proof": "scene-2.png"
+    },
+    {
+      "scene": 5,
+      "frame": 4463,
+      "mean_rgb_error": 1.5334619341563787,
+      "proof": "scene-5.png"
+    },
+    {
+      "scene": 9,
+      "frame": 7860,
+      "mean_rgb_error": 1.5326388888888889,
+      "proof": "scene-9.png"
+    },
+    {
+      "scene": 13,
+      "frame": 11098,
+      "mean_rgb_error": 1.5238400205761318,
+      "proof": "scene-13.png"
+    },
+    {
+      "scene": 17,
+      "frame": 14246,
+      "mean_rgb_error": 1.525735596707819,
+      "proof": "scene-17.png"
+    },
+    {
+      "scene": 21,
+      "frame": 17624,
+      "mean_rgb_error": 1.5409465020576132,
+      "proof": "scene-21.png"
+    },
+    {
+      "scene": 27,
+      "frame": 22587,
+      "mean_rgb_error": 1.6389737654320988,
+      "proof": "scene-27.png"
+    }
+  ],
+  "quiz_boundaries": [
+    {
+      "id": "Q1",
+      "before": 2583,
+      "after": 2674,
+      "mean_rgb_change": 16.294495884773664
+    },
+    {
+      "id": "Q2",
+      "before": 6004,
+      "after": 6095,
+      "mean_rgb_change": 14.764336419753086
+    },
+    {
+      "id": "Q3",
+      "before": 9309,
+      "after": 9400,
+      "mean_rgb_change": 14.851975308641975
+    },
+    {
+      "id": "Q4",
+      "before": 12535,
+      "after": 12626,
+      "mean_rgb_change": 15.383485082304526
+    },
+    {
+      "id": "Q5",
+      "before": 15710,
+      "after": 15801,
+      "mean_rgb_change": 14.649899691358025
+    },
+    {
+      "id": "Q6",
+      "before": 19188,
+      "after": 19279,
+      "mean_rgb_change": 14.635915637860082
+    },
+    {
+      "id": "Q7",
+      "before": 22496,
+      "after": 22587,
+      "mean_rgb_change": 15.16701646090535
+    }
+  ]
+}

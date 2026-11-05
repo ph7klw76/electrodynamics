@@ -1,0 +1,34 @@
+{
+  "script": "Can energy cross an empty gap? Pause and make a prediction. Ampere's law and Maxwell's displacement current explain the magnetic circulation. Faraday's law links a solenoid's changing magnetic flux to the azimuthal electric field. Stokes' theorem connects circulation and curl. The Poynting vector measures electromagnetic energy flux. Finally, we will use impedance to predict reflection from a dielectric film.",
+  "samples": [
+    {
+      "profile": "chatterbox_warm",
+      "label": "Warm lecturer",
+      "file": "outputs\\voice_samples\\01_chatterbox_warm.wav",
+      "duration_seconds": 25.75,
+      "word_error_rate": 0.0,
+      "asr": "Can energy cross an empty gap? Pause and make a prediction. Ampere's law and Maxwell's displacement  current explain the magnetic circulation. Faraday's law links a solenoid's changing  magnetic flux to the azimuthal electric field. Stokes' theorem connects circulation and curl.  The pointing vector measures electromagnetic energy flux.  Finally, we will use impedance to predict reflection from a dielectric film.",
+      "measured_integrated_lufs": -18.0735860115811
+    },
+    {
+      "profile": "chatterbox_expressive",
+      "label": "Curious storyteller",
+      "file": "outputs\\voice_samples\\02_chatterbox_expressive.wav",
+      "duration_seconds": 18.28,
+      "word_error_rate": 0.047619047619047616,
+      "asr": "An energy cross and empty gap. Pause and make a prediction. Ampere's law and Knoxville's displacement current explain the magnetic circulation. Faraday's law links a solenoid's changing magnetic flux to the azimuthal electric field. Stokes' theorem connects circulation and curl. The pointing vector measures electromagnetic energy flux. Finally, we will use impedance to predict reflection from a dielectric film.",
+      "measured_integrated_lufs": -18.0432563291071
+    },
+    {
+      "profile": "kokoro_heart",
+      "label": "Kokoro Heart — calm lecturer",
+      "file": "outputs\\voice_samples\\03_kokoro_heart.wav",
+      "duration_seconds": 26.5,
+      "word_error_rate": 0.0,
+      "asr": "Can energy cross an empty gap? Pause and make a prediction. Ampere's law and Maxwell's displacement  current explain the magnetic circulation. Faraday's law links a solenoid's changing magnetic flux to  the azimuthal electric field. Stokes' theorem connects circulation and curl. The pointing vector  measures electromagnetic energy flux. Finally, we will use impedance to predict reflection from  a dielectric film.",
+      "measured_integrated_lufs": -18.03407141684398
+    }
+  ],
+  "selection_policy": "Prefer the warm Chatterbox reading if intelligibility is reliable; use Kokoro when primary fails. WER is an intelligibility proxy, not a perceptual naturalness score.",
+  "comparison_mastering": "Loudness matched to nominal -18 LUFS, -1.5 dBTP; native 24 kHz 24-bit PCM."
+}

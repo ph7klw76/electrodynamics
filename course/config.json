@@ -1,0 +1,16 @@
+{
+  "title": "Electrodynamics",
+  "slug": "electrodynamics",
+  "repository": "ph7klw76/electrodynamics",
+  "website_url": "https://ph7klw76.github.io/electrodynamics/",
+  "base_path": "/electrodynamics/",
+  "youtube_url": "https://youtu.be/oKZdKkD_e9U",
+  "producer": "individual",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "target_seconds": 780,
+  "video_stem": "Electrodynamics_Lecture",
+  "status": "video-confirmed",
+  "video_revision": "6c703b5c1a6e"
+}

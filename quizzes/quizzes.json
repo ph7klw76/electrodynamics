@@ -1,0 +1,163 @@
+[
+  {
+    "id": "Q1",
+    "scene": 2,
+    "review_scene": 0,
+    "question": "Across the ideal vacuum gap of a charging capacitor, what accounts for the lead current in Ampère-Maxwell's law?",
+    "options": [
+      "The electric flux is fixed.",
+      "ε₀ times the rate of change of electric flux.",
+      "Conduction electrons crossing the gap."
+    ],
+    "correct": 1,
+    "explanation": "The electric flux is Q/ε₀ in the ideal gap, so ε₀ dΦ_E/dt = dQ/dt = I.",
+    "wrong": {
+      "0": "The plates are gaining charge. Gauss's law connects that changing charge to changing electric flux.",
+      "2": "In an ideal vacuum capacitor, charges accumulate on the plates. The field term accounts for the gap."
+    },
+    "time_seconds": 80,
+    "frame": 2400,
+    "review_seconds": 0.0,
+    "hold_start_frame": 2389,
+    "reveal_frame": 2584,
+    "timestamp": "01:20"
+  },
+  {
+    "id": "Q2",
+    "scene": 6,
+    "review_scene": 4,
+    "question": "Viewed from +z, which way does E circulate outside a long solenoid whose +z magnetic field is increasing?",
+    "options": [
+      "Clockwise.",
+      "Counterclockwise.",
+      "There is no induced E."
+    ],
+    "correct": 0,
+    "explanation": "The positive flux increases. Faraday's minus sign gives negative circulation relative to the counterclockwise direction.",
+    "wrong": {
+      "1": "The right-hand orientation is counterclockwise for +z. The increasing positive flux enters with a minus sign.",
+      "2": "The loop encloses a changing flux even where the local magnetic field is negligible."
+    },
+    "time_seconds": 194,
+    "frame": 5820,
+    "review_seconds": 118.56666666666666,
+    "hold_start_frame": 5810,
+    "reveal_frame": 6005,
+    "timestamp": "03:14"
+  },
+  {
+    "id": "Q3",
+    "scene": 10,
+    "review_scene": 8,
+    "question": "A small disk lies entirely outside the ideal solenoid and misses its axis. What must vanish?",
+    "options": [
+      "The electric field at every point of the edge.",
+      "The magnetic flux change, but the circulation equals the larger loop's.",
+      "The electric circulation around this edge."
+    ],
+    "correct": 2,
+    "explanation": "The flux through this disk is constant at zero, so Faraday's law gives zero electric circulation.",
+    "wrong": {
+      "0": "A line integral can vanish even when the field is nonzero along the path.",
+      "1": "Different boundary curves can enclose different changing fluxes. Apply the law to this disk."
+    },
+    "time_seconds": 305,
+    "frame": 9150,
+    "review_seconds": 233.0,
+    "hold_start_frame": 9115,
+    "reveal_frame": 9310,
+    "timestamp": "05:05"
+  },
+  {
+    "id": "Q4",
+    "scene": 14,
+    "review_scene": 12,
+    "question": "A steady insulated conductor narrows. What is the net outward current through a volume spanning the constriction?",
+    "options": [
+      "Positive.",
+      "Zero.",
+      "Negative."
+    ],
+    "correct": 1,
+    "explanation": "Steady charge means no accumulation. The inlet and outlet carry equal currents with opposite outward signs.",
+    "wrong": {
+      "0": "Greater current density over a smaller area can carry the same total current. Compare face integrals.",
+      "2": "There is no accumulation in this steady example. Include the exit current as well as the entry."
+    },
+    "time_seconds": 412,
+    "frame": 12360,
+    "review_seconds": 338.46666666666664,
+    "hold_start_frame": 12341,
+    "reveal_frame": 12536,
+    "timestamp": "06:52"
+  },
+  {
+    "id": "Q5",
+    "scene": 18,
+    "review_scene": 16,
+    "question": "While a circular vacuum capacitor charges with V > 0 and I > 0, what is the sign of outward side power?",
+    "options": [
+      "Positive.",
+      "Zero.",
+      "Negative."
+    ],
+    "correct": 2,
+    "explanation": "E points along +z and H along +φ. E × H points inward, giving negative outward power and increasing electric energy.",
+    "wrong": {
+      "0": "Check the cross-product order E × H and the outward radial normal.",
+      "1": "The work term J·E is zero in the vacuum gap, but the electromagnetic flux can cross the side."
+    },
+    "time_seconds": 518,
+    "frame": 15540,
+    "review_seconds": 446.03333333333336,
+    "hold_start_frame": 15516,
+    "reveal_frame": 15711,
+    "timestamp": "08:38"
+  },
+  {
+    "id": "Q6",
+    "scene": 22,
+    "review_scene": 20,
+    "question": "A normally incident wave goes from n = 1 to n = 1.5. What is the reflected electric field sign at the interface?",
+    "options": [
+      "Negative.",
+      "Positive.",
+      "Zero."
+    ],
+    "correct": 0,
+    "explanation": "r = (1 − 1.5)/(1 + 1.5) = −0.2. The reflected electric field has a π phase shift at the interface.",
+    "wrong": {
+      "1": "The backward wave reverses the sign in the magnetic matching condition. Solve both conditions together.",
+      "2": "The indices differ, so these nonmagnetic media have unequal wave impedances."
+    },
+    "time_seconds": 634,
+    "frame": 19020,
+    "review_seconds": 554.4333333333333,
+    "hold_start_frame": 18994,
+    "reveal_frame": 19189,
+    "timestamp": "10:34"
+  },
+  {
+    "id": "Q7",
+    "scene": 26,
+    "review_scene": 24,
+    "question": "A matched quarter-wave film stays fixed while the vacuum wavelength changes. What generally happens?",
+    "options": [
+      "Cancellation stays exact at every wavelength.",
+      "Reflected power returns.",
+      "All incident power is absorbed."
+    ],
+    "correct": 1,
+    "explanation": "The phase 2π n_f d/λ depends on wavelength. Detuning generally spoils cancellation; the model has no absorption.",
+    "wrong": {
+      "0": "The physical thickness is fixed, but the number of wavelengths traversed is not.",
+      "2": "The materials are lossless. Any missing transmitted power must be reflected in this model."
+    },
+    "time_seconds": 744,
+    "frame": 22320,
+    "review_seconds": 667.5666666666667,
+    "hold_start_frame": 22302,
+    "reveal_frame": 22497,
+    "timestamp": "12:24"
+  }
+]

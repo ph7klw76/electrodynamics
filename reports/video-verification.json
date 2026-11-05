@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "edition": "full",
+  "file": "Electrodynamics_Lecture.mp4",
+  "frames": 23400,
+  "duration_seconds": 780.0,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "codec": "H.264/AAC",
+  "pixel_format": "yuv420p",
+  "color_space": "limited BT.709",
+  "audio_tracks": 1,
+  "chapters": 7,
+  "embedded_caption_cues": 181,
+  "full_decode": true,
+  "audio_correlations": [
+    0.9999947522517921,
+    0.9999913450595771,
+    0.999992495702122
+  ],
+  "integrated_lufs": -16.25,
+  "true_peak_db": -1.37,
+  "verified_at": "2026-11-05T11:32:00.766580+00:00",
+  "video_sha256": "9a83b8898e8d25902fa2a1768cc64aa865c6c8ec4c146948574223024b4172e1",
+  "timeline_sha256": "d2ddc2c50943fdbc289e01a843a51faf18a5564fad30a19b46f2d037afd94772",
+  "narration_sha256": "952949b635bb404c6ae98b9ba8836800b702150c664143b42caab556074e6d8a"
+}

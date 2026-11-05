@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "Isolated local-MP4 native H5P preview",
+  "content_type": "H5P.InteractiveVideo",
+  "libraries": 53,
+  "checkpoints": 7,
+  "summary": true,
+  "sha256": "567b87ee50e8f197a81635fd7d8daa0ec1f14655f8b829b7b0468877add55010"
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An upper-division field lab on Maxwell’s equations, induction, energy flow, and optical coatings.">
+<title>Electrodynamics | Field Lab</title>
+<link rel="stylesheet" href="style.css?v=c91aae998702"><link rel="stylesheet" href="assets/katex/katex.min.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to lesson</a>
+<header><a class="brand" href="#main"><span>∇</span> ELECTRODYNAMICS FIELD LAB</a>
+<nav aria-label="Course"><a href="#explore">Explore</a><a href="#watch">Watch &amp; Question</a><a href="#lab">Python lab</a><a href="#investigate">Transfer</a></nav></header>
+<main id="main">
+<section class="hero" aria-labelledby="intro">
+ <div>
+  <p class="eyebrow">UPPER-DIVISION UNDERGRADUATE PHYSICS / E&amp;M II</p>
+  <h1 id="intro">Can energy cross an <em>empty gap?</em></h1>
+  <p class="lead">Follow the fields from a charging capacitor to a transparent coating. Use Maxwell’s equations to predict what changes, what is conserved, and what an experiment would need to measure.</p>
+  <a class="button" href="#watch">Watch &amp; Question ↓</a><a class="textlink" href="#lab">Open the Python lab</a>
+ </div>
+ <aside class="hero-card" aria-label="The central puzzle">
+  <p class="eyebrow">01 SCENARIO / THE VACUUM GAP</p>
+  <div class="hero-ket" data-math="\mathbf S=\mathbf E\times\mathbf H"></div>
+  <div class="recipe"><b>01 PREDICT</b><b>02 COMPUTE</b><b>03 CHECK</b></div>
+  <p>The lead carries charge. The vacuum gap carries a changing field. Which way does electromagnetic energy flow as the capacitor charges?</p>
+  <div class="stat"><strong>07</strong><span>CONCEPTUAL CHECKPOINTS<br>+ ONE INDEPENDENT DESIGN TASK</span></div>
+ </aside>
+</section>
+<section id="explore">
+ <div class="section-title"><div><p class="eyebrow">01 / EXPLORE A MODEL</p><h2>When does a film<br>stop reflecting?</h2></div>
+ <p>An ideal film between air and glass cancels reflection near its design wavelength. Keep the film fixed and move the wavelength. Then vary its thickness and predict where the minimum shifts.</p></div>
+ <div class="simulation">
+  <form id="controls" aria-label="Optical film parameters"><h3>Film controls</h3>
+   <label for="wavelength">Vacuum wavelength <output id="wavelengthOut" for="wavelength"></output></label><input id="wavelength" type="range" min="400" max="700" value="550">
+   <label for="thickness">Physical thickness <output id="thicknessOut" for="thickness"></output></label><input id="thickness" type="range" min="50" max="190" step=".01" value="112.27">
+   <button type="reset" id="reset">Reset to the matched design</button>
+   <p class="small">Fixed indices 1.00 → √1.5 → 1.50. Normal incidence. Lossless and nondispersive. The bare interface reflects 4%.</p>
+  </form>
+  <div class="science"><div class="numbers" aria-live="polite"><div><span>REFLECTANCE</span><strong id="reflectance">—</strong></div><div><span>TRANSMITTANCE</span><strong id="transmittance">—</strong></div><div><span>FIRST MINIMUM</span><strong id="design">—</strong></div></div>
+  <svg id="spectrum" role="img" aria-label="Reflectance spectrum from 400 to 700 nanometres" viewBox="0 0 640 300" width="640" height="300"></svg>
+  <p class="small" id="plotNote">The solid line shows the coated interface. The dashed line shows bare glass.</p>
+  <details><summary>Model equation and assumptions</summary><div data-math="r=\frac{r_{1f}+r_{f3}e^{2i\delta}}{1+r_{1f}r_{f3}e^{2i\delta}},\quad \delta=2\pi n_f d/\lambda_0"></div><p>Reflectance is |r|². The lab independently solves the four tangential-field boundary equations and checks the power balance.</p></details></div>
+ </div>
+</section>
+<section id="watch">
+ <div class="section-title"><div><p class="eyebrow">02 / WATCH &amp; QUESTION</p><h2>Follow the field.<br>Defend your prediction.</h2></div>
+ <p>The video and checkpoints share one H5P player. At each pause, choose an answer, read the feedback, and use the review jump before trying again.</p></div>
+ <div class="watch-layout"><div>
+  <div class="pending" id="videoPending"><h3>Lecture upload pending</h3><p>The independent practice and lab below are available in this preview.</p><a href="#practice">Start the practice activities ↓</a></div>
+  <iframe id="lectureH5p" class="lecture-h5p" title="Electrodynamics interactive lecture and questions" loading="lazy" allow="fullscreen; autoplay; encrypted-media" allowfullscreen hidden></iframe>
+  <div class="resources"><a id="youtubeLink" hidden>Open on YouTube ↗</a><a href="lecture.srt" download>Captions · SRT</a><a href="lecture.vtt" download>Captions · VTT</a><a id="h5pDownload" href="h5p/Electrodynamics_Interactive.h5p" download hidden>Native H5P download</a></div>
+ </div><aside aria-label="Lecture chapters"><h3>Chapters</h3><div id="chapters"></div><p id="chapterFeedback" role="status" class="small"></p></aside></div>
+</section>
+<section id="lab">
+ <div class="section-title"><div><p class="eyebrow">03 / COMPUTE &amp; CHECK</p><h2>Run your own<br>field calculations.</h2></div>
+ <p>Use vector calculus and complex amplitudes to make quantitative predictions. Four worked investigations connect the video questions to model checks.</p></div>
+ <div class="lab-grid"><article class="lab-card"><h3>Electrodynamics Python lab</h3>
+ <p>Compare the capacitor energy budget, integrate solenoid fields, check continuity in a taper, and vary the thickness of a coating.</p>
+ <a class="button" href="lab/lab/index.html?path=Electrodynamics_Lab.ipynb">Launch JupyterLite ↗</a>
+ <p class="small">First launch needs network access. If asked, choose Python (Pyodide). Use Run → Run All Cells, then download your notebook to keep your changes.</p>
+ <a href="Electrodynamics_Lab.ipynb" download>Download notebook ↓</a>
+ </article><article><h3>How to investigate</h3><ol class="steps"><li>Predict a direction, sign or limiting value.</li><li>Compute it independently in two ways.</li><li>Change one parameter and explain the result.</li><li>Use a convergence or sensitivity check.</li><li>State what a real measurement could test.</li></ol></article></div>
+</section>
+<section id="practice">
+ <div class="section-title"><div><p class="eyebrow">04 / CHECK YOUR REASONING</p><h2>Practice without<br>the video.</h2></div><p>Each standalone H5P question gives feedback and a retry. Explain why the distractors fail, then revisit the matching notebook investigation.</p></div>
+ <div id="practiceLinks" class="practice-links"></div>
+ <p class="small">These original formative activities draw on learning goals in the CURrENT study. Their scores serve as practice feedback. The site does not store individual grades.</p>
+</section>
+<section id="investigate" class="transfer">
+ <p class="eyebrow">05 / INDEPENDENT TRANSFER</p><h2>Design a coating<br>for an unfamiliar substrate.</h2>
+ <p>A sensor window has index 2.25. Your available film has index 1.40. Choose a thickness that controls reflection over 450–650 nm with a manufacturing tolerance of ±8 nm.</p>
+ <div class="transfer-grid"><div><h3>Derive the ideal match.</h3><p>Use both boundary conditions. Compare the ideal film with the available material.</p></div><div><h3>Optimize a real constraint.</h3><p>Minimize the worst reflectance over the wavelength band and thickness uncertainty.</p></div><div><h3>Defend the model.</h3><p>Check numerical convergence, compare against bare glass, and propose a measurement.</p></div></div>
+ <a class="button" href="assessment.html">Open the investigation and rubric ↗</a>
+</section>
+<section id="sources"><p class="eyebrow">SOURCES &amp; SCOPE</p><h2>Research and assumptions</h2>
+ <p>Conceptual learning goals draw on C. Baily, Q. X. Ryan, C. Astolfi, and S. J. Pollock, “Conceptual assessment tool for advanced undergraduate electrodynamics,” <a href="https://doi.org/10.1103/PhysRevPhysEducRes.13.020113"><i>Phys. Rev. Phys. Educ. Res.</i> 13, 020113 (2017)</a>. This module uses original formative questions.</p>
+ <p>Scientific background: <a href="https://ocw.mit.edu/courses/8-02t-electricity-and-magnetism-spring-2005/pages/lecture-notes/">MIT 8.02T notes</a>. Prerequisites are introductory E&amp;M, vector calculus, complex numbers and basic Python. The module treats selected E&amp;M II ideas in SI, with explicit idealizations in the lecture and lab.</p>
+ <a id="repositoryLink" href="https://github.com/ph7klw76/electrodynamics">Source, build instructions and verification ↗</a>
+</section>
+</main>
+<footer><a class="brand" href="#main"><span>∇</span> ELECTRODYNAMICS FIELD LAB</a><p>Original lesson content CC BY 4.0 · Code MIT<br><a href="CONTENT_LICENSE.md">Content license</a> · <a href="LICENSE">Code license</a></p></footer>
+<script src="config.js?v=f066b8c55a07"></script><script src="assets/katex/katex.min.js"></script><script src="physics.js?v=99b58352a2ea"></script><script src="app.js?v=96b9a976e816"></script>
+</body></html>
