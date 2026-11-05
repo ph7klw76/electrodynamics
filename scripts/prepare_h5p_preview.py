@@ -2,6 +2,7 @@
 
 The preview copy is ignored by Git and isolated from public configuration.
 """
+from argparse import ArgumentParser
 from hashlib import sha256
 from pathlib import Path
 import json
@@ -15,8 +16,11 @@ OUT = ROOT / "outputs"
 CFG = json.loads((ROOT / "course/config.json").read_text())
 PORT = 8778
 source = f"http://127.0.0.1:{PORT}{CFG['base_path']}media/lecture.mp4"
-video = OUT / "Electrodynamics_Lecture.mp4"
-verified = json.loads((OUT / "video-verification.json").read_text())
+parser = ArgumentParser()
+parser.add_argument("--render-dir",type=Path,default=OUT)
+render_dir = parser.parse_args().render_dir.resolve()
+verified = json.loads((render_dir / "video-verification.json").read_text())
+video = render_dir / verified["file"]
 if verified["edition"] != "full" or verified["status"] != "PASS":
     raise RuntimeError("Verify the full render before creating the playback preview.")
 if sha256(video.read_bytes()).hexdigest() != verified["video_sha256"]:

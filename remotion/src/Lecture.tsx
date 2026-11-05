@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {AbsoluteFill, Img, Sequence, interpolate, staticFile, useCurrentFrame, delayRender, continueRender} from 'remotion';
-import {Video, Audio} from '@remotion/media';
+import {AbsoluteFill, Sequence, interpolate, staticFile, useCurrentFrame, delayRender, continueRender} from 'remotion';
+import {Audio} from '@remotion/media';
+import {FieldMotion} from './FieldMotion';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 import './style.css';
@@ -8,13 +9,35 @@ import events from './generated/events.json';
 
 const palette = {paper:'#071a24',panel:'#102a36',ink:'#f6f7ed',muted:'#b7d1d6',teal:'#74e2d4',gold:'#ffc679',line:'#305260'};
 const font = 'Arial, Helvetica, sans-serif';
-const symbols = ['∮ B', '∂B/∂t', '∇ × E', '∇ · J', 'E × H', 'E, H', 'δ'];
-const labels = ['SAME CONTOUR','CHANGING FLUX','LOCAL TO GLOBAL','CHARGE BUDGET','ENERGY BUDGET','BOUNDARY MATCH','OPTICAL PHASE'];
+const takeaways: Record<number,string> = {
+  0:'Keep the edge fixed and compare two surfaces.',
+  1:'The flat surface cuts the wire. The bulging surface reaches the gap.',
+  3:'The electric flux grows while the lead current stays steady.',
+  4:'A changing axial field drives electric circulation outside the coil.',
+  5:'The field-filled area stops growing at the coil radius.',
+  7:'Reverse the magnetic ramp. The electric arrows reverse even while B stays positive.',
+  8:'Adjacent cells trace each shared edge in opposite directions.',
+  9:'The small loop encloses no changing magnetic flux. Local E still exists along it.',
+  11:'The signed contributions cancel after one trip around the exterior loop.',
+  12:'When outflow exceeds inflow, the charge inside decreases.',
+  13:'The narrow end has larger current density over a smaller area.',
+  15:'The end currents balance. The steady volume stores no additional charge.',
+  16:'Use the E and B directions to find which way energy crosses the rim.',
+  17:'Watch the stored electric energy rise as power enters through the side.',
+  19:'Inward power grows from 4 to 20 mW as the voltage rises at fixed current.',
+  20:'Changing the direction of propagation reverses H relative to E.',
+  21:'Field amplitudes and power fractions tell you different things.',
+  23:'The reflected electric field flips phase. The reflected power is 4%.',
+  24:'The thickness sets the round-trip phase. The index sets the amplitudes.',
+  25:'At 550 nm the returning phasor cancels the first reflection.',
+  27:'A shorter wavelength changes the phase and produces a net reflected field.',
+};
+const equationIndex: Record<number,number> = {3:1,4:0,5:0,7:0,8:0,11:0,12:1,13:0,16:1,17:1,19:1,20:0,21:1,25:0};
 type Scene = typeof events.scenes[number];
 
-const Equation: React.FC<{formula:string; index:number}> = ({formula,index}) => {
+const Equation: React.FC<{formula:string; at:number}> = ({formula,at}) => {
   const frame=useCurrentFrame();
-  const opacity=interpolate(frame,[10+index*14,25+index*14],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
+  const opacity=interpolate(frame,[at,at+22],[0,1],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
   const html=katex.renderToString(formula,{displayMode:true,throwOnError:true});
   const fontSize=formula.length>140?33:formula.length>105?38:formula.length>70?42:49;
   const outer=useRef<HTMLDivElement>(null), inner=useRef<HTMLDivElement>(null);
@@ -38,28 +61,15 @@ const Equation: React.FC<{formula:string; index:number}> = ({formula,index}) => 
   </div>;
 };
 
-const FieldLines:React.FC<{phase:number;color?:string}> = ({phase,color=palette.teal}) => (
-  <svg width="100%" height="100%" viewBox="0 0 900 600" aria-hidden="true">
-    <defs><radialGradient id="fieldGlow"><stop stopColor={color} stopOpacity=".18"/><stop offset="1" stopColor={color} stopOpacity="0"/></radialGradient></defs>
-    <rect width="900" height="600" fill="url(#fieldGlow)"/>
-    {Array.from({length:11},(_,i)=>{
-      const y=68+i*46;
-      const a=42*Math.cos(i*.46+phase);
-      return <path key={i} d={`M 25 ${y} C 260 ${y+a} 610 ${y-a} 875 ${y}`} stroke={color} strokeOpacity={i===5?.62:.25} fill="none" strokeWidth={i===5?3:1.6}/>;
-    })}
-    {Array.from({length:15},(_,i)=><path key={i} d={`M ${30+i*60} 48 V 548`} stroke={color} strokeOpacity=".08"/>)}
-    <circle cx="450" cy="300" r="150" fill="none" stroke={color} strokeOpacity=".24" strokeDasharray="5 14" strokeWidth="2"/>
-  </svg>
-);
-
 const Presentation:React.FC<{scene:Scene}> = ({scene})=>{
   const frame=useCurrentFrame();
   const chapter=events.chapters[scene.chapter];
   const question=events.quizzes.find(q=>q.scene===scene.index);
   const enter=interpolate(frame,[0,14],[0,1],{extrapolateRight:'clamp'});
-  const highlight=scene.highlight_frame!==null&&frame+scene.start_frame>=scene.highlight_frame&&frame+scene.start_frame<scene.highlight_frame+70;
-  const localAnimationFrames=Math.min(scene.duration_frames,chapter.animation_frames);
+  const progress=frame/(scene.duration_frames-1);
   const reveal=scene.kind==='reveal';
+  const equation=scene.formulas[equationIndex[scene.index]];
+  const equationAt=Math.round(scene.duration_frames*.58);
   const shell={position:'absolute' as const,left:66,right:66,top:277,height:652,borderRadius:20,background:palette.panel,border:`1px solid ${palette.line}`};
   return <AbsoluteFill style={{fontFamily:font,color:palette.ink}}>
     <header style={{position:'absolute',top:40,left:68,right:68,display:'flex',justifyContent:'space-between',fontSize:24,letterSpacing:3,color:palette.teal}}>
@@ -68,7 +78,7 @@ const Presentation:React.FC<{scene:Scene}> = ({scene})=>{
     <div style={{position:'absolute',left:66,right:66,top:102,opacity:enter}}>
       <div style={{fontSize:23,letterSpacing:3,color:palette.gold}}>{chapter.title.toUpperCase()}</div>
       <div style={{fontSize:63,lineHeight:1.04,fontWeight:700,marginTop:10}}>{scene.title}</div>
-      <div style={{fontSize:30,color:palette.muted,marginTop:11}}>{scene.focus}</div>
+      <div style={{fontSize:30,color:palette.muted,marginTop:11}}>{scene.index===7?'Clockwise for increasing B. The arrows reverse when B decreases.':scene.focus}</div>
     </div>
     {question?<div style={{...shell,padding:'36px 51px'}}>
       <div style={{fontSize:24,color:palette.gold,letterSpacing:4}}>PREDICT / {question.id}</div>
@@ -80,19 +90,15 @@ const Presentation:React.FC<{scene:Scene}> = ({scene})=>{
         <div style={{height:4,background:palette.line,marginTop:17}}><div style={{height:4,background:palette.gold,width:`${interpolate(frame+scene.start_frame,[question.hold_start_frame,question.reveal_frame],[0,100],{extrapolateLeft:'clamp',extrapolateRight:'clamp'})}%`}}/></div>
       </div>
     </div>:<>
-      <div style={{...shell,right:'auto',width:874,overflow:'hidden'}}>
-        {reveal?<><Img src={staticFile(`manim/chapter-${scene.chapter+1}.png`)} style={{width:874,height:612,objectFit:'contain'}}/>
-          <Sequence durationInFrames={localAnimationFrames}><Video muted src={staticFile(`manim/chapter-${scene.chapter+1}.mp4`)} style={{width:874,height:612,objectFit:'contain'}}/></Sequence></>
-          :<><FieldLines phase={scene.chapter*.9}/><div style={{position:'absolute',inset:0,display:'grid',placeContent:'center',textAlign:'center'}}>
-              <div style={{fontSize:27,letterSpacing:5,color:palette.teal}}>{labels[scene.chapter]}</div>
-              <div style={{font:'144px Georgia, serif',color:palette.ink,textShadow:`0 8px 45px ${palette.paper}`}}>{symbols[scene.chapter]}</div>
-            </div></>}
-        <div style={{position:'absolute',bottom:16,left:25,fontSize:20,letterSpacing:2,color:palette.muted}}>{reveal?'MODEL VISUALIZATION':'FIELD NOTE / KEY QUANTITY'}</div>
+      <div style={{...shell,right:'auto',width:1164,overflow:'hidden'}}>
+        <FieldMotion chapter={scene.chapter} step={scene.index%4} progress={progress} seconds={frame/events.fps}/>
       </div>
-      <div style={{position:'absolute',left:985,right:68,top:305,height:582,display:'flex',flexDirection:'column',justifyContent:'center'}}>
-        <div style={{fontSize:24,letterSpacing:4,color:highlight?palette.gold:palette.teal}}>{highlight?`KEY IDEA / ${scene.highlight_term.toUpperCase()}`:reveal?'CHECK THE PREDICTION':'THE REASONING'}</div>
-        <div style={{margin:'20px 0'}}>{scene.formulas.map((formula,i)=><Equation key={formula} formula={formula} index={i}/>)}</div>
-        <div style={{fontSize:32,color:palette.muted,lineHeight:1.3,borderTop:`1px solid ${palette.line}`,paddingTop:23}}>{scene.note}</div>
+      <div style={{position:'absolute',left:1280,right:69,top:303,height:597,display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        <div style={{fontSize:24,letterSpacing:3,color:palette.teal}}>{reveal?'CHECK THE PREDICTION':'WATCH THE MODEL'}</div>
+        <div style={{fontSize:40,lineHeight:1.22,margin:'24px 0'}}>{takeaways[scene.index]}</div>
+        {equation&&frame>=equationAt&&<div style={{paddingTop:16,borderTop:'1px solid '+palette.line}}>
+          <Equation formula={equation} at={equationAt}/>
+        </div>}
         {scene.index===events.scenes.length-1&&<div style={{color:palette.gold,fontSize:27,marginTop:25}}>OPEN THE PYTHON LAB • LINK IN DESCRIPTION</div>}
       </div>
     </>}
@@ -110,16 +116,21 @@ export const Lecture:React.FC<{showCaptions:boolean}> = ({showCaptions})=>{
   return <AbsoluteFill style={{background:palette.paper}}>
     <Sequence from={scene.start_frame} durationInFrames={scene.duration_frames}><Presentation scene={scene}/></Sequence>
     <Audio src={staticFile('media/narration.wav')}/>
-    {cue&&<div style={{position:'absolute',left:130,right:130,bottom:130,font:`34px/1.3 ${font}`,color:'white',textAlign:'center',padding:18,background:'#071a24ed',borderRadius:10,whiteSpace:'pre-line'}}>{cue.text}</div>}
+    {cue&&<div style={{position:'absolute',left:130,right:130,bottom:80,font:`34px/1.3 ${font}`,color:'white',textAlign:'center',padding:18,background:'#071a24ed',borderRadius:10,whiteSpace:'pre-line'}}>{cue.text}</div>}
     <div style={{position:'absolute',bottom:0,height:5,width:`${100*frame/(events.duration_frames-1)}%`,background:palette.teal}}/>
   </AbsoluteFill>;
 };
 
 export const Thumbnail:React.FC = ()=> <AbsoluteFill style={{background:palette.paper,color:palette.ink,fontFamily:font}}>
-  <div style={{position:'absolute',width:670,height:590,right:-120,top:56}}><FieldLines phase={1.2} color={palette.gold}/></div>
-  <div style={{position:'absolute',right:68,top:209,color:palette.gold,font:'162px Georgia, serif'}}>E × H</div>
+  <svg width="520" height="500" viewBox="0 0 520 500" style={{position:'absolute',right:30,top:110}}>
+    <rect x="93" y="118" width="330" height="18" rx="6" fill="#8cbcff"/>
+    <rect x="93" y="338" width="330" height="18" rx="6" fill="#ff9ba0"/>
+    <path d="M156 315V158m-13 16 13-16 13 16 M258 315V158m-13 16 13-16 13 16 M360 315V158m-13 16 13-16 13 16" fill="none" stroke={palette.gold} strokeWidth="8"/>
+    <path d="M15 243H113m-24-19 24 19-24 19 M501 243H403m24-19-24 19 24 19" fill="none" stroke={palette.teal} strokeWidth="12"/>
+    <text x="260" y="416" fill={palette.teal} fontSize="26" textAnchor="middle" letterSpacing="3">ENERGY ENTERS THE GAP</text>
+  </svg>
   <div style={{position:'absolute',left:64,top:65,fontSize:26,color:palette.teal,letterSpacing:5}}>ELECTRODYNAMICS / FIELD LAB</div>
   <div style={{position:'absolute',left:59,top:171,maxWidth:692,fontSize:86,fontWeight:800,lineHeight:.99}}>CAN ENERGY<br/>CROSS A <span style={{color:palette.teal}}>GAP?</span></div>
-  <div style={{position:'absolute',left:64,top:454,color:palette.muted,fontSize:36}}>From Maxwell’s equations to optical coatings</div>
+  <div style={{position:'absolute',left:64,top:454,color:palette.muted,fontSize:36}}>Field animations from Maxwell to optics</div>
   <div style={{position:'absolute',bottom:56,left:64,right:64,borderTop:`1px solid ${palette.line}`,paddingTop:22,fontSize:26,letterSpacing:2,color:palette.gold}}>PREDICT • CALCULATE • TEST</div>
 </AbsoluteFill>;

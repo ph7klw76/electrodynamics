@@ -2,10 +2,40 @@
 
 The canonical scientific model is in `course/physics.py`; the lesson, question
 and visual definitions are in `course/lesson.py`, `course/assessment.py` and
-`course/visuals.py`. Manim renders seven original model panels. Remotion
-combines these with the measured frame schedule, formulas, prediction holds and
-one continuous narration track. Remotion 4.0.540 use here is under the pinned
+`course/visuals.py`. The animated edition uses editable SVG scenes in Remotion,
+with numerical data exported by `video/field_motion.py` from the validated
+Python models. The original Manim panels are retained as source for the first
+edition. Remotion uses the measured frame schedule and narration master for
+both editions. Remotion 4.0.540 use here is under the pinned
 Free License for an individual producer. See the license in this directory.
+
+## Rebuild the timing-preserving animation edition
+
+Install the pinned Remotion and Python dependencies as in the README. Use the
+existing verified MP4 and its report under `outputs/` as the comparison
+baseline. The original narration WAV and chapter metadata also live there.
+Run `python scripts/prepare_site.py` once in a fresh checkout to stage the
+committed measured event manifest for Remotion.
+
+```sh
+python video/field_motion.py
+python video/field_motion.py --check
+pnpm --dir remotion typecheck
+python build.py stills
+python build.py sample
+python scripts/verify_video.py --sample --video outputs/animated/Electrodynamics_Sample.mp4
+python build.py video
+python build.py verify
+python scripts/inspect_delivery_frames.py
+```
+
+The default render directory is `outputs/animated`. Set
+`ELECTRODYNAMICS_RENDER_DIR` to render to a different directory and pass the
+resulting MP4 path to both verifiers. The animation verifier checks all 21
+explanation scenes for model-region motion, compares decoded frames to the
+Remotion proofs, compares all seven prediction screens to the original render,
+and checks the unchanged timeline and encoded narration. The media verifier
+also checks the full decode, captions, chapters, and delivery format.
 
 ## Narration and motion graphics
 
@@ -28,7 +58,7 @@ pnpm --dir remotion typecheck
 pnpm --dir remotion test
 python build.py stills
 python build.py sample
-python scripts/verify_video.py --sample --video outputs/Electrodynamics_Sample.mp4
+python scripts/verify_video.py --sample --video outputs/animated/Electrodynamics_Sample.mp4
 python build.py video
 python build.py verify
 ```
@@ -68,7 +98,7 @@ To run the tested local preview after the full MP4 passes verification:
 python scripts/inspect_delivery_frames.py
 python scripts/prepare_site.py
 python scripts/build_pages.py
-python scripts/prepare_h5p_preview.py
+python scripts/prepare_h5p_preview.py --render-dir outputs/animated
 node webtools/test-preview.cjs
 ```
 

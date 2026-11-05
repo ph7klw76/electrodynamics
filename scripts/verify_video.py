@@ -11,7 +11,8 @@ import imageio_ffmpeg
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--video',type=Path,default=ROOT/'outputs/Electrodynamics_Lecture.mp4');p.add_argument('--sample',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--video',type=Path,default=ROOT/'outputs/animated/Electrodynamics_Lecture.mp4');p.add_argument('--sample',action='store_true');a=p.parse_args()
+    output=a.video.resolve().parent
     events=json.loads((ROOT/'course/publication_events.json').read_text(encoding='utf-8'))
     video=av.open(str(a.video));stream=video.streams.video[0]
     expected=1800 if a.sample else events['duration_frames']
@@ -36,7 +37,7 @@ def main():
         embedded_captions=len(extracted)
     ffmpeg=imageio_ffmpeg.get_ffmpeg_exe()
     subprocess.run([ffmpeg,'-v','error','-xerror','-i',str(a.video),'-f','null','-'],check=True)
-    master=ROOT/'remotion/public/media/narration.wav'
+    master=ROOT/'outputs/Electrodynamics_Narration.wav'
     def audio(path,at):
         r=subprocess.run([ffmpeg,'-v','error','-ss',str(at),'-i',str(path),'-t','4','-map','0:a:0','-ar','48000','-ac','1','-f','f32le','-'],capture_output=True,check=True)
         return np.frombuffer(r.stdout,dtype=np.float32).astype(float)
@@ -44,7 +45,7 @@ def main():
     anchors = [events['scenes'][i]['start_frame']/events['fps'] + 2
                for i in (0, len(events['scenes'])//2, len(events['scenes'])-1)]
     for at in ([5,30,55] if a.sample else anchors):
-        offset=json.loads((ROOT/'outputs/sample-render.json').read_text())['audio_source_offset_seconds'] if a.sample else 0
+        offset=json.loads((output/'sample-render.json').read_text())['audio_source_offset_seconds'] if a.sample else 0
         x,y=audio(a.video,at),audio(master,at+offset);n=min(len(x),len(y));x=x[:n];y=y[:n]
         correlations.append(float(np.dot(x,y)/np.sqrt(np.dot(x,x)*np.dot(y,y))))
     assert min(correlations)>.995,'Rendered audio is misaligned or mixed with duplicate narration'
@@ -55,9 +56,9 @@ def main():
     from datetime import datetime,timezone
     result.update(verified_at=datetime.now(timezone.utc).isoformat(),video_sha256=hashlib.sha256(a.video.read_bytes()).hexdigest(),timeline_sha256=hashlib.sha256((ROOT/'course/publication_events.json').read_bytes()).hexdigest(),narration_sha256=hashlib.sha256(master.read_bytes()).hexdigest())
     name='sample-verification.json' if a.sample else 'video-verification.json'
-    (ROOT/'outputs'/name).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps(result))
-    if not a.sample:
-        timing_path=ROOT/'outputs/timing-report.json'
+    (output/name).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps(result))
+    timing_path=output/'timing-report.json'
+    if not a.sample and timing_path.exists():
         timing=json.loads(timing_path.read_text())
         timing.update(status='PASS',render_verification=name,video_sha256=result['video_sha256'],timeline_sha256=result['timeline_sha256'])
         timing_path.write_text(json.dumps(timing,indent=2)+'\n',encoding='utf-8')

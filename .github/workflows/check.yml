@@ -30,6 +30,7 @@ jobs:
       - name: Scientific model, measured timing and actual desktop notebook
         run: |
           python -m unittest discover -s tests -v
+          python video/field_motion.py --check
           python scripts/check_course.py
           pnpm --dir remotion typecheck
           pnpm --dir remotion test
