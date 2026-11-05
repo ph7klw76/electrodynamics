@@ -1,0 +1,602 @@
+{
+  "recorded_at": "2026-11-05T11:34:07.032751+00:00",
+  "scope": "Prepublication course checks",
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "checks": {
+    "video-verification.json": "PASS",
+    "timing-report.json": "PASS",
+    "visual-verification.json": "PASS",
+    "course-checks.json": "PASS"
+  },
+  "video_url": null,
+  "website": {
+    "base": "http://127.0.0.1:8776/electrodynamics/",
+    "layouts": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "noOverflow": true,
+        "coatingControls": true
+      },
+      {
+        "name": "tablet",
+        "width": 820,
+        "noOverflow": true,
+        "coatingControls": true
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "noOverflow": true,
+        "coatingControls": true
+      }
+    ],
+    "h5pPractice": [
+      {
+        "id": "Q1",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q2",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q3",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q4",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q5",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q6",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q7",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      }
+    ],
+    "video": {
+      "mode": "NOT_RUN",
+      "reason": "No confirmed public video URL; this build is not deployable yet."
+    },
+    "notebook": {
+      "errors": 0,
+      "plots": 4,
+      "kernelChoiceHandled": false,
+      "parameterChange": true,
+      "outputs": [
+        "Python runtime: emscripten\n",
+        "Gap displacement current (A): 0.002\nPower out (W), dU_E/dt (W): -0.02 0.02\n",
+        "",
+        "",
+        "Large and exterior-small circulation (V): -0.062832, 0.000000\n",
+        "Divergence components (A/m³): -51.55542 51.55542\n",
+        "",
+        "Bare interface r, t, R, T: -0.2 0.8 0.04 0.96\nMatched coating: n=1.224745, d=112.2683 nm\n",
+        "",
+        "LAB_COMPLETE emscripten four model plots generated\n",
+        "PARAMETER_CHECK 0.012697463\n"
+      ]
+    },
+    "pageErrors": [],
+    "status": "PASS"
+  },
+  "local_playback": [
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T11:33:01.196Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "http://127.0.0.1:8778/electrodynamics/media/lecture.mp4",
+      "duration": 780,
+      "embedded": false,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.049912,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.060903,
+          "wrongFeedback": true,
+          "reviewTime": 118.566666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.057934,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.057014,
+          "wrongFeedback": true,
+          "reviewTime": 338.466666,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.066672,
+          "wrongFeedback": true,
+          "reviewTime": 446.033333,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.077012,
+          "wrongFeedback": true,
+          "reviewTime": 554.433333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.062183,
+          "wrongFeedback": true,
+          "reviewTime": 667.566666,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": [
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q1"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q2"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q3"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q4"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q5"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q6"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q7"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T11:33:06.920Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "http://127.0.0.1:8778/electrodynamics/media/lecture.mp4",
+      "duration": 780,
+      "embedded": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.102526,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.101876,
+          "wrongFeedback": true,
+          "reviewTime": 118.567388,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.088873,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.095449,
+          "wrongFeedback": true,
+          "reviewTime": 338.466666,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.11982,
+          "wrongFeedback": true,
+          "reviewTime": 446.033333,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.104652,
+          "wrongFeedback": true,
+          "reviewTime": 554.433333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.09999,
+          "wrongFeedback": true,
+          "reviewTime": 667.566666,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": [
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q3"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q4"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q5"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q6"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q7"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T11:33:43.563Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "http://127.0.0.1:8778/electrodynamics/media/lecture.mp4",
+      "duration": 780,
+      "embedded": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.566666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.027659,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.060402,
+          "wrongFeedback": true,
+          "reviewTime": 118.566666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.057027,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.060376,
+          "wrongFeedback": true,
+          "reviewTime": 338.466666,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.060549,
+          "wrongFeedback": true,
+          "reviewTime": 446.033333,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.05067,
+          "wrongFeedback": true,
+          "reviewTime": 554.433333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.056628,
+          "wrongFeedback": true,
+          "reviewTime": 667.566666,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": [
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q1"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q1"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q2"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q3"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q4"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q5"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q6"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q7"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T11:33:50.029Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "http://127.0.0.1:8778/electrodynamics/media/lecture.mp4",
+      "duration": 780,
+      "embedded": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.566666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.099325,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.088272,
+          "wrongFeedback": true,
+          "reviewTime": 118.566666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.102078,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.100842,
+          "wrongFeedback": true,
+          "reviewTime": 338.466666,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.083516,
+          "wrongFeedback": true,
+          "reviewTime": 446.033333,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.110847,
+          "wrongFeedback": true,
+          "reviewTime": 554.433333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.099383,
+          "wrongFeedback": true,
+          "reviewTime": 667.566666,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": [
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q1"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q1"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q2"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q3"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q4"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q5"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q6"
+        },
+        {
+          "name": "AbortError",
+          "message": "The play() request was interrupted by a call to pause(). https://goo.gl/LdLk22",
+          "phase": "Q7"
+        }
+      ]
+    }
+  ],
+  "youtube_playback": [],
+  "public_pages": "PENDING",
+  "source_hashes": {
+    "course/physics.py": "8c57b5ccefd594927a28d55db6a44ad2cf1b81e14641ca4ea64456515d13b70b",
+    "course/publication_events.json": "d2ddc2c50943fdbc289e01a843a51faf18a5564fad30a19b46f2d037afd94772",
+    "lab/Electrodynamics_Lab.ipynb": "d3038facec4ffc95e035ca05b1d5e28968b08b69080799bd087c5305324aaec5"
+  }
+}

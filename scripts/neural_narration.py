@@ -170,7 +170,7 @@ def recognize(asr,data,sr):
         g=math.gcd(sr,16000);data=resample_poly(data,16000//g,sr//g)
     segments,info=asr.transcribe(np.asarray(data,dtype=np.float32),language='en',beam_size=5,
         word_timestamps=True,vad_filter=False,condition_on_previous_text=False,
-        initial_prompt='Electrodynamics. Ampere's law. Maxwell. Faraday. Solenoid. Azimuthal. Stokes. Poynting vector. Quasistatic. Refractive index. Dielectric coating.')
+        initial_prompt='Electrodynamics. Ampere law. Maxwell. Faraday. Solenoid. Azimuthal. Stokes. Poynting vector. Quasistatic. Refractive index. Dielectric coating.')
     words=[];text=[]
     for s in segments:
         text.append(s.text)

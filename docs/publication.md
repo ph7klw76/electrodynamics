@@ -12,7 +12,8 @@ until the lecture is uploaded and playable and the required checks have passed.
    The expected title is **Electrodynamics | Can energy cross an empty gap?**.
    Run `python scripts/activate_video.py --url ACTUAL_YOUTUBE_URL` after
    verifying the upload. The script checks oEmbed and regenerates H5P. Run the
-   embedded and standalone learning tests with real streaming after activation.
+   embedded and standalone learning tests with real streaming for both viewports.
+   Then run `python scripts/activate_video.py --confirm` to mark the edition confirmed.
 3. Set GitHub **Settings → Pages → Build and deployment → Source → GitHub Actions**
    for the repository. Push the activated configuration and checked evidence to
    the feature branch. Merge only the checked revision. The deploy workflow

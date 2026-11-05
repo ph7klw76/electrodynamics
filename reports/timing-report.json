@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "duration_frames": 23400,
+  "duration_seconds": 780.0,
+  "scenes": 28,
+  "quizzes": [
+    {
+      "id": "Q1",
+      "time_seconds": 80,
+      "review_seconds": 0.0,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q2",
+      "time_seconds": 194,
+      "review_seconds": 118.56666666666666,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q3",
+      "time_seconds": 305,
+      "review_seconds": 233.0,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q4",
+      "time_seconds": 412,
+      "review_seconds": 338.46666666666664,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q5",
+      "time_seconds": 518,
+      "review_seconds": 446.03333333333336,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q6",
+      "time_seconds": 634,
+      "review_seconds": 554.4333333333333,
+      "reasoning_hold_seconds": 6.5
+    },
+    {
+      "id": "Q7",
+      "time_seconds": 744,
+      "review_seconds": 667.5666666666667,
+      "reasoning_hold_seconds": 6.5
+    }
+  ],
+  "subtitle_cues": 181,
+  "video_url": null,
+  "baseline": "New course; no prior lecture timestamp baseline exists.",
+  "render_verification": "video-verification.json",
+  "video_sha256": "9a83b8898e8d25902fa2a1768cc64aa865c6c8ec4c146948574223024b4172e1",
+  "timeline_sha256": "d2ddc2c50943fdbc289e01a843a51faf18a5564fad30a19b46f2d037afd94772"
+}

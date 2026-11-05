@@ -27,3 +27,5 @@ result independently, and explain what an experiment would need to measure.
 
 Scientific background [MIT 8.02T Electricity and Magnetism lecture notes](https://ocw.mit.edu/courses/8-02t-electricity-and-magnetism-spring-2005/pages/lecture-notes/).
 Research context [Baily et al., Phys. Rev. Phys. Educ. Res. 13, 020113 (2017)](https://doi.org/10.1103/PhysRevPhysEducRes.13.020113).
+
+Optical matching reference [MIT 6.974 Classical Electromagnetism and Optics](https://ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/8e54d1625e9e71eb5b4e4998e6967e4e_chapter2.pdf).

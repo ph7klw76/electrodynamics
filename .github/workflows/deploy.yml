@@ -14,6 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      manifest_sha: ${{ steps.manifest.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
       - name: Require the confirmed lecture edition
@@ -55,6 +57,9 @@ jobs:
         with:
           name: publication-verification
           path: outputs/browser
+      - name: Fingerprint the exact Pages artifact
+        id: manifest
+        run: echo "sha=$(sha256sum outputs/pages/build-info.json | cut -d ' ' -f 1)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: outputs/pages
@@ -70,7 +75,7 @@ jobs:
       - uses: actions/deploy-pages@v4
         id: deployment
   verify-live:
-    needs: deploy
+    needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -80,4 +85,5 @@ jobs:
       - name: Verify actual public resources and active video
         env:
           SITE_URL: ${{ needs.deploy.outputs.page_url }}
+          PAGES_MANIFEST_SHA: ${{ needs.build.outputs.manifest_sha }}
         run: python scripts/check_live.py

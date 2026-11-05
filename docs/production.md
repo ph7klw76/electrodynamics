@@ -61,3 +61,20 @@ responsive controls and every notebook cell in the Pyodide kernel. During
 production the isolated H5P preview loads only the locally rendered MP4. The
 preview supports the same parent chapter controls and question flow, while the
 actual public build waits for the confirmed YouTube edition.
+
+To run the tested local preview after the full MP4 passes verification:
+
+```sh
+python scripts/inspect_delivery_frames.py
+python scripts/prepare_site.py
+python scripts/build_pages.py
+python scripts/prepare_h5p_preview.py
+node webtools/test-preview.cjs
+```
+
+The preview runner starts and closes a loopback server. It tests the native
+video in the exported standalone and embedded lesson at desktop and phone
+sizes, including timed pauses, feedback, review seeks, retries, fullscreen
+return and the final Summary. The local native ZIP embeds the loopback URL.
+For a public or LMS package, use the package rebuilt from the confirmed
+YouTube URL. Local playback evidence does not validate YouTube streaming.

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "physics": {
+    "interface_r": -0.2,
+    "interface_t": 0.8,
+    "interface_R": 0.04000000000000001,
+    "interface_T": 0.9600000000000002,
+    "design_nm": 550,
+    "film_index": 1.224744871391589,
+    "thickness_nm": 112.26827987756235,
+    "detuned_R": 0.012697462781108431,
+    "gap_outward_W": -0.02
+  },
+  "javascript_cases": 6,
+  "desktop_code_cells": 7
+}

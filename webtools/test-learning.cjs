@@ -15,6 +15,7 @@ async function main(){
   await page.goto(base,{waitUntil:'domcontentloaded'});player=page;
   if(embedded){await page.locator('#lectureH5p').scrollIntoViewIfNeeded();player=await(await page.locator('#lectureH5p').elementHandle()).contentFrame();assert.ok(player);}
   await player.waitForFunction(()=>window.H5P?.instances[0]?.video?.getDuration?.()>600,{},{timeout:60000,polling:250});
+  const duration=await player.evaluate(()=>H5P.instances[0].video.getDuration());assert.ok(Math.abs(duration-events.duration_seconds)<2,'Unexpected lecture duration');
   const source=await player.evaluate(()=>H5P.instances[0].options.video.files[0].path);if(preview)assert.ok(source.includes('127.0.0.1:8778'));else assert.equal(source,cfg.youtube_url);
   if(await player.locator('.h5p-splash').isVisible())await player.locator('.h5p-splash').click();else await player.locator('.h5p-controls .h5p-pause').click();
   await player.waitForFunction(()=>H5P.instances[0].video.getCurrentTime()>.5,{},{timeout:45000,polling:250});
@@ -46,7 +47,7 @@ async function main(){
   await page.screenshot({path:path.join(out,label+'-summary.png'),fullPage:true});assert.deepEqual(errors,[]);assert.ok(mediaInterruptions.length<=events.quizzes.length+2);
   await player.locator('.h5p-dialog-close:visible').click();await launcher.waitFor({state:'visible'});await player.evaluate(()=>H5P.instances[0].play());
   await player.waitForFunction(t=>H5P.instances[0].video.getCurrentTime()>t+.2,summaryTime,{timeout:15000,polling:250});
-  const report={status:'PASS',verifiedAt:new Date().toISOString(),url:base,source,embedded,viewport:page.viewportSize(),fullscreenReturn:true,summaryContinuation:true,parentChapterSeek,paths,summary,errors,mediaInterruptions};await fs.writeFile(path.join(out,'learning-'+label+'.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+  const report={status:'PASS',verifiedAt:new Date().toISOString(),url:base,source,duration,embedded,viewport:page.viewportSize(),fullscreenReturn:true,summaryContinuation:true,parentChapterSeek,paths,summary,errors,mediaInterruptions};await fs.writeFile(path.join(out,'learning-'+label+'.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
  }catch(e){if(page){await fs.writeFile(path.join(out,'learning-'+label+'-failure.json'),JSON.stringify({message:e.message,completed:paths,errors,text:await page.locator('body').innerText()},null,2));await page.screenshot({path:path.join(out,'learning-'+label+'-failure.png'),fullPage:true});}throw e;}finally{await browser?.close();server?.kill();}
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});

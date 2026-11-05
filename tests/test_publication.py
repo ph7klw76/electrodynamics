@@ -29,7 +29,7 @@ class PublicationTests(unittest.TestCase):
         cfg=json.loads((ROOT/'course/config.json').read_text())
         self.assertEqual(cfg['slug'],'electrodynamics')
         self.assertEqual(cfg['base_path'],'/electrodynamics/')
-        self.assertEqual(bool(cfg['youtube_url']),cfg['status']=='video-confirmed')
+        self.assertEqual(bool(cfg['youtube_url']),cfg['status'] in {'video-candidate','video-confirmed'})
         if cfg['youtube_url']:
             content=json.loads((ROOT/'h5p/content.json').read_text(encoding='utf-8'))
             self.assertEqual(content['interactiveVideo']['video']['files'][0]['path'],cfg['youtube_url'])
