@@ -25,7 +25,9 @@ def main():
     dest.mkdir(parents=True,exist_ok=True)
 
     index = (source/"index.html").read_text(encoding="utf-8")
-    for name in ["config.js","app.js","physics.js","style.css"]:
+    assets = ["config.js","app.js","physics.js","style.css","charge-explorers.js",
+              "charge-explorers.css","wave-explorers.js","wave-explorers.css"]
+    for name in assets:
         digest = hashlib.sha256((source/name).read_bytes()).hexdigest()[:12]
         index = re.sub(r'(?<=["\'])'+re.escape(name)+r'(?:\?[^"\s]*)?(?=["\'])',name+"?v="+digest,index)
     for item in source.iterdir():
@@ -46,11 +48,13 @@ def main():
     assert not list(dest.rglob("*.mp4")) and not list(dest.rglob("*.wav"))
     (dest/".nojekyll").touch()
     events = json.loads((ROOT/"course/publication_events.json").read_text(encoding="utf-8"))
-    resources = ["index.html","config.js","app.js","style.css","physics.js","assessment.html",
-                 "lecture.srt","lecture.vtt","publication_events.json","Electrodynamics_Lab.ipynb"]
+    resources = ["index.html", *assets, "assessment.html", "lecture.srt", "lecture.vtt",
+                 "publication_events.json", "reasoning.json", "Electrodynamics_Lab.ipynb"]
     resources.extend(f"h5p/question-{q['id'][1:]}.html" for q in events["quizzes"])
     if not args.skip_lab:
         resources += ["lab/lab/index.html","lab/files/Electrodynamics_Lab.ipynb"]
+        reasoning = json.loads((ROOT/"course/reasoning.json").read_text(encoding="utf-8"))
+        resources.extend(f"lab/files/{name}" for name in sorted({item["lab"] for item in reasoning.values()}))
     if cfg["youtube_url"]:
         resources += ["h5p/electrodynamics.html","h5p/Electrodynamics_Interactive.h5p"]
     hashes = {name:hashlib.sha256((dest/name).read_bytes()).hexdigest() for name in resources}

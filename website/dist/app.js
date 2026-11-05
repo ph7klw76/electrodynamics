@@ -96,10 +96,72 @@ window.addEventListener('pagehide',()=>{
   observer?.disconnect();
 },{once:true});
 
+function openLinkedExplorer() {
+  const target = document.getElementById(location.hash.slice(1));
+  const panel = target?.closest('details.explorer-panel');
+  if (panel && !panel.open) {
+    panel.open = true;
+    target.scrollIntoView();
+  }
+}
+window.addEventListener('hashchange', openLinkedExplorer);
+window.addEventListener('DOMContentLoaded', openLinkedExplorer, {once:true});
+
+function notebookLink(filename) {
+  return 'lab/lab/index.html?path='+encodeURIComponent(filename);
+}
+
+function setupReasoning(questions, reasoning) {
+  const chooser = select('#reasoning-question');
+  const response = select('#reasoning-response');
+  const checklist = select('#reasoning-checklist');
+  const drafts = new Map();
+  for (const question of questions) chooser.add(new Option(question.id+' · '+question.timestamp, question.id));
+  function showPrompt(id) {
+    chooser.value = id;
+    const {prompt, criteria, model, lab} = reasoning[id];
+    select('#reasoning-prompt').textContent = prompt;
+    select('#reasoning-model').href = model;
+    select('#reasoning-lab').href = notebookLink(lab);
+    response.value = drafts.get(id) ?? '';
+    response.setCustomValidity('');
+    checklist.hidden = true;
+    checklist.querySelector('ul').replaceChildren(...criteria.map(criterion => {
+      const item = document.createElement('li');
+      item.textContent = criterion;
+      return item;
+    }));
+  }
+  chooser.addEventListener('change', () => showPrompt(chooser.value));
+  response.addEventListener('input', () => {
+    response.setCustomValidity('');
+    drafts.set(chooser.value, response.value);
+    if (!response.value.trim()) checklist.hidden = true;
+  });
+  select('#reasoning-form').addEventListener('submit', event => {
+    event.preventDefault();
+    if (!response.value.trim()) {
+      response.setCustomValidity('Write your explanation before opening the checklist.');
+      response.reportValidity();
+      return;
+    }
+    checklist.hidden = false;
+    checklist.querySelector('h3').focus();
+  });
+  showPrompt(questions[0].id);
+  return showPrompt;
+}
+
 async function addLessonLinks() {
-  const response = await fetch('publication_events.json');
-  if (!response.ok) throw new Error('Lesson index unavailable');
-  const events = await response.json();
+  async function readLessonFile(path) {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('Could not load '+path);
+    return response.json();
+  }
+  const [events, reasoning] = await Promise.all([
+    readLessonFile('publication_events.json'), readLessonFile('reasoning.json')
+  ]);
+  const showPrompt = setupReasoning(events.quizzes, reasoning);
   for (const chapter of events.chapters) {
     const button = document.createElement('button');
     button.type = 'button';
@@ -120,12 +182,31 @@ async function addLessonLinks() {
     select('#chapters').append(button);
   }
   for (const question of events.quizzes) {
+    const activity = document.createElement('article');
+    const resources = document.createElement('div');
+    resources.className = 'checkpoint-resources';
     const link = document.createElement('a');
+    link.className = 'checkpoint-title';
     link.href='h5p/question-'+question.id.slice(1)+'.html';
     const small=document.createElement('small');
     small.textContent=question.id+' / ORIGINAL FORMATIVE ACTIVITY';
     link.append(small,document.createTextNode(events.scenes[question.scene].title));
-    select('#practiceLinks').append(link);
+    for (const [title, href] of [
+      ['Write an explanation', '#reasoning-notes'],
+      ['Explore the model', reasoning[question.id].model],
+      ['Open the Python investigation', notebookLink(reasoning[question.id].lab)]
+    ]) {
+      const resource = document.createElement('a');
+      resource.href = href;
+      resource.textContent = title;
+      if (href === '#reasoning-notes') resource.addEventListener('click', () => {
+        select('#reasoning-notes').open = true;
+        showPrompt(question.id);
+      });
+      resources.append(resource);
+    }
+    activity.append(link, resources);
+    select('#practiceLinks').append(activity);
   }
 }
 addLessonLinks().catch(error=>{status.textContent=error.message;});

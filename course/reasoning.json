@@ -1,0 +1,44 @@
+{
+  "Q1": {
+    "model": "#capacitor-explorer",
+    "lab": "Capacitor_Investigation.ipynb",
+    "prompt": "Sketch two surfaces that share the same loop. Explain how the surface crossing the wire and the surface crossing the gap give the same magnetic circulation.",
+    "criteria": ["I drew both surfaces with the same boundary and consistent orientation.", "I distinguished the lead current from changing electric flux in the gap.", "I explained why both surface choices give the same circulation."]
+  },
+  "Q2": {
+    "model": "#solenoid-explorer",
+    "lab": "Solenoid_Investigation.ipynb",
+    "prompt": "Sketch the loop from +z. Predict the direction of E when the axial field increases, and explain what changes if the field stays positive but begins to fall.",
+    "criteria": ["I marked the loop orientation relative to +z.", "I used the sign of the flux change to explain the circulation.", "I distinguished the sign of the field from the sign of its rate of change."]
+  },
+  "Q3": {
+    "model": "#solenoid-explorer",
+    "lab": "Solenoid_Investigation.ipynb",
+    "prompt": "Sketch the small disk and a few electric-field arrows along its rim. Explain what the loop integral tells you about the arrows at individual points.",
+    "criteria": ["My disk stays entirely outside the ideal solenoid.", "I used the flux through that disk to determine its circulation.", "I distinguished cancellation in the integral from a zero field at each point."]
+  },
+  "Q4": {
+    "model": "#conductor-explorer",
+    "lab": "Taper_Investigation.ipynb",
+    "prompt": "Sketch a control volume around the taper with outward normals. Explain whether charge accumulates even if the current-density arrows grow at the narrow end.",
+    "criteria": ["I identified the inlet, outlet and insulated wall.", "I compared the signed currents through the faces and accounted for their areas.", "I connected the net outward current to the rate of change of enclosed charge."]
+  },
+  "Q5": {
+    "model": "#capacitor-explorer",
+    "lab": "Capacitor_Investigation.ipynb",
+    "prompt": "Sketch E, H and the outward normal at the side of the gap. Explain what their directions tell you about the changing energy stored in the field.",
+    "criteria": ["I labelled both fields and the outward normal.", "I used the direction of E × H to justify the sign of outward power.", "I connected the energy flux to the change in stored field energy."]
+  },
+  "Q6": {
+    "model": "#reflection-explorer",
+    "lab": "Optics_Investigation.ipynb",
+    "prompt": "Sketch the three waves at the boundary. Explain why reversing the propagation direction changes the magnetic-field sign in the matching calculation.",
+    "criteria": ["I labelled incident, reflected and transmitted propagation directions.", "I applied both tangential field conditions at the interface.", "I distinguished reflected electric-field phase from reflected power."]
+  },
+  "Q7": {
+    "model": "#film-explorer",
+    "lab": "Optics_Investigation.ipynb",
+    "prompt": "Sketch the reflected amplitudes as arrows at the design wavelength. Explain how detuning changes their sum while the physical thickness stays fixed.",
+    "criteria": ["I described the reflected amplitudes and their relative phase at the design point.", "I explained how wavelength changes the round-trip phase.", "I accounted for reflected and transmitted power in the lossless model."]
+  }
+}

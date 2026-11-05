@@ -25,6 +25,7 @@ website/dist/lecture.vtt
 website/dist/config.js
 website/dist/config.json
 website/dist/publication_events.json
+website/dist/reasoning.json
 website/dist/*.ipynb
 website/dist/LICENSE
 website/dist/CONTENT_LICENSE.md

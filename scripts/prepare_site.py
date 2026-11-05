@@ -21,6 +21,7 @@ shutil.copytree(katex / "fonts", assets / "fonts", dirs_exist_ok=True)
 for asset in ["LICENSE", "CONTENT_LICENSE.md"]:
     shutil.copyfile(ROOT / asset, dist / asset)
 shutil.copyfile(events, dist / events.name)
+shutil.copyfile(ROOT / "course/reasoning.json", dist / "reasoning.json")
 render_manifest = ROOT / "remotion/src/generated/events.json"
 render_manifest.parent.mkdir(parents=True, exist_ok=True)
 shutil.copyfile(events, render_manifest)

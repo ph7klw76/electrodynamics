@@ -1,0 +1,170 @@
+.wave-explorer {
+  min-width: 0;
+  margin: 1rem 0;
+}
+
+.wave-layout {
+  display: grid;
+  grid-template-columns: minmax(170px, .65fr) minmax(0, 1.35fr);
+  gap: 1rem;
+}
+
+.wave-controls {
+  background: var(--panel);
+  padding: .8rem 1rem;
+  border-radius: 6px;
+}
+
+.wave-controls label {
+  margin-top: .65rem;
+}
+
+.wave-controls select {
+  width: 100%;
+  min-height: 42px;
+  padding: .3rem;
+  font: inherit;
+}
+
+.wave-transport {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: .85rem;
+}
+
+.wave-transport button {
+  min-height: 42px;
+}
+
+.wave-figure,
+.film-phasors {
+  min-width: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.film-phasors {
+  margin-top: 1rem;
+}
+
+.wave-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  font: 14px Arial, Helvetica, sans-serif;
+  fill: var(--ink);
+}
+
+.wave-caption,
+.wave-legend {
+  margin: .5rem 0;
+  font-size: .86rem;
+  line-height: 1.45;
+}
+
+.wave-legend {
+  display: flex;
+  gap: .35rem 1rem;
+  flex-wrap: wrap;
+}
+
+.wave-legend span {
+  border-bottom: 2px solid currentColor;
+}
+
+.wave-diagram polyline,
+.wave-diagram path.coil-loop,
+.wave-diagram circle.coil-loop,
+.wave-diagram .contribution-positive,
+.wave-diagram .contribution-negative {
+  fill: none;
+}
+
+.wave-diagram .incoming,
+.wave-diagram .electric {
+  stroke: #087d73;
+  stroke-width: 2;
+}
+
+.wave-legend .incoming {
+  color: #087d73;
+  border-bottom-style: dotted;
+}
+
+.wave-diagram polyline.incoming {
+  stroke-dasharray: 2 4;
+}
+
+.wave-diagram .backward,
+.wave-diagram .magnetic {
+  stroke: #82571d;
+  stroke-width: 2;
+}
+
+.wave-diagram polyline.backward {
+  stroke-dasharray: 7 4;
+}
+
+.wave-legend .backward {
+  color: #82571d;
+  border-bottom-style: dashed;
+}
+
+.wave-diagram .continuity,
+.wave-diagram .total {
+  stroke: var(--ink);
+  stroke-width: 2.3;
+}
+
+.wave-diagram .coil-body,
+.wave-diagram .film-layer {
+  fill: #dbefe8;
+  stroke: #087d73;
+}
+
+.wave-diagram .coil-loop,
+.wave-diagram .boundary-line {
+  fill: none;
+  stroke: #566d77;
+  stroke-dasharray: 4 4;
+}
+
+.wave-diagram .field-marker {
+  font-weight: 700;
+  font-size: 18px;
+  fill: #12313d;
+}
+
+.wave-diagram .contribution-positive {
+  stroke: #315e9d;
+  stroke-width: 3;
+}
+
+.wave-diagram .contribution-negative {
+  stroke: #82571d;
+  stroke-width: 3;
+  stroke-dasharray: 4 2;
+}
+
+.wave-diagram .film-substrate {
+  fill: #f1ebdb;
+  stroke: #82571d;
+}
+
+.wave-diagram .diagram-axis {
+  stroke: #819195;
+  fill: none;
+}
+
+.wave-diagram .boundary-point {
+  fill: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .wave-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

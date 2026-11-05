@@ -134,7 +134,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>Across the ideal vacuum gap of a charging capacitor, what accounts for the lead current in Ampère-Maxwell's law?</p>"
+              "question": "<p>Across the ideal vacuum gap of a charging capacitor, what accounts for the lead current in Ampère-Maxwell's law?</p><p><strong>Explain before checking.</strong> Sketch two surfaces that share the same loop. Explain how the surface crossing the wire and the surface crossing the gap give the same magnetic circulation. Record your reasoning in your notes.</p>"
             },
             "subContentId": "0f7dc47d-4ff3-5d07-af83-68560a11e0b0",
             "metadata": {
@@ -265,7 +265,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>Viewed from +z, which way does E circulate outside a long solenoid whose +z magnetic field is increasing?</p>"
+              "question": "<p>Viewed from +z, which way does E circulate outside a long solenoid whose +z magnetic field is increasing?</p><p><strong>Explain before checking.</strong> Sketch the loop from +z. Predict the direction of E when the axial field increases, and explain what changes if the field stays positive but begins to fall. Record your reasoning in your notes.</p>"
             },
             "subContentId": "c431df3b-e1d2-5707-b86d-a80b07b4608d",
             "metadata": {
@@ -396,7 +396,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>A small disk lies entirely outside the ideal solenoid and misses its axis. What must vanish?</p>"
+              "question": "<p>A small disk lies entirely outside the ideal solenoid and misses its axis. What must vanish?</p><p><strong>Explain before checking.</strong> Sketch the small disk and a few electric-field arrows along its rim. Explain what the loop integral tells you about the arrows at individual points. Record your reasoning in your notes.</p>"
             },
             "subContentId": "e754060f-ae77-5abb-b58e-3072b5112d95",
             "metadata": {
@@ -527,7 +527,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>A steady insulated conductor narrows. What is the net outward current through a volume spanning the constriction?</p>"
+              "question": "<p>A steady insulated conductor narrows. What is the net outward current through a volume spanning the constriction?</p><p><strong>Explain before checking.</strong> Sketch a control volume around the taper with outward normals. Explain whether charge accumulates even if the current-density arrows grow at the narrow end. Record your reasoning in your notes.</p>"
             },
             "subContentId": "33990372-bdaa-5be9-a9f3-1142a71e701c",
             "metadata": {
@@ -658,7 +658,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>While a circular vacuum capacitor charges with V > 0 and I > 0, what is the sign of outward side power?</p>"
+              "question": "<p>While a circular vacuum capacitor charges with V > 0 and I > 0, what is the sign of outward side power?</p><p><strong>Explain before checking.</strong> Sketch E, H and the outward normal at the side of the gap. Explain what their directions tell you about the changing energy stored in the field. Record your reasoning in your notes.</p>"
             },
             "subContentId": "0a8fac9b-85e3-5d11-afd9-7d4a705ed169",
             "metadata": {
@@ -789,7 +789,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>A normally incident wave goes from n = 1 to n = 1.5. What is the reflected electric field sign at the interface?</p>"
+              "question": "<p>A normally incident wave goes from n = 1 to n = 1.5. What is the reflected electric field sign at the interface?</p><p><strong>Explain before checking.</strong> Sketch the three waves at the boundary. Explain why reversing the propagation direction changes the magnetic-field sign in the matching calculation. Record your reasoning in your notes.</p>"
             },
             "subContentId": "90137125-b0f2-5062-be90-b1b64690a2b1",
             "metadata": {
@@ -920,7 +920,7 @@
                 "cancelLabel": "Cancel",
                 "confirmLabel": "Confirm"
               },
-              "question": "<p>A matched quarter-wave film stays fixed while the vacuum wavelength changes. What generally happens?</p>"
+              "question": "<p>A matched quarter-wave film stays fixed while the vacuum wavelength changes. What generally happens?</p><p><strong>Explain before checking.</strong> Sketch the reflected amplitudes as arrows at the design wavelength. Explain how detuning changes their sum while the physical thickness stays fixed. Record your reasoning in your notes.</p>"
             },
             "subContentId": "81b71154-993c-595a-8bb5-d90322103a6a",
             "metadata": {
