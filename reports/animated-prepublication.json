@@ -1,0 +1,574 @@
+{
+  "status": "PASS",
+  "scope": "Prepublication animated YouTube edition",
+  "verified_at": "2026-11-05T13:30:24.447258+00:00",
+  "youtube_url": "https://youtu.be/bGJpe2hk_QM",
+  "video": {
+    "status": "PASS",
+    "edition": "full",
+    "file": "Electrodynamics_Lecture.mp4",
+    "frames": 23400,
+    "duration_seconds": 780.0,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "codec": "H.264/AAC",
+    "pixel_format": "yuv420p",
+    "color_space": "limited BT.709",
+    "audio_tracks": 1,
+    "chapters": 7,
+    "embedded_caption_cues": 181,
+    "full_decode": true,
+    "audio_correlations": [
+      0.9999947522517921,
+      0.9999913450595771,
+      0.999992495702122
+    ],
+    "integrated_lufs": -16.25,
+    "true_peak_db": -1.37,
+    "verified_at": "2026-11-05T13:12:56.374112+00:00",
+    "video_sha256": "961151ebd3a1df8f1d5716715f793f109955d7c6f7da5b604019db65a8169274",
+    "timeline_sha256": "d2ddc2c50943fdbc289e01a843a51faf18a5564fad30a19b46f2d037afd94772",
+    "narration_sha256": "952949b635bb404c6ae98b9ba8836800b702150c664143b42caab556074e6d8a"
+  },
+  "stream_identity": {
+    "status": "PASS",
+    "source": "https://youtu.be/bGJpe2hk_QM",
+    "evidence": [
+      {
+        "phase": "positive-ramp",
+        "screenshot": "positive-ramp.png",
+        "time": 205.45206206866456
+      },
+      {
+        "phase": "negative-ramp",
+        "screenshot": "negative-ramp.png",
+        "time": 223.5896789732971
+      }
+    ],
+    "observed": "The model shows clockwise electric-field arrows during a positive ramp and counterclockwise arrows during a negative ramp."
+  },
+  "animated_explanation_scenes": 21,
+  "timeline_delta_frames": 0,
+  "quiz_boundaries": [
+    {
+      "id": "Q1",
+      "before": 2583,
+      "after": 2674,
+      "mean_rgb_change": 15.866021090534979,
+      "question_frame": 2400,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q2",
+      "before": 6004,
+      "after": 6095,
+      "mean_rgb_change": 15.02329475308642,
+      "question_frame": 5820,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q3",
+      "before": 9309,
+      "after": 9400,
+      "mean_rgb_change": 14.31301440329218,
+      "question_frame": 9150,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q4",
+      "before": 12535,
+      "after": 12626,
+      "mean_rgb_change": 15.068791152263374,
+      "question_frame": 12360,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q5",
+      "before": 15710,
+      "after": 15801,
+      "mean_rgb_change": 14.1090329218107,
+      "question_frame": 15540,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q6",
+      "before": 19188,
+      "after": 19279,
+      "mean_rgb_change": 14.867232510288066,
+      "question_frame": 19020,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    },
+    {
+      "id": "Q7",
+      "before": 22496,
+      "after": 22587,
+      "mean_rgb_change": 14.662181069958848,
+      "question_frame": 22320,
+      "question_delta_frames": 0,
+      "review_delta_frames": 0,
+      "prediction_mean_rgb_error": 0.0
+    }
+  ],
+  "max_pause_offset_seconds": 0.1308219999999949,
+  "local_course": {
+    "base": "http://127.0.0.1:8776/electrodynamics/",
+    "layouts": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "noOverflow": true,
+        "coatingControls": true
+      },
+      {
+        "name": "tablet",
+        "width": 820,
+        "noOverflow": true,
+        "coatingControls": true
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "noOverflow": true,
+        "coatingControls": true
+      }
+    ],
+    "h5pPractice": [
+      {
+        "id": "Q1",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q2",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q3",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q4",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q5",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q6",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      },
+      {
+        "id": "Q7",
+        "wrongFeedback": true,
+        "retry": true,
+        "score": 1
+      }
+    ],
+    "video": {
+      "mode": "startup-only",
+      "source": "https://youtu.be/bGJpe2hk_QM",
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 774,
+        "height": 435.375
+      },
+      "streaming": "Separate real streaming and all-learning-path tests are required."
+    },
+    "notebook": {
+      "errors": 0,
+      "plots": 4,
+      "kernelChoiceHandled": false,
+      "parameterChange": true,
+      "outputs": [
+        "Python runtime: emscripten\n",
+        "Gap displacement current (A): 0.002\nPower out (W), dU_E/dt (W): -0.02 0.02\n",
+        "",
+        "",
+        "Large and exterior-small circulation (V): -0.062832, 0.000000\n",
+        "Divergence components (A/m³): -51.55542 51.55542\n",
+        "",
+        "Bare interface r, t, R, T: -0.2 0.8 0.04 0.96\nMatched coating: n=1.224745, d=112.2683 nm\n",
+        "",
+        "LAB_COMPLETE emscripten four model plots generated\n",
+        "PARAMETER_CHECK 0.012697463\n"
+      ]
+    },
+    "pageErrors": [],
+    "status": "PASS"
+  },
+  "youtube_playback": [
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T13:28:36.687Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "https://youtu.be/bGJpe2hk_QM",
+      "duration": 781,
+      "embedded": false,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.07153600190735,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.04727195994568,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.0433630324249,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.05848099046324,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.0679278874665,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0698520839234,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.0560678779296,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T13:28:39.542Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "https://youtu.be/bGJpe2hk_QM",
+      "duration": 781,
+      "embedded": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.109323,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.0990770038147,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.0928581182556,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.09966607629394,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.0992738512268,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0997628912811,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.1072870247955,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T13:29:26.324Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "https://youtu.be/bGJpe2hk_QM",
+      "duration": 781,
+      "embedded": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.56666666666666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.05384494850159,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.05573002098083,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.0636478569489,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.060411835968,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.0626729694824,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0579490114441,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.0623262193451,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T13:29:31.955Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "https://youtu.be/bGJpe2hk_QM",
+      "duration": 781,
+      "embedded": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.56666666666666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.130822,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.09788690081788,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.1126960476837,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.110591,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.121105,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.115907,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.121252,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    }
+  ],
+  "local_native_package_sha256": "f98fc25b338c9fb0a7b883297b73ec048877de54a33d22317f44906ab01ae8e4"
+}
