@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "Native YouTube release package reimported with Lumi's H5P server",
+  "source": "https://youtu.be/oKZdKkD_e9U",
+  "checkpoints": 7,
+  "summary": true,
+  "caption_bytes_match": true,
+  "sha256": "4183c4e493014e939b7a8c3988367f91358206a57edfdb3bcb6b92ea34e45b56"
+}

@@ -75,7 +75,12 @@ def main():
         assert proof["summary"]["score"]==len(events["summary"])
     cfg["status"]="video-confirmed"
     save(cfg)
-    prepare()
+    try:
+        prepare()
+    except Exception:
+        cfg["status"]="video-candidate"
+        save(cfg)
+        raise
     print(json.dumps(dict(status="CONFIRMED",url=cfg["youtube_url"])))
 
 if __name__=="__main__":

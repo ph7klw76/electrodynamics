@@ -16,7 +16,13 @@ async function main(){
  else for(const name of ['H5P.InteractiveVideo','H5P.MultiChoice','H5P.Summary'])await editor.uploadPackage(path.join(work,name+'.h5p'),user,{onlyInstallLibraries:true});
  const upstream=path.join(work,'video-upstream'),v=JSON.parse(await fs.readFile(path.join(upstream,'library.json'),'utf8'));
  if(v.machineName!=='H5P.Video'||v.majorVersion!==1||v.minorVersion!==6||v.patchVersion!==81)throw Error('Expected the pinned official Video 1.6.81 adapter');
- await editor.libraryManager.installFromDirectory(upstream);if(onlyLibraries)return;
+ await editor.libraryManager.installFromDirectory(upstream);
+ // Upstream repository metadata is outside the native H5P import whitelist.
+ const installed=path.join(work,'libraries','H5P.Video-1.6');
+ for(const file of ['.github/workflows/ci-workflows.yml','.gitignore','crowdin.yml']){
+  await fs.rm(path.join(installed,file),{force:true});
+ }
+ if(onlyLibraries)return;
  const exporter=new HtmlExporter(libraries,content,config,path.join(work,'core'),path.join(work,'editor'));
  const metadata=JSON.parse(await fs.readFile(path.join(root,'h5p/h5p.json'),'utf8'));
  const questions=JSON.parse(await fs.readFile(path.join(root,'h5p/questions.json'),'utf8'));

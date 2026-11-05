@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-11-05T11:34:07.032751+00:00",
+  "recorded_at": "2026-11-05T12:29:23.583037+00:00",
   "scope": "Prepublication course checks",
   "python": "3.12.13",
   "platform": "Windows-11-10.0.26200-SP0",
@@ -9,7 +9,7 @@
     "visual-verification.json": "PASS",
     "course-checks.json": "PASS"
   },
-  "video_url": null,
+  "video_url": "https://youtu.be/oKZdKkD_e9U",
   "website": {
     "base": "http://127.0.0.1:8776/electrodynamics/",
     "layouts": [
@@ -77,8 +77,15 @@
       }
     ],
     "video": {
-      "mode": "NOT_RUN",
-      "reason": "No confirmed public video URL; this build is not deployable yet."
+      "mode": "startup-only",
+      "source": "https://youtu.be/oKZdKkD_e9U",
+      "geometry": {
+        "x": 0,
+        "y": 0,
+        "width": 774,
+        "height": 435.375
+      },
+      "streaming": "Separate real streaming and all-learning-path tests are required."
     },
     "notebook": {
       "errors": 0,
@@ -592,11 +599,356 @@
       ]
     }
   ],
-  "youtube_playback": [],
+  "youtube_playback": [
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T12:26:40.229Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "https://youtu.be/oKZdKkD_e9U",
+      "duration": 781,
+      "embedded": false,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.0811500743866,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.0679140858307,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.06432895994567,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.05510600190735,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.0683870019074,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0563338874664,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.0656329504089,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T12:26:42.713Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/h5p/electrodynamics.html",
+      "source": "https://youtu.be/oKZdKkD_e9U",
+      "duration": 781,
+      "embedded": false,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": null,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.114967,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.10195094277955,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.09684310681155,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.0984218588562,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.097578169754,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0945981811981,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.1111299313354,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T12:27:27.333Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "https://youtu.be/oKZdKkD_e9U",
+      "duration": 781,
+      "embedded": true,
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.56666666666666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.05699199046326,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.05305704196167,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.05718515830995,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.0549450209808,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.0673660934601,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.0638529198914,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.0558160114441,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    },
+    {
+      "status": "PASS",
+      "verifiedAt": "2026-11-05T12:27:37.030Z",
+      "url": "http://127.0.0.1:8778/electrodynamics/",
+      "source": "https://youtu.be/oKZdKkD_e9U",
+      "duration": 781,
+      "embedded": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullscreenReturn": true,
+      "summaryContinuation": true,
+      "parentChapterSeek": 118.56666666666666,
+      "paths": [
+        {
+          "id": "Q1",
+          "pausedAt": 80.116051,
+          "wrongFeedback": true,
+          "reviewTime": 0,
+          "targetReview": 0,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q2",
+          "pausedAt": 194.09922589128112,
+          "wrongFeedback": true,
+          "reviewTime": 118.56666666666666,
+          "targetReview": 118.56666666666666,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q3",
+          "pausedAt": 305.0912470038147,
+          "wrongFeedback": true,
+          "reviewTime": 233,
+          "targetReview": 233,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q4",
+          "pausedAt": 412.1070492021789,
+          "wrongFeedback": true,
+          "reviewTime": 338.46666666666664,
+          "targetReview": 338.46666666666664,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q5",
+          "pausedAt": 518.1206000991822,
+          "wrongFeedback": true,
+          "reviewTime": 446.03333333333336,
+          "targetReview": 446.03333333333336,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q6",
+          "pausedAt": 634.112607,
+          "wrongFeedback": true,
+          "reviewTime": 554.4333333333333,
+          "targetReview": 554.4333333333333,
+          "retry": true,
+          "correctScore": 1
+        },
+        {
+          "id": "Q7",
+          "pausedAt": 744.098310005722,
+          "wrongFeedback": true,
+          "reviewTime": 667.5666666666667,
+          "targetReview": 667.5666666666667,
+          "retry": true,
+          "correctScore": 1
+        }
+      ],
+      "summary": {
+        "score": 5,
+        "maxScore": 5
+      },
+      "errors": [],
+      "mediaInterruptions": []
+    }
+  ],
   "public_pages": "PENDING",
   "source_hashes": {
     "course/physics.py": "8c57b5ccefd594927a28d55db6a44ad2cf1b81e14641ca4ea64456515d13b70b",
     "course/publication_events.json": "d2ddc2c50943fdbc289e01a843a51faf18a5564fad30a19b46f2d037afd94772",
-    "lab/Electrodynamics_Lab.ipynb": "d3038facec4ffc95e035ca05b1d5e28968b08b69080799bd087c5305324aaec5"
+    "lab/Electrodynamics_Lab.ipynb": "2330dfad714f45b69b1eba8393f240821b9971c0dbc66a1d76b75fec2803a79a"
   }
 }
