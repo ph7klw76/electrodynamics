@@ -1,4 +1,4 @@
-/* Two learner-paced experiments using the same models as the full field explorers. */
+/* Learner-paced experiments using the models behind the full field explorers. */
 (() => {
   'use strict';
   const model = window.FieldLab;
@@ -34,7 +34,65 @@
       ${label(18, 154, 'Electric pulses · same vertical scale')}`;
   }
 
+  function powerPicture(current, power) {
+    // Each arrow straddles the rim. Positive outward power points away from the plates.
+    const length = 1.7 * Math.abs(power);
+    const arrows = [74, 238].map((rim, side) => {
+      const direction = (side === 0 ? -1 : 1) * Math.sign(power);
+      const tip = rim + direction * length / 2;
+      const tail = rim - direction * length / 2;
+      const wing = tip - direction * Math.min(5, length * .45);
+      return power === 0 ? '' : `<path data-flow d="M${tail} 87 H${tip} M${wing} 84 L${tip} 87 L${wing} 90" stroke="${gold}" stroke-width="3" fill="none"/>`;
+    }).join('');
+    return `${label(16,19,'Side view · vacuum gap')}
+      <rect x="74" y="51" width="164" height="71" fill="#e3f1ed"/>
+      <path d="M69 50 H243 M69 123 H243" stroke="${ink}" stroke-width="5"/>
+      <path d="M156 104 V68 m-4 6 4 -6 4 6" stroke="${teal}" stroke-width="2.5" fill="none"/>
+      ${label(164,91,'E')}${label(252,55,'−')}${label(252,127,'+')}
+      ${arrows}${label(156,151,current === 0 ? 'No energy crosses the rim' : power > 0 ? 'Energy leaves both sides of the rim' : 'Energy enters both sides of the rim','middle')}`;
+  }
+
+  function wirePicture(mm) {
+    const radius = 12 * mm;
+    // Equal-current area samples retain their fractional positions on each face.
+    const dots = [[0,0], ...Array.from({length:8}, (_, i) =>
+      [.7 * Math.cos(i * Math.PI / 4), .7 * Math.sin(i * Math.PI / 4)])];
+    return `${label(12,19,'End view · current toward you')}
+      <circle cx="103" cy="86" r="48" fill="none" stroke="${ink}" stroke-dasharray="4 3"/>
+      <circle cx="103" cy="86" r="${radius}" fill="#d8eee9" stroke="${teal}" stroke-width="2"/>
+      ${dots.map(([x,y]) => `<circle cx="${103 + x * radius}" cy="${86 + y * radius}" r="3" fill="${teal}"/>`).join('')}
+      ${label(166,70,'Total current')}${label(166,91,'4.00 mA')}
+      ${label(166,116,'Radius ' + mm.toFixed(2) + ' mm')}
+      ${label(12,153,'Dots represent equal shares of the current.')}`;
+  }
+
   const studies = {
+    power: {
+      min:-2, max:2, step:.1, start:2, target:-2, digits:1,
+      control:'Current onto the positive plate', unit:'mA', action:'Reverse the current',
+      options:['Energy still enters', 'Energy leaves at the same rate', 'Energy flow stops'], correct:1,
+      value: current => 1000 * model.capacitorState(10, current / 1000).outwardPower,
+      limits:[-20,20], ticks:[-2,0,2], axis:'Charging current (mA)', ordinate:'Outward power (mW)',
+      picture:'Energy crossing the capacitor rim', graph:'Outward power versus current', draw:powerPicture,
+      report: (current, power) => `At ${current.toFixed(1)} mA the signed outward power is ${power.toFixed(1)} mW. ${power === 0 ? 'The electric field still stores energy.' : power > 0 ? 'Stored energy is decreasing.' : 'Stored energy is increasing.'}`,
+      finding:'The power changes from −20 to +20 mW. The electric field still points upward, but reversing the current reverses the magnetic field and the energy flow.',
+      prompt:'Set the current to zero. Can the capacitor have stored energy while the power crossing its rim is zero?',
+      equation:'For ideal circular plates in vacuum, the Poynting vector is S = E × H. Integrated over the rim, Pout = −VI with positive I charging the positive plate. Each slider position is a separate instantaneous state at 10 V. Fringing and losses are neglected.',
+      notebook:'Capacitor_Investigation.ipynb'
+    },
+    density: {
+      min:2, max:4, step:.05, start:4, target:2, digits:2,
+      control:'Radius of the selected face', unit:'mm', action:'Move to the narrower face',
+      options:['It doubles', 'It quadruples', 'It stays the same'], correct:1,
+      value: mm => model.taperState(0, 0, .004, mm / 1000).axial,
+      limits:[0,320], ticks:[2,3,4], axis:'Cross-section radius (mm)', ordinate:'Axial current density (A/m²)',
+      picture:'Current through the selected face', graph:'Current density versus radius', draw:wirePicture,
+      report:(mm, density) => `At radius ${mm.toFixed(2)} mm, axial current density is ${density.toFixed(2)} A/m² through an area of ${(Math.PI * mm * mm).toFixed(2)} mm². Total current remains 4.00 mA.`,
+      finding:'Halving the radius gives one quarter of the area. Each second the same charge crosses a smaller face, so the axial current density rises fourfold.',
+      prompt:'Pick an intermediate radius. How can you use its area and the plotted density to recover the total current?',
+      equation:'For this steady axisymmetric model, Jz is uniform across each circular face and I = ∫ J · dA = Jz πa². The radial component follows the insulated wall. The dots illustrate current sharing. They are not individual electrons.',
+      notebook:'Taper_Investigation.ipynb'
+    },
     probe: {
       min: 0, max: 15, step: 0.25, start: 5, target: 10, digits: 2,
       control: 'Probe distance from center', unit: 'cm', action: 'Move the probe to 10 cm',

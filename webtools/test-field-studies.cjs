@@ -9,13 +9,18 @@ async function checkFieldStudies(browser, base) {
   const root = path.join(__dirname, '..');
   const fixtures = JSON.parse(execFileSync(process.env.PYTHON || 'python', ['-c', [
     'import json',
-    'from course.physics import solenoid_e, interface',
+    'from math import log',
+    'from course.physics import solenoid_e, interface, capacitor, taper_j',
     'print(json.dumps(dict(probe=[float(abs(solenoid_e(i / 400, .05, .4)) * 1000) for i in range(61)],',
-    '                      match=[interface(1.5, 1 + i / 100)[0] for i in range(101)])))'
+    '                      match=[interface(1.5, 1 + i / 100)[0] for i in range(101)],',
+    '                      power=[1000*capacitor(.05, .001, 10, (i-20)/10000)[-1] for i in range(41)],',
+    '                      density=[taper_j(0, .2*log(4/(2+i/20)), .004, .2, .004)[1] for i in range(41)])))'
   ].join('\n')], {cwd: root, encoding: 'utf8'}));
   const cases = [
-    {id:'probe', hash:'induction-probe', initial:5, target:10, min:0, max:15, step:.25, ticks:60},
-    {id:'match', hash:'index-match', initial:1, target:1.5, min:1, max:2, step:.01, ticks:100}
+    {id:'probe', hash:'induction-probe', target:10, min:0, max:15, step:.25, limits:[0,10], digits:2, unit:'mV/m'},
+    {id:'match', hash:'index-match', target:1.5, min:1, max:2, step:.01, limits:[-.2,.2], digits:3, unit:'times'},
+    {id:'power', hash:'capacitor-power', target:-2, min:-2, max:2, step:.1, limits:[-20,20], digits:1, unit:'mW'},
+    {id:'density', hash:'wire-density', target:2, min:2, max:4, step:.05, limits:[0,320], digits:2, unit:'A/m²'}
   ];
   for (const phone of [false, true]) {
     const context = await browser.newContext({hasTouch:phone, reducedMotion:'reduce',
@@ -38,19 +43,28 @@ async function checkFieldStudies(browser, base) {
         assert.equal(Number(await slider.inputValue()), c.target);
         assert.notEqual(await diagram.innerHTML(), baseline);
         const python = fixtures[c.id];
-        const browserValues = await page.evaluate(({id, min, step, ticks}) => Array.from({length:ticks + 1}, (_, i) => {
-          const x = min + i * step;
-          return id === 'probe' ? Math.abs(FieldLab.solenoidE(x / 100, .05, .4)) * 1000 : FieldLab.waveInterface(1.5, x).r;
-        }), c);
-        browserValues.forEach((v, i) => assert.ok(Math.abs(v - python[i]) < 1e-10));
+        // Exercise the actual slider binding, including zero and the transition between regimes.
+        const sweep = await host.evaluate((element, count) => {
+          const input = element.querySelector('input');
+          const saved = input.value;
+          const samples = Array.from({length:count}, (_, i) => {
+            input.value = Number(input.min) + i * Number(input.step);
+            input.dispatchEvent(new Event('input'));
+            return Number(element.querySelector('[data-marker]').getAttribute('cy'));
+          });
+          input.value = saved;
+          input.dispatchEvent(new Event('input'));
+          return samples;
+        }, python.length);
+        const [low, high] = c.limits;
+        sweep.forEach((v, i) => assert.ok(Math.abs(v - (116 - 83 * (python[i] - low) / (high - low))) < 1e-8));
         async function checkMarker() {
           const x = Number(await slider.inputValue()), y = python[Math.round((x - c.min) / c.step)];
-          const [low, high] = c.id === 'probe' ? [0,10] : [-.2,.2];
           const marker = curve.locator('[data-marker]');
           assert.ok(Math.abs(Number(await marker.getAttribute('cx')) - (47 + 237 * (x - c.min) / (c.max - c.min))) < .001);
           assert.ok(Math.abs(Number(await marker.getAttribute('cy')) - (116 - 83 * (y - low) / (high - low))) < .001);
           const reading = await host.locator('[data-reading]').innerText();
-          assert.ok(reading.includes(c.id === 'probe' ? y.toFixed(2) + ' mV/m' : y.toFixed(3) + ' times'), reading);
+          assert.ok(reading.includes(y.toFixed(c.digits) + ' ' + c.unit), reading);
         }
         await checkMarker();
         if (phone) {
@@ -74,7 +88,7 @@ async function checkFieldStudies(browser, base) {
       await context.close();
     }
   }
-  return {layouts:['desktop keyboard', 'phone touch'], modelCases:162, studies:2};
+  return {layouts:['desktop keyboard', 'phone touch'], modelCases:Object.values(fixtures).reduce((n, rows) => n + rows.length, 0), studies:cases.length};
 }
 module.exports = {checkFieldStudies};
 if (require.main === module) (async () => {

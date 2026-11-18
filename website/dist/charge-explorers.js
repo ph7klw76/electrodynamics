@@ -29,6 +29,7 @@
   // Node checks can compare these functions with the canonical Python model.
   if (typeof module === 'object' && module.exports) module.exports = { capacitorState, taperState };
   if (typeof document === 'undefined') return;
+  Object.assign(window.FieldLab, { capacitorState, taperState });
 
   function elements(mount, names) {
     return Object.fromEntries(names.split(' ').map(name => [name, mount.querySelector(`[data-part="${name}"]`)]));
