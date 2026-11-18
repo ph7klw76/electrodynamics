@@ -26,7 +26,7 @@ def main():
 
     index = (source/"index.html").read_text(encoding="utf-8")
     assets = ["config.js","app.js","physics.js","style.css","charge-explorers.js",
-              "charge-explorers.css","wave-explorers.js","wave-explorers.css"]
+              "charge-explorers.css","wave-explorers.js","wave-explorers.css","field-studies.js"]
     for name in assets:
         digest = hashlib.sha256((source/name).read_bytes()).hexdigest()[:12]
         index = re.sub(r'(?<=["\'])'+re.escape(name)+r'(?:\?[^"\s]*)?(?=["\'])',name+"?v="+digest,index)
